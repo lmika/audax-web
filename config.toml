@@ -1,3 +1,8 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "awstools"
+
+theme = "terminal"
+
+[params.Logo]
+	logoText = "awstools"

@@ -4,5 +4,11 @@ title = "awstools"
 
 theme = "terminal"
 
+[markup.goldmark.renderer]
+  unsafe = true
+ 
+[params]
+	contentTypeName = "docs"
+	
 [params.Logo]
 	logoText = "awstools"

@@ -1,0 +1,5 @@
+kbd {
+  background: var(--accent);
+  color: black;
+  border-radius: 4px;
+}

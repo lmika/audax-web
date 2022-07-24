@@ -59,7 +59,7 @@ the actual table until it is "putted" (see [Committing Changes](#committing-chan
 An item that has been modified will be displayed in read and a modified indicator (`M`) will appear
 on the left side of the table.
 
-## Creating Items
+## Adding Items
 
 A new item can be created by typing in the command `new-item`.  When entered, _dynamo-browse_
 will prompt for the partition and sort key.  Once these are entered, the item will appear
@@ -80,7 +80,7 @@ immediately.
 New or modified items (but not deleted items) will be kept in memory until they are committed
 or "putted" to the table.  To put the changes, use the `put` command or `w` alias.
 
-## Backing Out Of Changes
+## Backing Out of Changes
 
 Any modified items can be reverted back to what they are in the actual table by rerunning the
 current query.  This can be done by pressing <kbd>R</kbd>. 

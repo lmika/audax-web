@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "awstools"
+title = "Audax Toolset"
 
 theme = "terminal"
 
@@ -11,4 +11,4 @@ theme = "terminal"
 	contentTypeName = "docs"
 	
 [params.Logo]
-	logoText = "awstools"
+	logoText = "Audax Toolset"

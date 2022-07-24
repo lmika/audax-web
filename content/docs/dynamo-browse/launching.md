@@ -1,5 +1,5 @@
 +++
-title = "Launching And Quitting"
+title = "Launching and Quitting"
 weight = 10
 +++
 
@@ -19,7 +19,7 @@ endpoint (if localhost is used, only the port is required):
 dynamo-browse -local :8080
 ```
 
-### Selecting A Table
+## Selecting a Table
 
 Upon launch, dynamo-browse will request a description of the tables within the account
 and present them as a list:

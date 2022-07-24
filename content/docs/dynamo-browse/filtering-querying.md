@@ -1,11 +1,9 @@
 +++
-title = "Filtering And Querying"
+title = "Filtering and Querying"
 weight = 30
 +++
 
-
-
-### Filtering Items
+## Filtering
 
 The displayed items can be filtered down to those that contain a specific substring.
 When a filter is set, the items displayed will be reduced to those that contain the substring in any top-level
@@ -18,7 +16,7 @@ To clear the filter, press <kbd>/</kbd>, and press <kbd>Enter</kbd> without ente
 Filtering will only consist the items that have been returned in the last scan or query, and will not
 make calls to DynamoDB.
 
-### Querying
+## Querying
 
 A query or scan over the table can be made by entering a query expression.
 Query expressions are a built-in expression language which translates to either a DynamoDB query

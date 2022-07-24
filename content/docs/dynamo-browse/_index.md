@@ -12,24 +12,19 @@ XXX
 
 ## Table Of Contents
 
-- [Launching](/launching)
-- [Browsing](/browsing)
-- [Editing](/editing)
-
-
-
-## Modifying Items Within A Table
-
-XXX
-
-## Reference
-
-The following are references for using 
-
-### Commands
-
-#### q - Quit
-
-Quits the application.
-
-### Key Mapping
+- [Launching and Quitting](/docs/dynamo-browse/launching)
+	- [Selecting a Table](/docs/dynamo-browse/launching#selecting-a-table)
+	- [Quitting](/docs/dynamo-browse/launching#quitting)
+- [Getting Around](/docs/dynamo-browse/getting-around)
+	- [Entering Command](/docs/dynamo-browse/launching#entering-command)
+- [Filtering and Querying](/docs/dynamo-browse/filtering-querying)
+	- [Filtering](/docs/dynamo-browse/filtering-querying#filtering)
+	- [Querying](/docs/dynamo-browse/filtering-querying#querying)
+- [Editing Items](/docs/dynamo-browse/editing-items)
+	- [Marking Items](/docs/dynamo-browse/editing-items#marking-items)
+	- [Modifying Attributes](/docs/dynamo-browse/editing-items#modifying-attributes)
+	- [Deleting Attributes](/docs/dynamo-browse/editing-items#deleting-attributes)
+	- [Adding Items](/docs/dynamo-browse/editing-items#adding-items)
+	- [Deleting Items](/docs/dynamo-browse/editing-items#deleting-items)
+	- [Committing Changes](/docs/dynamo-browse/editing-items#committing-changes)
+	- [Backing Out of Changes](/docs/dynamo-browse/editing-items#backing-out-of-changes)

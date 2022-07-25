@@ -28,3 +28,6 @@ XXX
 	- [Deleting Items](/docs/dynamo-browse/editing-items#deleting-items)
 	- [Committing Changes](/docs/dynamo-browse/editing-items#committing-changes)
 	- [Backing Out of Changes](/docs/dynamo-browse/editing-items#backing-out-of-changes)
+- [Reference](/docs/dynamo-browse/reference)
+	- [Key Bindings](/docs/dynamo-browse/reference#key-bindings)
+	- [Commands](/docs/dynamo-browse/reference#commands)

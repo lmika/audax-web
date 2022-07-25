@@ -73,7 +73,7 @@ Commits all new and modified items to the table.
 ### quit
 
 ```
-:q
+:quit
 ```
 
 Alias: `q`

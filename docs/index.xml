@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The Audax Toolset on Audax Toolset</title>
-    <link>http://example.org/</link>
+    <link>https://audax.tools/</link>
     <description>Recent content in The Audax Toolset on Audax Toolset</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://audax.tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launching and Quitting</title>
-      <link>http://example.org/docs/dynamo-browse/launching/</link>
+      <link>https://audax.tools/docs/dynamo-browse/launching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/dynamo-browse/launching/</guid>
+      <guid>https://audax.tools/docs/dynamo-browse/launching/</guid>
       <description>To launch dynamo-browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:</description>
@@ -26,7 +26,7 @@ and endpoint of the local DynamoDB server.  The hostname can be omitted, and wil
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;selecting-a-table&#34;&gt;Selecting a Table&lt;/h2&gt;
 &lt;p&gt;Upon launch, dynamo-browse will present a list of all the tables within the region:&lt;/p&gt;
 
-  &lt;img src=&#34;http://example.org/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;Select the table to view by pressing &lt;kbd&gt;Enter&lt;/kbd&gt;.  Use the following keys to navigate
@@ -47,16 +47,16 @@ The keystroke &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; can also be used to quit.&lt;/p&gt;
     
     <item>
       <title>Getting Around</title>
-      <link>http://example.org/docs/dynamo-browse/getting-around/</link>
+      <link>https://audax.tools/docs/dynamo-browse/getting-around/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/dynamo-browse/getting-around/</guid>
+      <guid>https://audax.tools/docs/dynamo-browse/getting-around/</guid>
       <description>After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
 This mode consists of three panes:
  The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.</description>
       <content>&lt;p&gt;After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.&lt;/p&gt;
 
-  &lt;img src=&#34;http://example.org/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;This mode consists of three panes:&lt;/p&gt;
@@ -99,10 +99,10 @@ such as the length.&lt;/p&gt;
     
     <item>
       <title>Filtering and Querying</title>
-      <link>http://example.org/docs/dynamo-browse/filtering-querying/</link>
+      <link>https://audax.tools/docs/dynamo-browse/filtering-querying/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/dynamo-browse/filtering-querying/</guid>
+      <guid>https://audax.tools/docs/dynamo-browse/filtering-querying/</guid>
       <description>Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
 To set the filter, press /, and enter the substring you wish to filter on.
 To clear the filter, press /, and press Enter without entering any value.
@@ -110,7 +110,7 @@ When a filter is set, any item that does not have a top-level attribute containi
 Filtering will only consist the items that are in the current result-set.</description>
       <content>&lt;h2 id=&#34;filtering&#34;&gt;Filtering&lt;/h2&gt;
 
-  &lt;img src=&#34;http://example.org/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;The displayed items of the current result-set can be filtered down to those that contain a specific substring.&lt;/p&gt;
@@ -122,7 +122,7 @@ table itself.&lt;/p&gt;
 &lt;p&gt;Note that filtering is case sensitive.&lt;/p&gt;
 &lt;h2 id=&#34;querying&#34;&gt;Querying&lt;/h2&gt;
 
-  &lt;img src=&#34;http://example.org/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;A query or scan over the table can be made by entering a query expression.
@@ -144,10 +144,10 @@ or scan, depending on the expression.&lt;/p&gt;
     
     <item>
       <title>Editing Items</title>
-      <link>http://example.org/docs/dynamo-browse/editing-items/</link>
+      <link>https://audax.tools/docs/dynamo-browse/editing-items/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/dynamo-browse/editing-items/</guid>
+      <guid>https://audax.tools/docs/dynamo-browse/editing-items/</guid>
       <description>dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
 Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
 To mark or unmark the selected item, press m.
@@ -155,7 +155,7 @@ The command unmark can be used to clear all marked items.</description>
       <content>&lt;p&gt;dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items,
 and modifying their attribute values.&lt;/p&gt;
 
-  &lt;img src=&#34;http://example.org/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;h2 id=&#34;marking-items&#34;&gt;Marking Items&lt;/h2&gt;
@@ -216,10 +216,10 @@ current query.  This can be done by pressing &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p
     
     <item>
       <title>Reference</title>
-      <link>http://example.org/docs/dynamo-browse/reference/</link>
+      <link>https://audax.tools/docs/dynamo-browse/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/dynamo-browse/reference/</guid>
+      <guid>https://audax.tools/docs/dynamo-browse/reference/</guid>
       <description>Key Bindings    Key Action     ↑/i Move selection up   ↓/k Move selection down   PgUp/⇧I Page up   PgDn/⇧K Page down   Home/0 Move selection to first item   End/$ Move selection to last item   ←/j Shift displayed columns left   →/l Shift displayed columns right   m Mark/unmark currently selected item   / Filter   ?</description>
       <content>&lt;h1 id=&#34;key-bindings&#34;&gt;Key Bindings&lt;/h1&gt;
 &lt;table&gt;

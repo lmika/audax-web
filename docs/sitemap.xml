@@ -3,43 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/launching/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/launching/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/getting-around/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/getting-around/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/filtering-querying/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/filtering-querying/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/editing-items/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/editing-items/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/reference/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://audax.tools/categories/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/</loc>
+    <loc>https://audax.tools/docs/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/docs/dynamo-browse/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://audax.tools/tags/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://audax.tools/</loc>
   </url>
   
 </urlset>

@@ -41,4 +41,4 @@ If you have Go 1.18, you can install using the following command:
 go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.2
 ```
 
-The [source from GitHub](https://github.com/lmika/audax).
+The source code can be [found on GitHub](https://github.com/lmika/audax).

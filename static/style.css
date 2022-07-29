@@ -3,3 +3,8 @@ kbd {
   color: black;
   border-radius: 4px;
 }
+
+img.screenshot {
+  margin: -24px;
+  margin-top: 0;
+}

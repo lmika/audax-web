@@ -5,10 +5,8 @@ layout = "single"
 
 dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
 With it, you can quickly connect to and browse the contents of a DynamoDB table
-in your AWS account or local machine.  There are some basic tools for
+in your AWS account or local machine.  There are some basic facilities for
 editing as well.
-
-XXX
 
 ## Table Of Contents
 

@@ -78,7 +78,7 @@ Commits all new and modified items to the table.
 
 Alias: `q`
 
-Quits _dynamo-browse_.
+Quits dynamo-browse.
 
 ### set-attr
 

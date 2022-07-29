@@ -9,7 +9,9 @@ administering AWS services.
 They were built to make it easy to do quick things with
 common AWS services, such as DynamoDB, without having to learn incantations with the CLI or
 go to the AWS console itself.  This keeps you focused on your task and saves you from
-breaking concentration, especially if you do a lot in the terminal (like me).
+breaking concentration, especially if you do a lot in the terminal.
+
+{{< image src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse" position="center" >}}
 
 ## The Toolset
 
@@ -19,24 +21,24 @@ The set of tools available are:
 
 ## Install
 
-Binary packages can be [download from GitHub](https://github.com/lmika/awstools/releases/latest).
+Binary packages can be [download from GitHub](https://github.com/lmika/audax/releases/latest).
 
 To install the Debian package, download the `.deb` file, and install the package by running:
 
 ```
-sudo apt install ./awstool_0.0.1_linux_amd64.deb
+sudo apt install ./audax_0.0.2_linux_amd64.deb
 ```
 
 To install the RPM package, download the `.rpm` file, and install the package by running:
 
 ```
-sudo yum install ./awstools_0.0.1_linux_amd64.rpm
+sudo yum install ./audax_0.0.2_linux_amd64.rpm
 ```
 
 If you have Go 1.18, you can install using the following command:
 
 ```
-go install github.com/lmika/awstools/cmd/dynamo-browse@v0.0.1
+go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.2
 ```
 
-The [source from GitHub](https://github.com/lmika/awstools).
+The [source from GitHub](https://github.com/lmika/audax).

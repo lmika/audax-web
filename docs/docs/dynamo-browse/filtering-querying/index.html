@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Filtering and Querying :: Audax Toolset</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
+To set the filter, press /, and enter the substring you wish to filter on.
+To clear the filter, press /, and press Enter without entering any value.
+When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
+Filtering will only consist the items that are in the current result-set." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://example.org/docs/dynamo-browse/filtering-querying/" />
+
+
+
+
+<link rel="stylesheet" href="http://example.org/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="http://example.org/style.css">
+
+
+<link rel="apple-touch-icon" href="http://example.org/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="http://example.org/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Filtering and Querying">
+<meta property="og:description" content="Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
+To set the filter, press /, and enter the substring you wish to filter on.
+To clear the filter, press /, and press Enter without entering any value.
+When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
+Filtering will only consist the items that are in the current result-set." />
+<meta property="og:url" content="http://example.org/docs/dynamo-browse/filtering-querying/" />
+<meta property="og:site_name" content="Audax Toolset" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://example.org/">
+  <div class="logo">
+    Audax Toolset
+  </div>
+</a>
+
+    </div>
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://example.org/docs/dynamo-browse/filtering-querying/">Filtering and Querying</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="filtering">Filtering<a href="#filtering" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+  <img src="/images/dynamo-browse/filter-items.png"  alt="Items with filter applied"  class="center"  />
+
+
+<p>The displayed items of the current result-set can be filtered down to those that contain a specific substring.</p>
+<p>To set the filter, press <kbd>/</kbd>, and enter the substring you wish to filter on.</p>
+<p>To clear the filter, press <kbd>/</kbd>, and press <kbd>Enter</kbd> without entering any value.</p>
+<p>When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.</p>
+<p>Filtering will only consist the items that are in the current result-set.  It will not result in a call to the actual
+table itself.</p>
+<p>Note that filtering is case sensitive.</p>
+<h2 id="querying">Querying<a href="#querying" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+  <img src="/images/dynamo-browse/query-items.png"  alt="Items with query applied"  class="center"  />
+
+
+<p>A query or scan over the table can be made by entering a query expression.
+Query expressions are a built-in expression language which translates to either a DynamoDB query
+or scan, depending on the expression.</p>
+<p>To run a query, press <kbd>?</kbd>, and enter the query expression.</p>
+<p>To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without entering any value.</p>
+<div class="framed">
+  Note that the query expression language is still under early development and may change in the future.
+  At the moment, all query expressions result in a table scan.
+</div>
+<p>The types of query expressions that are supported are:</p>
+<ul>
+<li><code>attr = &quot;value&quot;</code>: matches items where attribute <em>attr</em> matches the string <em>value</em></li>
+<li><code>attr ^= &quot;value&quot;</code>: matches items where attribute <em>attr</em> has the prefix <em>value</em></li>
+</ul>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="http://example.org/docs/dynamo-browse/getting-around/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Getting Around</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="http://example.org/docs/dynamo-browse/editing-items/">
+                <span class="button__text">Editing Items</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="http://example.org/assets/main.js"></script>
+<script src="http://example.org/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

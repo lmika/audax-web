@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dynamo-browse on Audax Toolset</title>
+    <link>http://example.org/docs/dynamo-browse/</link>
+    <description>Recent content in dynamo-browse on Audax Toolset</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/dynamo-browse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Launching and Quitting</title>
+      <link>http://example.org/docs/dynamo-browse/launching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dynamo-browse/launching/</guid>
+      <description>To launch dynamo-browse, run the following command at the terminal:
+dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
+To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:</description>
+      <content>&lt;p&gt;To launch dynamo-browse, run the following command at the terminal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dynamo-browse
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will use your current AWS configuration and region, which can be changed by setting
+the relevant &lt;code&gt;AWS_&lt;/code&gt; environment variables.&lt;/p&gt;
+&lt;p&gt;To connect to a local instance of DynamoDB, such as one
+running in a Docker container, use the &lt;code&gt;--local&lt;/code&gt; flag.  This takes as the argument the hostname
+and endpoint of the local DynamoDB server.  The hostname can be omitted, and will default to &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dynamo-browse --local :8080
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;selecting-a-table&#34;&gt;Selecting a Table&lt;/h2&gt;
+&lt;p&gt;Upon launch, dynamo-browse will present a list of all the tables within the region:&lt;/p&gt;
+
+  &lt;img src=&#34;http://example.org/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;Select the table to view by pressing &lt;kbd&gt;Enter&lt;/kbd&gt;.  Use the following keys to navigate
+the items within the list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;: Move selection up&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;: Move selection down&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the table is selected, the table will be scanned and dynamo-browse will be presented in
+&lt;a href=&#34;#view-mode&#34;&gt;View Mode&lt;/a&gt;.  Another table can be selected from within view mode using the &lt;code&gt;:table&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;dynamo-browse can also be launched directly in view mode by specifying a table using the &lt;code&gt;-t&lt;/code&gt; flag:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dynamo-browse -t user-accounts
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;quitting&#34;&gt;Quitting&lt;/h2&gt;
+&lt;p&gt;To quit dynamodb-browse, enter the command &lt;code&gt;q&lt;/code&gt; by pressing &lt;kbd&gt;:&lt;/kbd&gt;, then typing &lt;kbd&gt;q&lt;/kbd&gt;&lt;kbd&gt;Enter&lt;/kbd&gt;.
+The keystroke &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; can also be used to quit.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Getting Around</title>
+      <link>http://example.org/docs/dynamo-browse/getting-around/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dynamo-browse/getting-around/</guid>
+      <description>After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+ The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.</description>
+      <content>&lt;p&gt;After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.&lt;/p&gt;
+
+  &lt;img src=&#34;http://example.org/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;This mode consists of three panes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The top pane displays the result-set of the last scan or query.  The table name is at the top-left.&lt;/li&gt;
+&lt;li&gt;The middle pane displays the attributes of the currently selected item, along with their type.&lt;/li&gt;
+&lt;li&gt;The bottom pane displays the current query or filter, plus any messages.  Prompts for input will
+also appear at the bottom.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The result-set is sorted in ascending order based on the value and type of the partition and sort key.
+Up to 1,000 rows will be displayed for the current result-set.&lt;/p&gt;
+&lt;p&gt;Since DynamoDB does not require all items to have the same attribute (unless they are pre-defined), any
+attribute not set for a column is indicated with a grey tilde character &lt;code&gt;~&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Use the following keys to change the currently selected row, which is highlighted in purple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;: Move selection up&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;: Move selection down&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;PgUp&lt;/kbd&gt;/&lt;kbd&gt;⇧ I&lt;/kbd&gt;: Page up&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;PgDn&lt;/kbd&gt;/&lt;kbd&gt;⇧ K&lt;/kbd&gt;: Page down&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;Home&lt;/kbd&gt;/&lt;kbd&gt;0&lt;/kbd&gt;: First row&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;End&lt;/kbd&gt;/&lt;kbd&gt;$&lt;/kbd&gt;: Last row&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The columns of the table
+consist of the top-level attributes of the result-set.  The partition key, sort key, plus any explicitly defined
+attributes will always be displayed from the left margin onwards.  The other attributes are determined
+from the results of the last scan or query, and may change depending on the result.&lt;/p&gt;
+&lt;p&gt;The display columns of the table can be scrolled across by using the following keys:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;←&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt;: Scroll to the left&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;→&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt;: Scroll to the right&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The attributes of the currently selected item will appear in the middle pane.  Both the type and the value of each
+attribute will be displayed.  Any nested attributes will be indented, and will below their parent item.  A value
+displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
+such as the length.&lt;/p&gt;
+&lt;h2 id=&#34;entering-commands&#34;&gt;Entering Commands&lt;/h2&gt;
+&lt;p&gt;Commands can be entered by pressing &lt;kbd&gt;:&lt;/kbd&gt; and entering the command, with any arguments, at the prompt.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Filtering and Querying</title>
+      <link>http://example.org/docs/dynamo-browse/filtering-querying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dynamo-browse/filtering-querying/</guid>
+      <description>Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
+To set the filter, press /, and enter the substring you wish to filter on.
+To clear the filter, press /, and press Enter without entering any value.
+When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
+Filtering will only consist the items that are in the current result-set.</description>
+      <content>&lt;h2 id=&#34;filtering&#34;&gt;Filtering&lt;/h2&gt;
+
+  &lt;img src=&#34;http://example.org/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;The displayed items of the current result-set can be filtered down to those that contain a specific substring.&lt;/p&gt;
+&lt;p&gt;To set the filter, press &lt;kbd&gt;/&lt;/kbd&gt;, and enter the substring you wish to filter on.&lt;/p&gt;
+&lt;p&gt;To clear the filter, press &lt;kbd&gt;/&lt;/kbd&gt;, and press &lt;kbd&gt;Enter&lt;/kbd&gt; without entering any value.&lt;/p&gt;
+&lt;p&gt;When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.&lt;/p&gt;
+&lt;p&gt;Filtering will only consist the items that are in the current result-set.  It will not result in a call to the actual
+table itself.&lt;/p&gt;
+&lt;p&gt;Note that filtering is case sensitive.&lt;/p&gt;
+&lt;h2 id=&#34;querying&#34;&gt;Querying&lt;/h2&gt;
+
+  &lt;img src=&#34;http://example.org/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;A query or scan over the table can be made by entering a query expression.
+Query expressions are a built-in expression language which translates to either a DynamoDB query
+or scan, depending on the expression.&lt;/p&gt;
+&lt;p&gt;To run a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and enter the query expression.&lt;/p&gt;
+&lt;p&gt;To clear a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and press &lt;kbd&gt;Enter&lt;/kbd&gt; without entering any value.&lt;/p&gt;
+&lt;div class=&#34;framed&#34;&gt;
+  Note that the query expression language is still under early development and may change in the future.
+  At the moment, all query expressions result in a table scan.
+&lt;/div&gt;
+&lt;p&gt;The types of query expressions that are supported are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;attr = &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; matches the string &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;attr ^= &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; has the prefix &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Editing Items</title>
+      <link>http://example.org/docs/dynamo-browse/editing-items/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dynamo-browse/editing-items/</guid>
+      <description>dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
+Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
+To mark or unmark the selected item, press m.
+The command unmark can be used to clear all marked items.</description>
+      <content>&lt;p&gt;dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items,
+and modifying their attribute values.&lt;/p&gt;
+
+  &lt;img src=&#34;http://example.org/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;h2 id=&#34;marking-items&#34;&gt;Marking Items&lt;/h2&gt;
+&lt;p&gt;Most modifications are applied to items that are marked.  A marked item is indicated by a grey
+background and a bullet indicator (&lt;code&gt;•&lt;/code&gt;) on the left side of the table.&lt;/p&gt;
+&lt;p&gt;To mark or unmark the selected item, press &lt;kbd&gt;m&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;The command &lt;code&gt;unmark&lt;/code&gt; can be used to clear all marked items.&lt;/p&gt;
+&lt;h2 id=&#34;modifying-attributes&#34;&gt;Modifying Attributes&lt;/h2&gt;
+&lt;p&gt;Item attributes can be added or modified by using the command &lt;code&gt;set-attr&lt;/code&gt; or the alias &lt;code&gt;sa&lt;/code&gt;.
+This command can be used to modify the value and type of an attribute of the currently selected items, or
+from any marked items.&lt;/p&gt;
+&lt;p&gt;The format of the command is as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:set-attr [&amp;lt;type&amp;gt;] &amp;lt;attributeName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where type is one of the following (case insensitive):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-S&lt;/code&gt;: string&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-N&lt;/code&gt;: number&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-BOOL&lt;/code&gt;: boolean&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-NULL&lt;/code&gt;: null&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If the type is not specified, and the attribute exists, then the attribute type will not change.
+The type must be specified if this is a new attribute or multiple items have been marked.
+After executing the command, dynamo-browse will prompt for the value of the new attribute if one is
+required.&lt;/p&gt;
+&lt;p&gt;Modified attributes will only be tracked in memory: they will not be written
+to the actual table until it is &amp;ldquo;putted&amp;rdquo; (see &lt;a href=&#34;#committing-changes&#34;&gt;Committing Changes&lt;/a&gt;).
+An item that has been modified will be displayed in red and a modified indicator (&lt;code&gt;M&lt;/code&gt;) will appear
+on the left-most column.&lt;/p&gt;
+&lt;h2 id=&#34;deleting-attributes&#34;&gt;Deleting Attributes&lt;/h2&gt;
+&lt;p&gt;An attribute can be deleted by using the command &lt;code&gt;del-attr&lt;/code&gt; or the alias &lt;code&gt;da&lt;/code&gt;.  The format of the command
+is as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:del-attr &amp;lt;attributeName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When executed, the attribute with the name &lt;em&gt;attributeName&lt;/em&gt; will be deleted from the selected item, or
+from any marked items.&lt;/p&gt;
+&lt;p&gt;Deleted attributes will only be tracked in memory: they will not be removed from
+the actual table until it is &amp;ldquo;putted&amp;rdquo; (see &lt;a href=&#34;#committing-changes&#34;&gt;Committing Changes&lt;/a&gt;).
+An item that has been modified will be displayed in red and a modified indicator (&lt;code&gt;M&lt;/code&gt;) will appear
+on the left-most column.&lt;/p&gt;
+&lt;h2 id=&#34;adding-items&#34;&gt;Adding Items&lt;/h2&gt;
+&lt;p&gt;A new item can be created by typing in the command &lt;code&gt;new-item&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When entered, dynamo-browse will prompt for the partition and sort key.  Once these are entered,
+the item will appear in the top pane in green with an asterisk indicator (&lt;code&gt;*&lt;/code&gt;) on the left left-most column.
+Any additional attributes can be set by using &lt;code&gt;set-attr&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A new item will only appear in memory: it will not be written
+to the actual table until it is &amp;ldquo;putted&amp;rdquo; (see &lt;a href=&#34;#committing-changes&#34;&gt;Committing Changes&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;deleting-items&#34;&gt;Deleting Items&lt;/h2&gt;
+&lt;p&gt;Items can be deleted by marking them and then typing in the command &lt;code&gt;delete&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unlike most of the other modified commands, running &lt;code&gt;delete&lt;/code&gt; WILL make changes to the table
+immediately.&lt;/p&gt;
+&lt;h2 id=&#34;committing-changes&#34;&gt;Committing Changes&lt;/h2&gt;
+&lt;p&gt;New or modified items (but not deleted items) will be kept in memory until they are committed
+or &amp;ldquo;putted&amp;rdquo; to the table.  To put the changes, use the &lt;code&gt;put&lt;/code&gt; command or &lt;code&gt;w&lt;/code&gt; alias.&lt;/p&gt;
+&lt;h2 id=&#34;backing-out-of-changes&#34;&gt;Backing Out of Changes&lt;/h2&gt;
+&lt;p&gt;Any modified items can be reverted back to what they are in the actual table by rerunning the
+current query.  This can be done by pressing &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Reference</title>
+      <link>http://example.org/docs/dynamo-browse/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/dynamo-browse/reference/</guid>
+      <description>Key Bindings    Key Action     ↑/i Move selection up   ↓/k Move selection down   PgUp/⇧I Page up   PgDn/⇧K Page down   Home/0 Move selection to first item   End/$ Move selection to last item   ←/j Shift displayed columns left   →/l Shift displayed columns right   m Mark/unmark currently selected item   / Filter   ?</description>
+      <content>&lt;h1 id=&#34;key-bindings&#34;&gt;Key Bindings&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Action&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Move selection up&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Move selection down&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;PgUp&lt;/kbd&gt;/&lt;kbd&gt;⇧I&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Page up&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;PgDn&lt;/kbd&gt;/&lt;kbd&gt;⇧K&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Page down&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;Home&lt;/kbd&gt;/&lt;kbd&gt;0&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Move selection to first item&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;End&lt;/kbd&gt;/&lt;kbd&gt;$&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Move selection to last item&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;←&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Shift displayed columns left&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;→&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Shift displayed columns right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;m&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Mark/unmark currently selected item&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;/&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Filter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;?&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Run scan/query&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;R&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Rerun last scan/query&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;:&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Enter command&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;/&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Quit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+&lt;h3 id=&#34;del-attr&#34;&gt;del-attr&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:del-attr &amp;lt;attribute&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;da&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Deletes &lt;em&gt;attribute&lt;/em&gt; from the currently selected item; or if there are any marked items, the marked items.&lt;/p&gt;
+&lt;h3 id=&#34;delete&#34;&gt;delete&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:delete
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
+the table straight away.&lt;/p&gt;
+&lt;h3 id=&#34;export&#34;&gt;export&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:export &amp;lt;filename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Writes the currently loaded items as a CSV file to &lt;em&gt;filename&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;new-item&#34;&gt;new-item&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:new-item
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Creates a new item.  When executed, the value for the partition key and sort key will be prompted.
+The new item will not be written to the table until it is committed with the &lt;code&gt;put&lt;/code&gt; command.&lt;/p&gt;
+&lt;h3 id=&#34;put&#34;&gt;put&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:put
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;w&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Commits all new and modified items to the table.&lt;/p&gt;
+&lt;h3 id=&#34;quit&#34;&gt;quit&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:quit
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;q&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Quits dynamo-browse.&lt;/p&gt;
+&lt;h3 id=&#34;set-attr&#34;&gt;set-attr&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:set-attr [type] &amp;lt;attributeName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;sa&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Modifies the value of &lt;em&gt;attribute&lt;/em&gt; of the currently selected item; or if there are any marked items, the marked items.&lt;/p&gt;
+&lt;p&gt;The value of &lt;em&gt;type&lt;/em&gt; can be use to specify the type of the attribute.  It can be one of the following (case insensitive):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-S&lt;/code&gt;: string value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-N&lt;/code&gt;: number value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-BOOL&lt;/code&gt;: boolean value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-NULL&lt;/code&gt;: null value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If unset, the attribute type will not be changed.  &lt;em&gt;type&lt;/em&gt; must be set if multiple items have been marked.&lt;/p&gt;
+&lt;h3 id=&#34;table&#34;&gt;table&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:table
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Select the table to display.&lt;/p&gt;
+&lt;h3 id=&#34;unmark&#34;&gt;unmark&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:unmark
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Unmark all marked items.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

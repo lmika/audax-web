@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>dynamo-browse :: Audax Toolset</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
+Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting Around  Entering Command   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Reference  Key Bindings Commands    " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://example.org/docs/dynamo-browse/" />
+
+
+
+
+<link rel="stylesheet" href="http://example.org/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="http://example.org/style.css">
+
+
+<link rel="apple-touch-icon" href="http://example.org/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="http://example.org/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="dynamo-browse">
+<meta property="og:description" content="dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
+Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting Around  Entering Command   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Reference  Key Bindings Commands    " />
+<meta property="og:url" content="http://example.org/docs/dynamo-browse/" />
+<meta property="og:site_name" content="Audax Toolset" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="/docs/dynamo-browse/index.xml" rel="alternate" type="application/rss+xml" title="Audax Toolset" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://example.org/">
+  <div class="logo">
+    Audax Toolset
+  </div>
+</a>
+
+    </div>
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://example.org/docs/dynamo-browse/">dynamo-browse</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
+With it, you can quickly connect to and browse the contents of a DynamoDB table
+in your AWS account or local machine.  There are some basic facilities for
+editing as well.</p>
+<h2 id="table-of-contents">Table Of Contents<a href="#table-of-contents" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li><a href="/docs/dynamo-browse/launching">Launching and Quitting</a>
+<ul>
+<li><a href="/docs/dynamo-browse/launching#selecting-a-table">Selecting a Table</a></li>
+<li><a href="/docs/dynamo-browse/launching#quitting">Quitting</a></li>
+</ul>
+</li>
+<li><a href="/docs/dynamo-browse/getting-around">Getting Around</a>
+<ul>
+<li><a href="/docs/dynamo-browse/launching#entering-command">Entering Command</a></li>
+</ul>
+</li>
+<li><a href="/docs/dynamo-browse/filtering-querying">Filtering and Querying</a>
+<ul>
+<li><a href="/docs/dynamo-browse/filtering-querying#filtering">Filtering</a></li>
+<li><a href="/docs/dynamo-browse/filtering-querying#querying">Querying</a></li>
+</ul>
+</li>
+<li><a href="/docs/dynamo-browse/editing-items">Editing Items</a>
+<ul>
+<li><a href="/docs/dynamo-browse/editing-items#marking-items">Marking Items</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#modifying-attributes">Modifying Attributes</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#deleting-attributes">Deleting Attributes</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#adding-items">Adding Items</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#deleting-items">Deleting Items</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#committing-changes">Committing Changes</a></li>
+<li><a href="/docs/dynamo-browse/editing-items#backing-out-of-changes">Backing Out of Changes</a></li>
+</ul>
+</li>
+<li><a href="/docs/dynamo-browse/reference">Reference</a>
+<ul>
+<li><a href="/docs/dynamo-browse/reference#key-bindings">Key Bindings</a></li>
+<li><a href="/docs/dynamo-browse/reference#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+
+      </div></div>
+
+  
+  
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="http://example.org/assets/main.js"></script>
+<script src="http://example.org/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

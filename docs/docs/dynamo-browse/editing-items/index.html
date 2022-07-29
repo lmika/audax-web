@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Editing Items :: Audax Toolset</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
+Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
+To mark or unmark the selected item, press m.
+The command unmark can be used to clear all marked items." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://example.org/docs/dynamo-browse/editing-items/" />
+
+
+
+
+<link rel="stylesheet" href="http://example.org/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="http://example.org/style.css">
+
+
+<link rel="apple-touch-icon" href="http://example.org/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="http://example.org/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Editing Items">
+<meta property="og:description" content="dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
+Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
+To mark or unmark the selected item, press m.
+The command unmark can be used to clear all marked items." />
+<meta property="og:url" content="http://example.org/docs/dynamo-browse/editing-items/" />
+<meta property="og:site_name" content="Audax Toolset" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://example.org/">
+  <div class="logo">
+    Audax Toolset
+  </div>
+</a>
+
+    </div>
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://example.org/docs/dynamo-browse/editing-items/">Editing Items</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items,
+and modifying their attribute values.</p>
+
+  <img src="/images/dynamo-browse/modified-items.png"  alt="Item indicators"  class="center"  />
+
+
+<h2 id="marking-items">Marking Items<a href="#marking-items" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Most modifications are applied to items that are marked.  A marked item is indicated by a grey
+background and a bullet indicator (<code>•</code>) on the left side of the table.</p>
+<p>To mark or unmark the selected item, press <kbd>m</kbd>.</p>
+<p>The command <code>unmark</code> can be used to clear all marked items.</p>
+<h2 id="modifying-attributes">Modifying Attributes<a href="#modifying-attributes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Item attributes can be added or modified by using the command <code>set-attr</code> or the alias <code>sa</code>.
+This command can be used to modify the value and type of an attribute of the currently selected items, or
+from any marked items.</p>
+<p>The format of the command is as follows:</p>
+<pre><code>:set-attr [&lt;type&gt;] &lt;attributeName&gt;
+</code></pre><p>Where type is one of the following (case insensitive):</p>
+<ul>
+<li><code>-S</code>: string</li>
+<li><code>-N</code>: number</li>
+<li><code>-BOOL</code>: boolean</li>
+<li><code>-NULL</code>: null</li>
+</ul>
+<p>If the type is not specified, and the attribute exists, then the attribute type will not change.
+The type must be specified if this is a new attribute or multiple items have been marked.
+After executing the command, dynamo-browse will prompt for the value of the new attribute if one is
+required.</p>
+<p>Modified attributes will only be tracked in memory: they will not be written
+to the actual table until it is &ldquo;putted&rdquo; (see <a href="#committing-changes">Committing Changes</a>).
+An item that has been modified will be displayed in red and a modified indicator (<code>M</code>) will appear
+on the left-most column.</p>
+<h2 id="deleting-attributes">Deleting Attributes<a href="#deleting-attributes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>An attribute can be deleted by using the command <code>del-attr</code> or the alias <code>da</code>.  The format of the command
+is as follows:</p>
+<pre><code>:del-attr &lt;attributeName&gt;
+</code></pre><p>When executed, the attribute with the name <em>attributeName</em> will be deleted from the selected item, or
+from any marked items.</p>
+<p>Deleted attributes will only be tracked in memory: they will not be removed from
+the actual table until it is &ldquo;putted&rdquo; (see <a href="#committing-changes">Committing Changes</a>).
+An item that has been modified will be displayed in red and a modified indicator (<code>M</code>) will appear
+on the left-most column.</p>
+<h2 id="adding-items">Adding Items<a href="#adding-items" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>A new item can be created by typing in the command <code>new-item</code>.</p>
+<p>When entered, dynamo-browse will prompt for the partition and sort key.  Once these are entered,
+the item will appear in the top pane in green with an asterisk indicator (<code>*</code>) on the left left-most column.
+Any additional attributes can be set by using <code>set-attr</code>.</p>
+<p>A new item will only appear in memory: it will not be written
+to the actual table until it is &ldquo;putted&rdquo; (see <a href="#committing-changes">Committing Changes</a>).</p>
+<h2 id="deleting-items">Deleting Items<a href="#deleting-items" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Items can be deleted by marking them and then typing in the command <code>delete</code>.</p>
+<p>Unlike most of the other modified commands, running <code>delete</code> WILL make changes to the table
+immediately.</p>
+<h2 id="committing-changes">Committing Changes<a href="#committing-changes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>New or modified items (but not deleted items) will be kept in memory until they are committed
+or &ldquo;putted&rdquo; to the table.  To put the changes, use the <code>put</code> command or <code>w</code> alias.</p>
+<h2 id="backing-out-of-changes">Backing Out of Changes<a href="#backing-out-of-changes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Any modified items can be reverted back to what they are in the actual table by rerunning the
+current query.  This can be done by pressing <kbd>⇧ R</kbd>.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="http://example.org/docs/dynamo-browse/filtering-querying/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Filtering and Querying</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="http://example.org/docs/dynamo-browse/reference/">
+                <span class="button__text">Reference</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="http://example.org/assets/main.js"></script>
+<script src="http://example.org/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ title = "Audax Toolset"
 
 theme = "terminal"
 
+publishDir = "docs"
+
 [markup.goldmark.renderer]
   unsafe = true
  

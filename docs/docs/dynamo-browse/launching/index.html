@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Launching and Quitting :: Audax Toolset</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="To launch dynamo-browse, run the following command at the terminal:
+dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
+To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://example.org/docs/dynamo-browse/launching/" />
+
+
+
+
+<link rel="stylesheet" href="http://example.org/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="http://example.org/style.css">
+
+
+<link rel="apple-touch-icon" href="http://example.org/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="http://example.org/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Launching and Quitting">
+<meta property="og:description" content="To launch dynamo-browse, run the following command at the terminal:
+dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
+To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
+<meta property="og:url" content="http://example.org/docs/dynamo-browse/launching/" />
+<meta property="og:site_name" content="Audax Toolset" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="http://example.org/">
+  <div class="logo">
+    Audax Toolset
+  </div>
+</a>
+
+    </div>
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="http://example.org/docs/dynamo-browse/launching/">Launching and Quitting</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>To launch dynamo-browse, run the following command at the terminal:</p>
+<pre><code>dynamo-browse
+</code></pre><p>This will use your current AWS configuration and region, which can be changed by setting
+the relevant <code>AWS_</code> environment variables.</p>
+<p>To connect to a local instance of DynamoDB, such as one
+running in a Docker container, use the <code>--local</code> flag.  This takes as the argument the hostname
+and endpoint of the local DynamoDB server.  The hostname can be omitted, and will default to <code>localhost</code>:</p>
+<pre><code>dynamo-browse --local :8080
+</code></pre><h2 id="selecting-a-table">Selecting a Table<a href="#selecting-a-table" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Upon launch, dynamo-browse will present a list of all the tables within the region:</p>
+
+  <img src="/images/dynamo-browse/table-selection.png"  alt="Table selection"  class="center"  />
+
+
+<p>Select the table to view by pressing <kbd>Enter</kbd>.  Use the following keys to navigate
+the items within the list:</p>
+<ul>
+<li><kbd>↑</kbd>/<kbd>i</kbd>: Move selection up</li>
+<li><kbd>↓</kbd>/<kbd>k</kbd>: Move selection down</li>
+</ul>
+<p>Once the table is selected, the table will be scanned and dynamo-browse will be presented in
+<a href="#view-mode">View Mode</a>.  Another table can be selected from within view mode using the <code>:table</code> command.</p>
+<p>dynamo-browse can also be launched directly in view mode by specifying a table using the <code>-t</code> flag:</p>
+<pre><code>dynamo-browse -t user-accounts
+</code></pre><h2 id="quitting">Quitting<a href="#quitting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>To quit dynamodb-browse, enter the command <code>q</code> by pressing <kbd>:</kbd>, then typing <kbd>q</kbd><kbd>Enter</kbd>.
+The keystroke <kbd>Ctrl+C</kbd> can also be used to quit.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="http://example.org/docs/dynamo-browse/getting-around/">
+                <span class="button__text">Getting Around</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="http://example.org/assets/main.js"></script>
+<script src="http://example.org/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

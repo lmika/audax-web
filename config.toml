@@ -11,6 +11,24 @@ publishDir = "docs"
  
 [params]
 	contentTypeName = "docs"
+	centerTheme = true
 	
 [params.Logo]
 	logoText = "Audax Toolset"
+
+[menu]
+[[menu.main]]
+	identifier = "download"
+	name = "Download"
+	url = "/download"
+	weight = 20
+[[menu.main]]
+	identifier = "docs"
+	name = "Docs"
+	url = "/docs"
+	weight = 30
+[[menu.main]]
+	identifier = "news"
+	name = "News"
+	url = "/news"
+	weight = 40

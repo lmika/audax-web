@@ -12,9 +12,12 @@ editing as well.
 
 - [Launching and Quitting](/docs/dynamo-browse/launching)
 	- [Selecting a Table](/docs/dynamo-browse/launching#selecting-a-table)
+	- [Selecting a Workspace](/docs/dynamo-browse/launching#selecting-a-workspace)
 	- [Quitting](/docs/dynamo-browse/launching#quitting)
 - [Getting Around](/docs/dynamo-browse/getting-around)
-	- [Entering Command](/docs/dynamo-browse/launching#entering-command)
+	- [The Back-stack](/docs/dynamo-browse/getting-around#the-back-stack)
+	- [Adjusting The Layout](/docs/dynamo-browse/getting-around#adjusting-the-layout)
+	- [Entering Commands](/docs/dynamo-browse/getting-around#entering-commands)
 - [Filtering and Querying](/docs/dynamo-browse/filtering-querying)
 	- [Filtering](/docs/dynamo-browse/filtering-querying#filtering)
 	- [Querying](/docs/dynamo-browse/filtering-querying#querying)

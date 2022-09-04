@@ -8,3 +8,19 @@ img.screenshot {
   margin: -24px;
   margin-top: 0;
 }
+
+input {
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+
+
+/**
+ * Keybinding settings.
+ */
+table.key-bindings.show-binding-names .kb-key-binding {
+  display: none;
+}
+table.key-bindings:not(.show-binding-names) .kb-binding-name {
+  display: none;
+}

@@ -41,6 +41,21 @@ dynamo-browse can also be launched directly in view mode by specifying a table u
 dynamo-browse -t user-accounts
 ```
 
+## Selecting a Workspace
+
+Dynamo-browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
+file will be a new file created within the temporary directory, but it can be specified by using the
+`-w` flag:
+
+```
+dynamo-browse -w my-workspace.ws
+```
+
+The workspace file can either be a new file, in which case a brand new workspace will be initialised,
+or it can be an existing workspace file.  When launch with an existing workspace file, dynamo-browse will
+restore the workspace to its prior state.  For example, it will start with the last viewed table, query
+or filter settings of that session.
+
 ## Quitting
 
 To quit dynamodb-browse, enter the command `q` by pressing <kbd>:</kbd>, then typing <kbd>q</kbd><kbd>Enter</kbd>.

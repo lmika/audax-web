@@ -44,6 +44,40 @@ attribute will be displayed.  Any nested attributes will be indented, and will b
 displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
 such as the length.
 
+## The Back-stack
+
+The currently displayed table, filter, or query settings are maintained in a back-stack, similar to how a
+web-browse keeps track of the webpages you've visited.  Changing the currently
+displayed table, query, or filter will add those view details onto the stack, allowing you to recall the
+previous view by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\\</kbd> will allow you to go forward through the stack.
+
+The back-stack is preserved in the workspace file, allowing you to restore it by launching dynamo-browse with the `-w`
+switch.  Launching dynamo-browse with a workspace that has a non-empty stack will restore the last viewed table,
+filter and query settings.
+
+<div class="framed">
+  Note that the back-stack does not preserve the actual items in the workspace.  When going backwards or forwards
+  through the back-stack any previously executed queries or filters will be rerun against the actual table itself.
+</div>
+
+## Adjusting The Layout
+
+The horizontal size of the item table and currently selected item pane can be changed to one of the
+following layout configurations:
+
+- Item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)
+- Item view and table view taking up half of the available space
+- Table view taking up 7 rows on the top with the item view taking up the rest of the vertical space
+- Table view hidden
+- Item view hidden
+
+Pressing <kbd>w</kbd> will cycle forward though these layout configurations.  For example, while in the
+default layout, pressing <kbd>w</kbd> will move to the configuration where both the table view and the currently
+selected item view both take up half the horizontal space of the screen.  Pressing <kbd>&#8679; W</kbd> will 
+cycle amongst the layouts in the reverse order.
+
 ## Entering Commands
 
 Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.
+
+The list of available commands can be found within the [reference section](/docs/dynamo-browse/reference/#commands).

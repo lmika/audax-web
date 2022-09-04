@@ -28,7 +28,7 @@ publishDir = "docs"
 	url = "/docs"
 	weight = 30
 [[menu.main]]
-	identifier = "news"
-	name = "News"
-	url = "/news"
+	identifier = "updates"
+	name = "Updates"
+	url = "/updates"
 	weight = 40

@@ -146,6 +146,14 @@ Deletes _attribute_ from the currently selected item; or if there are any marked
 Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
 the table straight away.
 
+### echo
+
+```
+:echo [message ...]
+```
+
+Displays _message_ in the status bar.  Mainly used for debugging.
+
 ### export
 
 ```
@@ -182,6 +190,15 @@ Commits all new and modified items to the table.
 Alias: `q`
 
 Quits dynamo-browse.
+
+### rebind
+
+```
+:rebind <bindingName> <key>
+```
+
+Rebinds the action with _bindingName_ to _key_.  This will replace any existing binding for that action.
+See [Key Bindings](#key-bindings) with "Show binding names" checked to see available binding names.
 
 ### set-attr
 

@@ -25,7 +25,7 @@ publishDir = "docs"
 [[menu.main]]
 	identifier = "docs"
 	name = "Docs"
-	url = "/docs"
+	url = "/docs/dynamo-browse"
 	weight = 30
 [[menu.main]]
 	identifier = "updates"

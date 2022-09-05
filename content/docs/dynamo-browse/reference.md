@@ -189,7 +189,7 @@ Commits all new and modified items to the table.
 
 Alias: `q`
 
-Quits dynamo-browse.
+Quits Dynamo-Browse.
 
 ### rebind
 

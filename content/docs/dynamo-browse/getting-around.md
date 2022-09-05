@@ -3,7 +3,7 @@ title = "Getting Around"
 weight = 20
 +++
 
-After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
+After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 
 {{< image src="/images/dynamo-browse/main-item-view.png" alt="Main item view" position="center" >}}
 
@@ -46,18 +46,18 @@ such as the length.
 
 ## The Back-stack
 
-The currently displayed table, filter, or query settings are maintained in a back-stack, similar to how a
-web-browse keeps track of the webpages you've visited.  Changing the currently
-displayed table, query, or filter will add those view details onto the stack, allowing you to recall the
-previous view by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\\</kbd> will allow you to go forward through the stack.
+Changes to the view of Dynamo-Browse will be maintained in back-stack, similar to how a
+web-browse keeps track of the webpages you've visited.  This stack will record the
+currently viewed table, filter, or query, allowing you to "go back" to a previous view
+by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\\</kbd> will allow you to go forward through the stack.
 
-The back-stack is preserved in the workspace file, allowing you to restore it by launching dynamo-browse with the `-w`
-switch.  Launching dynamo-browse with a workspace that has a non-empty stack will restore the last viewed table,
-filter and query settings.
+The back-stack is preserved in the workspace file, and can be restored by launching Dynamo-Browse with the `-w`
+switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
+table, filter, or query from the session that was previously using the workspace.
 
 <div class="framed">
-  Note that the back-stack does not preserve the actual items in the workspace.  When going backwards or forwards
-  through the back-stack any previously executed queries or filters will be rerun against the actual table itself.
+  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+  through the back-stack will execute any queries or filters against the actual table itself.
 </div>
 
 ## Adjusting The Layout
@@ -71,10 +71,9 @@ following layout configurations:
 - Table view hidden
 - Item view hidden
 
-Pressing <kbd>w</kbd> will cycle forward though these layout configurations.  For example, while in the
-default layout, pressing <kbd>w</kbd> will move to the configuration where both the table view and the currently
-selected item view both take up half the horizontal space of the screen.  Pressing <kbd>&#8679; W</kbd> will 
-cycle amongst the layouts in the reverse order.
+Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
+default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
+screen.  Pressing <kbd>&#8679; W</kbd> will cycle through the layouts in the reverse order.
 
 ## Entering Commands
 

@@ -3,7 +3,7 @@ title = "Launching and Quitting"
 weight = 10
 +++
 
-To launch dynamo-browse, run the following command at the terminal:
+To launch Dynamo-Browse, run the following command at the terminal:
 
 ```
 dynamo-browse
@@ -22,7 +22,7 @@ dynamo-browse --local :8080
 
 ## Selecting a Table
 
-Upon launch, dynamo-browse will present a list of all the tables within the region:
+Upon launch, Dynamo-Browse will present a list of all the tables within the region:
 
 {{< image src="/images/dynamo-browse/table-selection.png" alt="Table selection" position="center" >}}
 
@@ -32,10 +32,10 @@ the items within the list:
 - <kbd>&uarr;</kbd>/<kbd>i</kbd>: Move selection up
 - <kbd>&darr;</kbd>/<kbd>k</kbd>: Move selection down
 
-Once the table is selected, the table will be scanned and dynamo-browse will be presented in
+Once the table is selected, the table will be scanned and Dynamo-Browse will be presented in
 [View Mode](#view-mode).  Another table can be selected from within view mode using the `:table` command.
 
-dynamo-browse can also be launched directly in view mode by specifying a table using the `-t` flag:
+Dynamo-Browse can also be launched directly in view mode by specifying a table using the `-t` flag:
 
 ```
 dynamo-browse -t user-accounts
@@ -43,18 +43,19 @@ dynamo-browse -t user-accounts
 
 ## Selecting a Workspace
 
-Dynamo-browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
-file will be a new file created within the temporary directory, but it can be specified by using the
-`-w` flag:
+Dynamo-Browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
+file will be a new file created within the temporary directory, but a specific workspace filename can be
+specified by using the `-w` flag:
 
 ```
 dynamo-browse -w my-workspace.ws
 ```
 
-The workspace file can either be a new file, in which case a brand new workspace will be initialised,
-or it can be an existing workspace file.  When launch with an existing workspace file, dynamo-browse will
-restore the workspace to its prior state.  For example, it will start with the last viewed table, query
-or filter settings of that session.
+If the workspace filename references an existing file, Dynamo-Browse will restore the workspace and use it for the duration of
+the session.  If the workspace filename references a non-existing file, Dynamo-Browse will initialise a new workspace
+using the specified filename.
+
+Only one running instance of Dynamo-Browse can use a single workspace file at any one time.
 
 ## Quitting
 

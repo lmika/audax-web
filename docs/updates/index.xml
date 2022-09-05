@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Updates on Audax Toolset</title>
+    <link>https://audax.tools/updates/</link>
+    <description>Recent content in Updates on Audax Toolset</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Sep 2022 09:41:00 +1000</lastBuildDate><atom:link href="https://audax.tools/updates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Version 0.0.3 Released</title>
+      <link>https://audax.tools/updates/release-0.0.3/</link>
+      <pubDate>Sun, 04 Sep 2022 09:41:00 +1000</pubDate>
+      
+      <guid>https://audax.tools/updates/release-0.0.3/</guid>
+      <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. This release contains the following new features for Dynamo-Browse:
+Back-stack And Workspaces Switching to a new table, changing the filter, or running a query will now preserve the previous view in a back-stack, similar to how a web browser tracks which webpages you&amp;rsquo;ve visited. Pressing Backspace will go back through the back-stack, restoring the view to the previously viewed table, filter, or query.</description>
+      <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
+This release contains the following new features for Dynamo-Browse:&lt;/p&gt;
+&lt;h2 id=&#34;back-stack-and-workspaces&#34;&gt;Back-stack And Workspaces&lt;/h2&gt;
+&lt;p&gt;Switching to a new table, changing the filter, or running a query will now preserve the previous
+view in a back-stack, similar to how a web browser tracks which webpages you&amp;rsquo;ve visited.
+Pressing &lt;kbd&gt;Backspace&lt;/kbd&gt; will go back through the back-stack, restoring the view to the
+previously viewed table, filter, or query.  After going backwards, you can go forwards again
+by pressing &lt;kbd&gt;\&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
+&lt;p&gt;The back-stack is maintained in a workspace, which is a file that tracks any session information.
+By default, the workspace file is created in the temporary directory, but the new &lt;code&gt;-w&lt;/code&gt; launch
+flag can now be used to specify which workspace file to use.  When launching Dynamo-Browse with
+an existing workspace, the back-stack will be restored and Dynamo-Browse will be launched
+with the previously viewed table, filter, and query.  This is useful if you need to preserve
+context for any particular long-running analysis over the items of a DynamoDB table.&lt;/p&gt;
+&lt;h2 id=&#34;adjusting-the-item-viewport&#34;&gt;Adjusting The Item Viewport&lt;/h2&gt;
+&lt;p&gt;Sometimes the middle pane displaying the fields of the currently selected item can be a little too small,
+limiting the number of attributes that can actually be seen.  In this release, it is now possible to change
+the size of the item table and item view panes.  There are now 5 different layouts, which can be cycled
+through by pressing &lt;kbd&gt;w&lt;/kbd&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)&lt;/li&gt;
+&lt;li&gt;The item view and table view taking up half of the available space&lt;/li&gt;
+&lt;li&gt;The table view taking up 7 rows on the top with the item view taking up the rest of the vertical space&lt;/li&gt;
+&lt;li&gt;The table view hidden&lt;/li&gt;
+&lt;li&gt;The item view hidden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pressing &lt;kbd&gt;W&lt;/kbd&gt; will cycle among these layout configurations in the opposite direction.&lt;/p&gt;
+&lt;h2 id=&#34;copying-item-view-to-clipboard&#34;&gt;Copying Item View to Clipboard&lt;/h2&gt;
+&lt;p&gt;The contents of the item view can be copied to the clipboard by pressing &lt;kbd&gt;c&lt;/kbd&gt;.  This will include
+all the attributes of the currently selected item, including those cut off due to the size of the item view.
+The attribute of multiple items can be copied to the clipboard by marking them first, and pressing &lt;kbd&gt;c&lt;/kbd&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rebindable-keys&#34;&gt;Rebindable Keys&lt;/h2&gt;
+&lt;p&gt;This release adds the &lt;code&gt;rebind&lt;/code&gt; command, which can be used to bind keyboard action to different keys.  This command
+can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
+More information about this can be found in &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;small-ui-fix&#34;&gt;Small UI Fix&lt;/h2&gt;
+&lt;p&gt;One small UI bug has been fixed.  Previously, any errors that were raised during incorrect usage of &lt;code&gt;set-attr&lt;/code&gt; or
+&lt;code&gt;del-attr&lt;/code&gt; were not being properly cleared after the command was re-entered and executed successfully.
+This has now been fix, so that successfully executing &lt;code&gt;set-attr&lt;/code&gt; or &lt;code&gt;del-attr&lt;/code&gt; will clear the previous error.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

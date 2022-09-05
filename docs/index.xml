@@ -5,17 +5,18 @@
     <link>https://audax.tools/</link>
     <description>Recent content in The Audax Toolset on Audax Toolset</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://audax.tools/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Sep 2022 09:41:00 +1000</lastBuildDate><atom:link href="https://audax.tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launching and Quitting</title>
       <link>https://audax.tools/docs/dynamo-browse/launching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://audax.tools/docs/dynamo-browse/launching/</guid>
-      <description>To launch dynamo-browse, run the following command at the terminal:
+      <description>To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:</description>
-      <content>&lt;p&gt;To launch dynamo-browse, run the following command at the terminal:&lt;/p&gt;
+      <content>&lt;p&gt;To launch Dynamo-Browse, run the following command at the terminal:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dynamo-browse
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will use your current AWS configuration and region, which can be changed by setting
 the relevant &lt;code&gt;AWS_&lt;/code&gt; environment variables.&lt;/p&gt;
@@ -24,7 +25,7 @@ running in a Docker container, use the &lt;code&gt;--local&lt;/code&gt; flag.  T
 and endpoint of the local DynamoDB server.  The hostname can be omitted, and will default to &lt;code&gt;localhost&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dynamo-browse --local :8080
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;selecting-a-table&#34;&gt;Selecting a Table&lt;/h2&gt;
-&lt;p&gt;Upon launch, dynamo-browse will present a list of all the tables within the region:&lt;/p&gt;
+&lt;p&gt;Upon launch, Dynamo-Browse will present a list of all the tables within the region:&lt;/p&gt;
 
   &lt;img src=&#34;https://audax.tools/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
 
@@ -35,11 +36,20 @@ the items within the list:&lt;/p&gt;
 &lt;li&gt;&lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;: Move selection up&lt;/li&gt;
 &lt;li&gt;&lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;: Move selection down&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Once the table is selected, the table will be scanned and dynamo-browse will be presented in
+&lt;p&gt;Once the table is selected, the table will be scanned and Dynamo-Browse will be presented in
 &lt;a href=&#34;#view-mode&#34;&gt;View Mode&lt;/a&gt;.  Another table can be selected from within view mode using the &lt;code&gt;:table&lt;/code&gt; command.&lt;/p&gt;
-&lt;p&gt;dynamo-browse can also be launched directly in view mode by specifying a table using the &lt;code&gt;-t&lt;/code&gt; flag:&lt;/p&gt;
+&lt;p&gt;Dynamo-Browse can also be launched directly in view mode by specifying a table using the &lt;code&gt;-t&lt;/code&gt; flag:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dynamo-browse -t user-accounts
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;quitting&#34;&gt;Quitting&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;selecting-a-workspace&#34;&gt;Selecting a Workspace&lt;/h2&gt;
+&lt;p&gt;Dynamo-Browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
+file will be a new file created within the temporary directory, but a specific workspace filename can be
+specified by using the &lt;code&gt;-w&lt;/code&gt; flag:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dynamo-browse -w my-workspace.ws
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If the workspace filename references an existing file, Dynamo-Browse will restore the workspace and use it for the duration of
+the session.  If the workspace filename references a non-existing file, Dynamo-Browse will initialise a new workspace
+using the specified filename.&lt;/p&gt;
+&lt;p&gt;Only one running instance of Dynamo-Browse can use a single workspace file at any one time.&lt;/p&gt;
+&lt;h2 id=&#34;quitting&#34;&gt;Quitting&lt;/h2&gt;
 &lt;p&gt;To quit dynamodb-browse, enter the command &lt;code&gt;q&lt;/code&gt; by pressing &lt;kbd&gt;:&lt;/kbd&gt;, then typing &lt;kbd&gt;q&lt;/kbd&gt;&lt;kbd&gt;Enter&lt;/kbd&gt;.
 The keystroke &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; can also be used to quit.&lt;/p&gt;
 </content>
@@ -51,10 +61,10 @@ The keystroke &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; can also be used to quit.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://audax.tools/docs/dynamo-browse/getting-around/</guid>
-      <description>After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
+      <description>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 This mode consists of three panes:
  The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.</description>
-      <content>&lt;p&gt;After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.&lt;/p&gt;
+      <content>&lt;p&gt;After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.&lt;/p&gt;
 
   &lt;img src=&#34;https://audax.tools/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
 
@@ -92,8 +102,34 @@ from the results of the last scan or query, and may change depending on the resu
 attribute will be displayed.  Any nested attributes will be indented, and will below their parent item.  A value
 displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
 such as the length.&lt;/p&gt;
+&lt;h2 id=&#34;the-back-stack&#34;&gt;The Back-stack&lt;/h2&gt;
+&lt;p&gt;Changes to the view of Dynamo-Browse will be maintained in back-stack, similar to how a
+web-browse keeps track of the webpages you&amp;rsquo;ve visited.  This stack will record the
+currently viewed table, filter, or query, allowing you to &amp;ldquo;go back&amp;rdquo; to a previous view
+by pressing &lt;kbd&gt;Backspace&lt;/kbd&gt;.  Pressing &lt;kbd&gt;\&lt;/kbd&gt; will allow you to go forward through the stack.&lt;/p&gt;
+&lt;p&gt;The back-stack is preserved in the workspace file, and can be restored by launching Dynamo-Browse with the &lt;code&gt;-w&lt;/code&gt;
+switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
+table, filter, or query from the session that was previously using the workspace.&lt;/p&gt;
+&lt;div class=&#34;framed&#34;&gt;
+  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+  through the back-stack will execute any queries or filters against the actual table itself.
+&lt;/div&gt;
+&lt;h2 id=&#34;adjusting-the-layout&#34;&gt;Adjusting The Layout&lt;/h2&gt;
+&lt;p&gt;The horizontal size of the item table and currently selected item pane can be changed to one of the
+following layout configurations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)&lt;/li&gt;
+&lt;li&gt;Item view and table view taking up half of the available space&lt;/li&gt;
+&lt;li&gt;Table view taking up 7 rows on the top with the item view taking up the rest of the vertical space&lt;/li&gt;
+&lt;li&gt;Table view hidden&lt;/li&gt;
+&lt;li&gt;Item view hidden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pressing &lt;kbd&gt;w&lt;/kbd&gt; will cycle forward though these layouts.  For example, while in the
+default layout, pressing &lt;kbd&gt;w&lt;/kbd&gt; will switch to the second layout, where both the table view take up half the
+screen.  Pressing &lt;kbd&gt;⇧ W&lt;/kbd&gt; will cycle through the layouts in the reverse order.&lt;/p&gt;
 &lt;h2 id=&#34;entering-commands&#34;&gt;Entering Commands&lt;/h2&gt;
 &lt;p&gt;Commands can be entered by pressing &lt;kbd&gt;:&lt;/kbd&gt; and entering the command, with any arguments, at the prompt.&lt;/p&gt;
+&lt;p&gt;The list of available commands can be found within the &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/reference/#commands&#34;&gt;reference section&lt;/a&gt;.&lt;/p&gt;
 </content>
     </item>
     
@@ -148,11 +184,11 @@ or scan, depending on the expression.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://audax.tools/docs/dynamo-browse/editing-items/</guid>
-      <description>dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
+      <description>Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
 Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
 To mark or unmark the selected item, press m.
 The command unmark can be used to clear all marked items.</description>
-      <content>&lt;p&gt;dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items,
+      <content>&lt;p&gt;Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items,
 and modifying their attribute values.&lt;/p&gt;
 
   &lt;img src=&#34;https://audax.tools/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
@@ -178,7 +214,7 @@ from any marked items.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;If the type is not specified, and the attribute exists, then the attribute type will not change.
 The type must be specified if this is a new attribute or multiple items have been marked.
-After executing the command, dynamo-browse will prompt for the value of the new attribute if one is
+After executing the command, Dynamo-Browse will prompt for the value of the new attribute if one is
 required.&lt;/p&gt;
 &lt;p&gt;Modified attributes will only be tracked in memory: they will not be written
 to the actual table until it is &amp;ldquo;putted&amp;rdquo; (see &lt;a href=&#34;#committing-changes&#34;&gt;Committing Changes&lt;/a&gt;).
@@ -196,7 +232,7 @@ An item that has been modified will be displayed in red and a modified indicator
 on the left-most column.&lt;/p&gt;
 &lt;h2 id=&#34;adding-items&#34;&gt;Adding Items&lt;/h2&gt;
 &lt;p&gt;A new item can be created by typing in the command &lt;code&gt;new-item&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;When entered, dynamo-browse will prompt for the partition and sort key.  Once these are entered,
+&lt;p&gt;When entered, Dynamo-Browse will prompt for the partition and sort key.  Once these are entered,
 the item will appear in the top pane in green with an asterisk indicator (&lt;code&gt;*&lt;/code&gt;) on the left left-most column.
 Any additional attributes can be set by using &lt;code&gt;set-attr&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;A new item will only appear in memory: it will not be written
@@ -215,79 +251,165 @@ current query.  This can be done by pressing &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p
     </item>
     
     <item>
+      <title>Customising Dynamo-Browse</title>
+      <link>https://audax.tools/docs/dynamo-browse/customising/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/docs/dynamo-browse/customising/</guid>
+      <description>Some commands can be used to customise Dynamo-Browse, such as modify key bindings. The effect of these commands will only be applied for the duration of the session: they are currently not tracked within the workspace file. So in order to keep customisations across relaunches, these commands can be added to an RC file.
+The RC File The RC file is a text file containing commands that will be executed by Dynamo-Browse upon launch.</description>
+      <content>&lt;p&gt;Some commands can be used to customise Dynamo-Browse, such as modify key bindings.
+The effect of these commands will only be applied for the duration of the session: they are currently not
+tracked within the workspace file.  So in order to keep customisations across relaunches, these commands
+can be added to an RC file.&lt;/p&gt;
+&lt;h2 id=&#34;the-rc-file&#34;&gt;The RC File&lt;/h2&gt;
+&lt;p&gt;The RC file is a text file containing commands that will be executed by Dynamo-Browse upon launch.
+By default, the RC file is located at the following path:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$HOME/.config/audax/dynamo-browse/init.rc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This file is primarily intended for commands that customise Dynamo-Browse in a particular way, but any
+command can be entered here.  If this file is found, Dynamo-Browse will invoke each command before loading
+or prompting the table.&lt;/p&gt;
+&lt;h2 id=&#34;rebinding-keys&#34;&gt;Rebinding Keys&lt;/h2&gt;
+&lt;p&gt;The default key bindings of Dynamo-Browse can be changed using the &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/reference/#rebind&#34;&gt;rebind&lt;/a&gt; command.  This takes
+a binding name corresponding to the particular action to invoke, and the key
+to which it should be mapped to.&lt;/p&gt;
+&lt;p&gt;Putting these commands in the RC file will effectively change the default bindings of Dynamo-Browse.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Rebind T to prompt for a table
+rebind &amp;quot;view.prompt-for-table&amp;quot; &amp;quot;T&amp;quot;
+
+# Rebind escape to prompt for a command
+rebind &amp;quot;view.prompt-for-command&amp;quot; &amp;quot;esc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At the moment each binding name can only be mapped to a single key.  It&amp;rsquo;s also currently not possible
+to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
+&lt;p&gt;A list of available binding names can be found the the &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/reference/#key-bindings&#34;&gt;reference&lt;/a&gt;
+(check the &amp;ldquo;Show binding names&amp;rdquo; checkbox).  Note that some bindings may not have default key bindings.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
       <title>Reference</title>
       <link>https://audax.tools/docs/dynamo-browse/reference/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://audax.tools/docs/dynamo-browse/reference/</guid>
-      <description>Key Bindings    Key Action     ↑/i Move selection up   ↓/k Move selection down   PgUp/⇧I Page up   PgDn/⇧K Page down   Home/0 Move selection to first item   End/$ Move selection to last item   ←/j Shift displayed columns left   →/l Shift displayed columns right   m Mark/unmark currently selected item   / Filter   ?</description>
+      <description>Key Bindings  Show binding names    Key Binding Name Action     &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Shift displayed columns left   &amp;rarr;/l table.</description>
       <content>&lt;h1 id=&#34;key-bindings&#34;&gt;Key Bindings&lt;/h1&gt;
-&lt;table&gt;
+&lt;div data-controller=&#34;keybindings&#34;&gt;
+&lt;label&gt;
+	&lt;input type=&#34;checkbox&#34; id=&#34;show-kb-binding-names&#34; 
+    data-keybindings-target=&#34;showBindingNames&#34; data-action=&#34;keybindings#bindingNamesChanged&#34;&gt; Show binding names
+&lt;/label&gt;
+&lt;table class=&#34;key-bindings&#34; data-keybindings-target=&#34;keyBindingTable&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Action&lt;/th&gt;
+  &lt;th class=&#34;kb-key-binding&#34; style=&#34;text-align:left&#34;&gt;Key&lt;/th&gt;
+  &lt;th class=&#34;kb-binding-name&#34; style=&#34;text-align:left&#34;&gt;Binding Name&lt;/th&gt;
+  &lt;th style=&#34;text-align:left&#34;&gt;Action&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Move selection up&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;uarr;&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-up&lt;/td&gt;
+  &lt;td&gt;Move selection up&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Move selection down&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;darr;&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-down&lt;/td&gt;
+  &lt;td&gt;Move selection down&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;PgUp&lt;/kbd&gt;/&lt;kbd&gt;⇧I&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Page up&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;PgUp&lt;/kbd&gt;/&lt;kbd&gt;&amp;#8679;I&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.page-up&lt;/td&gt;
+  &lt;td&gt;Page up&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;PgDn&lt;/kbd&gt;/&lt;kbd&gt;⇧K&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Page down&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;PgDn&lt;/kbd&gt;/&lt;kbd&gt;&amp;#8679;K&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.page-down&lt;/td&gt;
+  &lt;td&gt;Page down&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;Home&lt;/kbd&gt;/&lt;kbd&gt;0&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Move selection to first item&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;Home&lt;/kbd&gt;/&lt;kbd&gt;0&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.goto-top&lt;/td&gt;
+  &lt;td&gt;Move selection to first item&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;End&lt;/kbd&gt;/&lt;kbd&gt;$&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Move selection to last item&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;End&lt;/kbd&gt;/&lt;kbd&gt;$&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.goto-bottom&lt;/td&gt;
+  &lt;td&gt;Move selection to last item&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;←&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Shift displayed columns left&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;larr;&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-left&lt;/td&gt;
+  &lt;td&gt;Shift displayed columns left&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;→&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Shift displayed columns right&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;rarr;&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-right&lt;/td&gt;
+  &lt;td&gt;Shift displayed columns right&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;m&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Mark/unmark currently selected item&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;Backspace&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.view-back&lt;/td&gt;
+  &lt;td&gt;Go back&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;/&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Filter&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;\&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.view-forward&lt;/td&gt;
+  &lt;td&gt;Go forward&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;?&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Run scan/query&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;w&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.cycle-layout-forward&lt;/td&gt;
+  &lt;td&gt;Cycle forward through layout&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;R&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Rerun last scan/query&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;#8679;W&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.cycle-layout-backwards&lt;/td&gt;
+  &lt;td&gt;Cycle backwards through layout&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;:&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Enter command&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;m&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.mark&lt;/td&gt;
+  &lt;td&gt;Mark/unmark currently selected item&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;/&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Quit&lt;/td&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;c&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.copy-item-to-clipboard&lt;/td&gt;
+  &lt;td&gt;Copy displayed item to pasteboard&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;/&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.prompt-for-filter&lt;/td&gt;
+  &lt;td&gt;Filter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;?&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.prompt-for-query&lt;/td&gt;
+  &lt;td&gt;Run scan/query&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;kb-binding-name&#34;&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.prompt-for-table&lt;/td&gt;
+  &lt;td&gt;Select table&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;R&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.rescan&lt;/td&gt;
+  &lt;td&gt;Rerun last scan/query&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;:&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.prompt-for-command&lt;/td&gt;
+  &lt;td&gt;Enter command&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;/&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.quit&lt;/td&gt;
+  &lt;td&gt;Quit&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 &lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
 &lt;h3 id=&#34;del-attr&#34;&gt;del-attr&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:del-attr &amp;lt;attribute&amp;gt;
@@ -297,6 +419,9 @@ current query.  This can be done by pressing &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p
 &lt;pre&gt;&lt;code&gt;:delete
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
 the table straight away.&lt;/p&gt;
+&lt;h3 id=&#34;echo&#34;&gt;echo&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:echo [message ...]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Displays &lt;em&gt;message&lt;/em&gt; in the status bar.  Mainly used for debugging.&lt;/p&gt;
 &lt;h3 id=&#34;export&#34;&gt;export&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:export &amp;lt;filename&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Writes the currently loaded items as a CSV file to &lt;em&gt;filename&lt;/em&gt;.&lt;/p&gt;
@@ -311,7 +436,11 @@ The new item will not be written to the table until it is committed with the &lt
 &lt;h3 id=&#34;quit&#34;&gt;quit&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:quit
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;q&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Quits dynamo-browse.&lt;/p&gt;
+&lt;p&gt;Quits Dynamo-Browse.&lt;/p&gt;
+&lt;h3 id=&#34;rebind&#34;&gt;rebind&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:rebind &amp;lt;bindingName&amp;gt; &amp;lt;key&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Rebinds the action with &lt;em&gt;bindingName&lt;/em&gt; to &lt;em&gt;key&lt;/em&gt;.  This will replace any existing binding for that action.
+See &lt;a href=&#34;#key-bindings&#34;&gt;Key Bindings&lt;/a&gt; with &amp;ldquo;Show binding names&amp;rdquo; checked to see available binding names.&lt;/p&gt;
 &lt;h3 id=&#34;set-attr&#34;&gt;set-attr&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:set-attr [type] &amp;lt;attributeName&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;sa&lt;/code&gt;&lt;/p&gt;
@@ -331,6 +460,91 @@ The new item will not be written to the table until it is committed with the &lt
 &lt;pre&gt;&lt;code&gt;:unmark
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Unmark all marked items.&lt;/p&gt;
 </content>
+    </item>
+    
+    <item>
+      <title>Version 0.0.3 Released</title>
+      <link>https://audax.tools/updates/release-0.0.3/</link>
+      <pubDate>Sun, 04 Sep 2022 09:41:00 +1000</pubDate>
+      
+      <guid>https://audax.tools/updates/release-0.0.3/</guid>
+      <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. This release contains the following new features for Dynamo-Browse:
+Back-stack And Workspaces Switching to a new table, changing the filter, or running a query will now preserve the previous view in a back-stack, similar to how a web browser tracks which webpages you&amp;rsquo;ve visited. Pressing Backspace will go back through the back-stack, restoring the view to the previously viewed table, filter, or query.</description>
+      <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
+This release contains the following new features for Dynamo-Browse:&lt;/p&gt;
+&lt;h2 id=&#34;back-stack-and-workspaces&#34;&gt;Back-stack And Workspaces&lt;/h2&gt;
+&lt;p&gt;Switching to a new table, changing the filter, or running a query will now preserve the previous
+view in a back-stack, similar to how a web browser tracks which webpages you&amp;rsquo;ve visited.
+Pressing &lt;kbd&gt;Backspace&lt;/kbd&gt; will go back through the back-stack, restoring the view to the
+previously viewed table, filter, or query.  After going backwards, you can go forwards again
+by pressing &lt;kbd&gt;\&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
+&lt;p&gt;The back-stack is maintained in a workspace, which is a file that tracks any session information.
+By default, the workspace file is created in the temporary directory, but the new &lt;code&gt;-w&lt;/code&gt; launch
+flag can now be used to specify which workspace file to use.  When launching Dynamo-Browse with
+an existing workspace, the back-stack will be restored and Dynamo-Browse will be launched
+with the previously viewed table, filter, and query.  This is useful if you need to preserve
+context for any particular long-running analysis over the items of a DynamoDB table.&lt;/p&gt;
+&lt;h2 id=&#34;adjusting-the-item-viewport&#34;&gt;Adjusting The Item Viewport&lt;/h2&gt;
+&lt;p&gt;Sometimes the middle pane displaying the fields of the currently selected item can be a little too small,
+limiting the number of attributes that can actually be seen.  In this release, it is now possible to change
+the size of the item table and item view panes.  There are now 5 different layouts, which can be cycled
+through by pressing &lt;kbd&gt;w&lt;/kbd&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)&lt;/li&gt;
+&lt;li&gt;The item view and table view taking up half of the available space&lt;/li&gt;
+&lt;li&gt;The table view taking up 7 rows on the top with the item view taking up the rest of the vertical space&lt;/li&gt;
+&lt;li&gt;The table view hidden&lt;/li&gt;
+&lt;li&gt;The item view hidden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pressing &lt;kbd&gt;W&lt;/kbd&gt; will cycle among these layout configurations in the opposite direction.&lt;/p&gt;
+&lt;h2 id=&#34;copying-item-view-to-clipboard&#34;&gt;Copying Item View to Clipboard&lt;/h2&gt;
+&lt;p&gt;The contents of the item view can be copied to the clipboard by pressing &lt;kbd&gt;c&lt;/kbd&gt;.  This will include
+all the attributes of the currently selected item, including those cut off due to the size of the item view.
+The attribute of multiple items can be copied to the clipboard by marking them first, and pressing &lt;kbd&gt;c&lt;/kbd&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rebindable-keys&#34;&gt;Rebindable Keys&lt;/h2&gt;
+&lt;p&gt;This release adds the &lt;code&gt;rebind&lt;/code&gt; command, which can be used to bind keyboard action to different keys.  This command
+can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
+More information about this can be found in &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;small-ui-fix&#34;&gt;Small UI Fix&lt;/h2&gt;
+&lt;p&gt;One small UI bug has been fixed.  Previously, any errors that were raised during incorrect usage of &lt;code&gt;set-attr&lt;/code&gt; or
+&lt;code&gt;del-attr&lt;/code&gt; were not being properly cleared after the command was re-entered and executed successfully.
+This has now been fix, so that successfully executing &lt;code&gt;set-attr&lt;/code&gt; or &lt;code&gt;del-attr&lt;/code&gt; will clear the previous error.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>https://audax.tools/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/download/</guid>
+      <description>Binary packages can be download from GitHub.
+Install Using Go If you have Go 1.18, you can install using the following command:
+go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.3 Linux To install the Debian package, download the .deb file, and install the package by running:
+sudo apt install ./audax_0.0.3_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+sudo yum install ./audax_0.0.3_linux_amd64.rpm The source code can be found on GitHub.</description>
+      <content>&lt;p&gt;Binary packages can be &lt;a href=&#34;https://github.com/lmika/audax/releases/latest&#34;&gt;download from GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;install-using-go&#34;&gt;Install Using Go&lt;/h2&gt;
+&lt;p&gt;If you have Go 1.18, you can install using the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.3
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;linux&#34;&gt;Linux&lt;/h2&gt;
+&lt;p&gt;To install the Debian package, download the &lt;code&gt;.deb&lt;/code&gt; file, and install the package by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install ./audax_0.0.3_linux_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To install the RPM package, download the &lt;code&gt;.rpm&lt;/code&gt; file, and install the package by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install ./audax_0.0.3_linux_amd64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The source code can be &lt;a href=&#34;https://github.com/lmika/audax&#34;&gt;found on GitHub&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>https://audax.tools/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/install/</guid>
+      <description></description>
+      <content></content>
     </item>
     
   </channel>

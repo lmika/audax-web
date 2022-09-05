@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
+<meta name="description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 This mode consists of three panes:
  The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages." />
 <meta name="keywords" content="" />
@@ -38,7 +38,7 @@ This mode consists of three panes:
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Getting Around">
-<meta property="og:description" content="After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.
+<meta property="og:description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 This mode consists of three panes:
  The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages." />
 <meta property="og:url" content="https://audax.tools/docs/dynamo-browse/getting-around/" />
@@ -66,7 +66,7 @@ This mode consists of three panes:
 <body class="">
 
 
-<div class="container headings--one-size">
+<div class="container center headings--one-size">
 
   <header class="header">
   <div class="header__inner">
@@ -79,7 +79,49 @@ This mode consists of three panes:
 
     </div>
     
+      <div class="menu-trigger">menu</div>
+    
   </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs/dynamo-browse">Docs</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs/dynamo-browse">Docs</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
   
 </header>
 
@@ -102,7 +144,7 @@ This mode consists of three panes:
   
 
   <div class="post-content"><div>
-        <p>After selecting a table, dynamo-browse will perform a scan and present the results in the default view mode.</p>
+        <p>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.</p>
 
   <img src="/images/dynamo-browse/main-item-view.png"  alt="Main item view"  class="center"  />
 
@@ -140,8 +182,34 @@ from the results of the last scan or query, and may change depending on the resu
 attribute will be displayed.  Any nested attributes will be indented, and will below their parent item.  A value
 displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
 such as the length.</p>
+<h2 id="the-back-stack">The Back-stack<a href="#the-back-stack" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Changes to the view of Dynamo-Browse will be maintained in back-stack, similar to how a
+web-browse keeps track of the webpages you&rsquo;ve visited.  This stack will record the
+currently viewed table, filter, or query, allowing you to &ldquo;go back&rdquo; to a previous view
+by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\</kbd> will allow you to go forward through the stack.</p>
+<p>The back-stack is preserved in the workspace file, and can be restored by launching Dynamo-Browse with the <code>-w</code>
+switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
+table, filter, or query from the session that was previously using the workspace.</p>
+<div class="framed">
+  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+  through the back-stack will execute any queries or filters against the actual table itself.
+</div>
+<h2 id="adjusting-the-layout">Adjusting The Layout<a href="#adjusting-the-layout" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The horizontal size of the item table and currently selected item pane can be changed to one of the
+following layout configurations:</p>
+<ul>
+<li>Item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)</li>
+<li>Item view and table view taking up half of the available space</li>
+<li>Table view taking up 7 rows on the top with the item view taking up the rest of the vertical space</li>
+<li>Table view hidden</li>
+<li>Item view hidden</li>
+</ul>
+<p>Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
+default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
+screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse order.</p>
 <h2 id="entering-commands">Entering Commands<a href="#entering-commands" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.</p>
+<p>The list of available commands can be found within the <a href="/docs/dynamo-browse/reference/#commands">reference section</a>.</p>
 
       </div></div>
 
@@ -200,7 +268,7 @@ such as the length.</p>
 
 
 
-
+<script src="https://audax.tools/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 
   

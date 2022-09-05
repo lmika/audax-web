@@ -6,8 +6,8 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
-Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting Around  Entering Command   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Reference  Key Bindings Commands    " />
+<meta name="description" content="Dynamo-Browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
+Table Of Contents  Launching and Quitting  Selecting a Table Selecting a Workspace Quitting   Getting Around  The Back-stack Adjusting The Layout Entering Commands   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Customising Dynamo-Browse  The RC File Rebinding Keys   Reference  Key Bindings Commands    " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://audax.tools/docs/dynamo-browse/" />
@@ -37,8 +37,8 @@ Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="dynamo-browse">
-<meta property="og:description" content="dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
-Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting Around  Entering Command   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Reference  Key Bindings Commands    " />
+<meta property="og:description" content="Dynamo-Browse is a terminal-based UI (TUI) app for working with DynamoDB tables. With it, you can quickly connect to and browse the contents of a DynamoDB table in your AWS account or local machine. There are some basic facilities for editing as well.
+Table Of Contents  Launching and Quitting  Selecting a Table Selecting a Workspace Quitting   Getting Around  The Back-stack Adjusting The Layout Entering Commands   Filtering and Querying  Filtering Querying   Editing Items  Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes   Customising Dynamo-Browse  The RC File Rebinding Keys   Reference  Key Bindings Commands    " />
 <meta property="og:url" content="https://audax.tools/docs/dynamo-browse/" />
 <meta property="og:site_name" content="Audax Toolset" />
 
@@ -66,7 +66,7 @@ Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting 
 <body class="">
 
 
-<div class="container headings--one-size">
+<div class="container center headings--one-size">
 
   <header class="header">
   <div class="header__inner">
@@ -79,7 +79,49 @@ Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting 
 
     </div>
     
+      <div class="menu-trigger">menu</div>
+    
   </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs/dynamo-browse">Docs</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs/dynamo-browse">Docs</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
   
 </header>
 
@@ -102,7 +144,7 @@ Table Of Contents  Launching and Quitting  Selecting a Table Quitting   Getting 
   
 
   <div class="post-content"><div>
-        <p>dynamo-browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
+        <p>Dynamo-Browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
 With it, you can quickly connect to and browse the contents of a DynamoDB table
 in your AWS account or local machine.  There are some basic facilities for
 editing as well.</p>
@@ -111,12 +153,15 @@ editing as well.</p>
 <li><a href="/docs/dynamo-browse/launching">Launching and Quitting</a>
 <ul>
 <li><a href="/docs/dynamo-browse/launching#selecting-a-table">Selecting a Table</a></li>
+<li><a href="/docs/dynamo-browse/launching#selecting-a-workspace">Selecting a Workspace</a></li>
 <li><a href="/docs/dynamo-browse/launching#quitting">Quitting</a></li>
 </ul>
 </li>
 <li><a href="/docs/dynamo-browse/getting-around">Getting Around</a>
 <ul>
-<li><a href="/docs/dynamo-browse/launching#entering-command">Entering Command</a></li>
+<li><a href="/docs/dynamo-browse/getting-around#the-back-stack">The Back-stack</a></li>
+<li><a href="/docs/dynamo-browse/getting-around#adjusting-the-layout">Adjusting The Layout</a></li>
+<li><a href="/docs/dynamo-browse/getting-around#entering-commands">Entering Commands</a></li>
 </ul>
 </li>
 <li><a href="/docs/dynamo-browse/filtering-querying">Filtering and Querying</a>
@@ -134,6 +179,12 @@ editing as well.</p>
 <li><a href="/docs/dynamo-browse/editing-items#deleting-items">Deleting Items</a></li>
 <li><a href="/docs/dynamo-browse/editing-items#committing-changes">Committing Changes</a></li>
 <li><a href="/docs/dynamo-browse/editing-items#backing-out-of-changes">Backing Out of Changes</a></li>
+</ul>
+</li>
+<li><a href="/docs/dynamo-browse/customising">Customising Dynamo-Browse</a>
+<ul>
+<li><a href="/docs/dynamo-browse/customising#rc-file">The RC File</a></li>
+<li><a href="/docs/dynamo-browse/customising#rebinding-keys">Rebinding Keys</a></li>
 </ul>
 </li>
 <li><a href="/docs/dynamo-browse/reference">Reference</a>
@@ -176,7 +227,7 @@ editing as well.</p>
 
 
 
-
+<script src="https://audax.tools/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 
   

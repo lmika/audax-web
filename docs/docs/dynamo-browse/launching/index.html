@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="To launch dynamo-browse, run the following command at the terminal:
+<meta name="description" content="To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
 <meta name="keywords" content="" />
@@ -38,7 +38,7 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Launching and Quitting">
-<meta property="og:description" content="To launch dynamo-browse, run the following command at the terminal:
+<meta property="og:description" content="To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
 <meta property="og:url" content="https://audax.tools/docs/dynamo-browse/launching/" />
@@ -66,7 +66,7 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
 <body class="">
 
 
-<div class="container headings--one-size">
+<div class="container center headings--one-size">
 
   <header class="header">
   <div class="header__inner">
@@ -79,7 +79,49 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
 
     </div>
     
+      <div class="menu-trigger">menu</div>
+    
   </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs/dynamo-browse">Docs</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs/dynamo-browse">Docs</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
   
 </header>
 
@@ -102,7 +144,7 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
   
 
   <div class="post-content"><div>
-        <p>To launch dynamo-browse, run the following command at the terminal:</p>
+        <p>To launch Dynamo-Browse, run the following command at the terminal:</p>
 <pre><code>dynamo-browse
 </code></pre><p>This will use your current AWS configuration and region, which can be changed by setting
 the relevant <code>AWS_</code> environment variables.</p>
@@ -111,7 +153,7 @@ running in a Docker container, use the <code>--local</code> flag.  This takes as
 and endpoint of the local DynamoDB server.  The hostname can be omitted, and will default to <code>localhost</code>:</p>
 <pre><code>dynamo-browse --local :8080
 </code></pre><h2 id="selecting-a-table">Selecting a Table<a href="#selecting-a-table" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>Upon launch, dynamo-browse will present a list of all the tables within the region:</p>
+<p>Upon launch, Dynamo-Browse will present a list of all the tables within the region:</p>
 
   <img src="/images/dynamo-browse/table-selection.png"  alt="Table selection"  class="center"  />
 
@@ -122,11 +164,20 @@ the items within the list:</p>
 <li><kbd>↑</kbd>/<kbd>i</kbd>: Move selection up</li>
 <li><kbd>↓</kbd>/<kbd>k</kbd>: Move selection down</li>
 </ul>
-<p>Once the table is selected, the table will be scanned and dynamo-browse will be presented in
+<p>Once the table is selected, the table will be scanned and Dynamo-Browse will be presented in
 <a href="#view-mode">View Mode</a>.  Another table can be selected from within view mode using the <code>:table</code> command.</p>
-<p>dynamo-browse can also be launched directly in view mode by specifying a table using the <code>-t</code> flag:</p>
+<p>Dynamo-Browse can also be launched directly in view mode by specifying a table using the <code>-t</code> flag:</p>
 <pre><code>dynamo-browse -t user-accounts
-</code></pre><h2 id="quitting">Quitting<a href="#quitting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+</code></pre><h2 id="selecting-a-workspace">Selecting a Workspace<a href="#selecting-a-workspace" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Dynamo-Browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
+file will be a new file created within the temporary directory, but a specific workspace filename can be
+specified by using the <code>-w</code> flag:</p>
+<pre><code>dynamo-browse -w my-workspace.ws
+</code></pre><p>If the workspace filename references an existing file, Dynamo-Browse will restore the workspace and use it for the duration of
+the session.  If the workspace filename references a non-existing file, Dynamo-Browse will initialise a new workspace
+using the specified filename.</p>
+<p>Only one running instance of Dynamo-Browse can use a single workspace file at any one time.</p>
+<h2 id="quitting">Quitting<a href="#quitting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>To quit dynamodb-browse, enter the command <code>q</code> by pressing <kbd>:</kbd>, then typing <kbd>q</kbd><kbd>Enter</kbd>.
 The keystroke <kbd>Ctrl+C</kbd> can also be used to quit.</p>
 
@@ -180,7 +231,7 @@ The keystroke <kbd>Ctrl+C</kbd> can also be used to quit.</p>
 
 
 
-
+<script src="https://audax.tools/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 
   

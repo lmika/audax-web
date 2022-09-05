@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Key Bindings    Key Action     ↑/i Move selection up   ↓/k Move selection down   PgUp/⇧I Page up   PgDn/⇧K Page down   Home/0 Move selection to first item   End/$ Move selection to last item   ←/j Shift displayed columns left   →/l Shift displayed columns right   m Mark/unmark currently selected item   / Filter   ?" />
+<meta name="description" content="Key Bindings  Show binding names    Key Binding Name Action     &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Shift displayed columns left   &amp;rarr;/l table." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://audax.tools/docs/dynamo-browse/reference/" />
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Reference">
-<meta property="og:description" content="Key Bindings    Key Action     ↑/i Move selection up   ↓/k Move selection down   PgUp/⇧I Page up   PgDn/⇧K Page down   Home/0 Move selection to first item   End/$ Move selection to last item   ←/j Shift displayed columns left   →/l Shift displayed columns right   m Mark/unmark currently selected item   / Filter   ?" />
+<meta property="og:description" content="Key Bindings  Show binding names    Key Binding Name Action     &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Shift displayed columns left   &amp;rarr;/l table." />
 <meta property="og:url" content="https://audax.tools/docs/dynamo-browse/reference/" />
 <meta property="og:site_name" content="Audax Toolset" />
 
@@ -62,7 +62,7 @@
 <body class="">
 
 
-<div class="container headings--one-size">
+<div class="container center headings--one-size">
 
   <header class="header">
   <div class="header__inner">
@@ -75,7 +75,49 @@
 
     </div>
     
+      <div class="menu-trigger">menu</div>
+    
   </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs/dynamo-browse">Docs</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs/dynamo-browse">Docs</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
   
 </header>
 
@@ -99,72 +141,122 @@
 
   <div class="post-content"><div>
         <h1 id="key-bindings">Key Bindings<a href="#key-bindings" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<table>
+<div data-controller="keybindings">
+<label>
+	<input type="checkbox" id="show-kb-binding-names" 
+    data-keybindings-target="showBindingNames" data-action="keybindings#bindingNamesChanged"> Show binding names
+</label>
+<table class="key-bindings" data-keybindings-target="keyBindingTable">
 <thead>
 <tr>
-<th style="text-align:left">Key</th>
-<th style="text-align:left">Action</th>
+  <th class="kb-key-binding" style="text-align:left">Key</th>
+  <th class="kb-binding-name" style="text-align:left">Binding Name</th>
+  <th style="text-align:left">Action</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><kbd>↑</kbd>/<kbd>i</kbd></td>
-<td style="text-align:left">Move selection up</td>
+  <td class="kb-key-binding"><kbd>&uarr;</kbd>/<kbd>i</kbd></td>
+  <td class="kb-binding-name">table.move-up</td>
+  <td>Move selection up</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>↓</kbd>/<kbd>k</kbd></td>
-<td style="text-align:left">Move selection down</td>
+  <td class="kb-key-binding"><kbd>&darr;</kbd>/<kbd>k</kbd></td>
+  <td class="kb-binding-name">table.move-down</td>
+  <td>Move selection down</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>PgUp</kbd>/<kbd>⇧I</kbd></td>
-<td style="text-align:left">Page up</td>
+  <td class="kb-key-binding"><kbd>PgUp</kbd>/<kbd>&#8679;I</kbd></td>
+  <td class="kb-binding-name">table.page-up</td>
+  <td>Page up</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>PgDn</kbd>/<kbd>⇧K</kbd></td>
-<td style="text-align:left">Page down</td>
+  <td class="kb-key-binding"><kbd>PgDn</kbd>/<kbd>&#8679;K</kbd></td>
+  <td class="kb-binding-name">table.page-down</td>
+  <td>Page down</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>Home</kbd>/<kbd>0</kbd></td>
-<td style="text-align:left">Move selection to first item</td>
+  <td class="kb-key-binding"><kbd>Home</kbd>/<kbd>0</kbd></td>
+  <td class="kb-binding-name">table.goto-top</td>
+  <td>Move selection to first item</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>End</kbd>/<kbd>$</kbd></td>
-<td style="text-align:left">Move selection to last item</td>
+  <td class="kb-key-binding"><kbd>End</kbd>/<kbd>$</kbd></td>
+  <td class="kb-binding-name">table.goto-bottom</td>
+  <td>Move selection to last item</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>←</kbd>/<kbd>j</kbd></td>
-<td style="text-align:left">Shift displayed columns left</td>
+  <td class="kb-key-binding"><kbd>&larr;</kbd>/<kbd>j</kbd></td>
+  <td class="kb-binding-name">table.move-left</td>
+  <td>Shift displayed columns left</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>→</kbd>/<kbd>l</kbd></td>
-<td style="text-align:left">Shift displayed columns right</td>
+  <td class="kb-key-binding"><kbd>&rarr;</kbd>/<kbd>l</kbd></td>
+  <td class="kb-binding-name">table.move-right</td>
+  <td>Shift displayed columns right</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>m</kbd></td>
-<td style="text-align:left">Mark/unmark currently selected item</td>
+  <td class="kb-key-binding"><kbd>Backspace</kbd></td>
+  <td class="kb-binding-name">view.view-back</td>
+  <td>Go back</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>/</kbd></td>
-<td style="text-align:left">Filter</td>
+  <td class="kb-key-binding"><kbd>\</kbd></td>
+  <td class="kb-binding-name">view.view-forward</td>
+  <td>Go forward</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>?</kbd></td>
-<td style="text-align:left">Run scan/query</td>
+  <td class="kb-key-binding"><kbd>w</kbd></td>
+  <td class="kb-binding-name">view.cycle-layout-forward</td>
+  <td>Cycle forward through layout</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>R</kbd></td>
-<td style="text-align:left">Rerun last scan/query</td>
+  <td class="kb-key-binding"><kbd>&#8679;W</kbd></td>
+  <td class="kb-binding-name">view.cycle-layout-backwards</td>
+  <td>Cycle backwards through layout</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>:</kbd></td>
-<td style="text-align:left">Enter command</td>
+  <td class="kb-key-binding"><kbd>m</kbd></td>
+  <td class="kb-binding-name">view.mark</td>
+  <td>Mark/unmark currently selected item</td>
 </tr>
 <tr>
-<td style="text-align:left"><kbd>^C</kbd>/<kbd>Esc</kbd></td>
-<td style="text-align:left">Quit</td>
+  <td class="kb-key-binding"><kbd>c</kbd></td>
+  <td class="kb-binding-name">view.copy-item-to-clipboard</td>
+  <td>Copy displayed item to pasteboard</td>
 </tr>
-</tbody>
+<tr>
+  <td class="kb-key-binding"><kbd>/</kbd></td>
+  <td class="kb-binding-name">view.prompt-for-filter</td>
+  <td>Filter</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>?</kbd></td>
+  <td class="kb-binding-name">view.prompt-for-query</td>
+  <td>Run scan/query</td>
+</tr>
+<tr class="kb-binding-name">
+  <td class="kb-key-binding"></td>
+  <td class="kb-binding-name">view.prompt-for-table</td>
+  <td>Select table</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>R</kbd></td>
+  <td class="kb-binding-name">view.rescan</td>
+  <td>Rerun last scan/query</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>:</kbd></td>
+  <td class="kb-binding-name">view.prompt-for-command</td>
+  <td>Enter command</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>^C</kbd>/<kbd>Esc</kbd></td>
+  <td class="kb-binding-name">view.quit</td>
+  <td>Quit</td>
+</tr></tbody>
 </table>
+</div>
 <h2 id="commands">Commands<a href="#commands" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <h3 id="del-attr">del-attr<a href="#del-attr" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <pre><code>:del-attr &lt;attribute&gt;
@@ -174,6 +266,9 @@
 <pre><code>:delete
 </code></pre><p>Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
 the table straight away.</p>
+<h3 id="echo">echo<a href="#echo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre><code>:echo [message ...]
+</code></pre><p>Displays <em>message</em> in the status bar.  Mainly used for debugging.</p>
 <h3 id="export">export<a href="#export" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <pre><code>:export &lt;filename&gt;
 </code></pre><p>Writes the currently loaded items as a CSV file to <em>filename</em>.</p>
@@ -188,7 +283,11 @@ The new item will not be written to the table until it is committed with the <co
 <h3 id="quit">quit<a href="#quit" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <pre><code>:quit
 </code></pre><p>Alias: <code>q</code></p>
-<p>Quits dynamo-browse.</p>
+<p>Quits Dynamo-Browse.</p>
+<h3 id="rebind">rebind<a href="#rebind" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre><code>:rebind &lt;bindingName&gt; &lt;key&gt;
+</code></pre><p>Rebinds the action with <em>bindingName</em> to <em>key</em>.  This will replace any existing binding for that action.
+See <a href="#key-bindings">Key Bindings</a> with &ldquo;Show binding names&rdquo; checked to see available binding names.</p>
 <h3 id="set-attr">set-attr<a href="#set-attr" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <pre><code>:set-attr [type] &lt;attributeName&gt;
 </code></pre><p>Alias: <code>sa</code></p>
@@ -220,9 +319,9 @@ The new item will not be written to the table until it is committed with the <co
     <div class="pagination__buttons">
         
         <span class="button previous">
-            <a href="https://audax.tools/docs/dynamo-browse/editing-items/">
+            <a href="https://audax.tools/docs/dynamo-browse/customising/">
                 <span class="button__icon">←</span>
-                <span class="button__text">Editing Items</span>
+                <span class="button__text">Customising Dynamo-Browse</span>
             </a>
         </span>
         
@@ -258,7 +357,7 @@ The new item will not be written to the table until it is committed with the <co
 
 
 
-
+<script src="https://audax.tools/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 
   

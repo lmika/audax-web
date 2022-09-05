@@ -19,7 +19,31 @@
   </url>
   
   <url>
+    <loc>https://audax.tools/docs/dynamo-browse/customising/</loc>
+  </url>
+  
+  <url>
     <loc>https://audax.tools/docs/dynamo-browse/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/</loc>
+    <lastmod>2022-09-04T09:41:00+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/updates/</loc>
+    <lastmod>2022-09-04T09:41:00+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/updates/release-0.0.3/</loc>
+    <lastmod>2022-09-04T09:41:00+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/docs/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -27,7 +51,11 @@
   </url>
   
   <url>
-    <loc>https://audax.tools/docs/</loc>
+    <loc>https://audax.tools/download/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/install/</loc>
   </url>
   
   <url>
@@ -36,10 +64,6 @@
   
   <url>
     <loc>https://audax.tools/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://audax.tools/</loc>
   </url>
   
 </urlset>

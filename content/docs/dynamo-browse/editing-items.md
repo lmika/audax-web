@@ -3,7 +3,7 @@ title = "Editing Items"
 weight = 40
 +++
 
-dynamo-browse offers some basic facilities for editing items — such as creating items, deleting items,
+Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items,
 and modifying their attribute values.
 
 {{< image src="/images/dynamo-browse/modified-items.png" alt="Item indicators" position="center" >}}
@@ -38,7 +38,7 @@ Where type is one of the following (case insensitive):
 
 If the type is not specified, and the attribute exists, then the attribute type will not change.
 The type must be specified if this is a new attribute or multiple items have been marked.
-After executing the command, dynamo-browse will prompt for the value of the new attribute if one is
+After executing the command, Dynamo-Browse will prompt for the value of the new attribute if one is
 required.
 
 Modified attributes will only be tracked in memory: they will not be written
@@ -67,7 +67,7 @@ on the left-most column.
 
 A new item can be created by typing in the command `new-item`.  
 
-When entered, dynamo-browse will prompt for the partition and sort key.  Once these are entered,
+When entered, Dynamo-Browse will prompt for the partition and sort key.  Once these are entered,
 the item will appear in the top pane in green with an asterisk indicator (`*`) on the left left-most column.
 Any additional attributes can be set by using `set-attr`.
 

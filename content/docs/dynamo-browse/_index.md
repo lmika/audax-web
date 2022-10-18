@@ -32,6 +32,11 @@ editing as well.
 - [Customising Dynamo-Browse](/docs/dynamo-browse/customising)
 	- [The RC File](/docs/dynamo-browse/customising#rc-file)
 	- [Rebinding Keys](/docs/dynamo-browse/customising#rebinding-keys)
-- [Reference](/docs/dynamo-browse/reference)
-	- [Key Bindings](/docs/dynamo-browse/reference#key-bindings)
-	- [Commands](/docs/dynamo-browse/reference#commands)
+
+References
+
+- [Key Bindings](/docs/dynamo-browse/reference/key-bindings)
+- [Commands](/docs/dynamo-browse/reference/commands)
+- [Query Expressions](/docs/dynamo-browse/reference/query-expressions)
+- [Launch Flags](/docs/dynamo-browse/reference/launch-flags)
+- [Settings](/docs/dynamo-browse/reference/settings)

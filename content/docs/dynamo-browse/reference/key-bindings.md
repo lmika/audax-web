@@ -1,9 +1,7 @@
 +++
-title = "Reference"
-weight = 100
+title = "Key Bindings"
+weight = 101
 +++
-
-# Key Bindings
 
 <div data-controller="keybindings">
 
@@ -21,6 +19,9 @@ weight = 100
 </tr>
 </thead>
 <tbody>
+<tr>
+  <td colspan="2">Main View Mode</td>
+</tr>
 <tr>
   <td class="kb-key-binding"><kbd>&uarr;</kbd>/<kbd>i</kbd></td>
   <td class="kb-binding-name">table.move-up</td>
@@ -54,12 +55,12 @@ weight = 100
 <tr>
   <td class="kb-key-binding"><kbd>&larr;</kbd>/<kbd>j</kbd></td>
   <td class="kb-binding-name">table.move-left</td>
-  <td>Shift displayed columns left</td>
+  <td>Scroll displayed columns left</td>
 </tr>
 <tr>
   <td class="kb-key-binding"><kbd>&rarr;</kbd>/<kbd>l</kbd></td>
   <td class="kb-binding-name">table.move-right</td>
-  <td>Shift displayed columns right</td>
+  <td>Scroll displayed columns right</td>
 </tr>
 <tr>
   <td class="kb-key-binding"><kbd>Backspace</kbd></td>
@@ -117,120 +118,60 @@ weight = 100
   <td>Enter command</td>
 </tr>
 <tr>
+  <td class="kb-key-binding"><kbd>f</td>
+  <td class="kb-binding-name">view.show-fields-popup</td>
+  <td>Show fields popup</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>^C</kbd></td>
+  <td class="kb-binding-name">view.cancel-running-job</td>
+  <td>Cancel running operation</td>
+</tr>
+<tr>
   <td class="kb-key-binding"><kbd>^C</kbd>/<kbd>Esc</kbd></td>
   <td class="kb-binding-name">view.quit</td>
   <td>Quit</td>
-</tr></tbody>
+</tr>
+<tr>
+  <td colspan="2">Field Popup Mode</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>&#8679;I</kbd></td>
+  <td class="kb-binding-name">fields-popup.shift-column-left</td>
+  <td>Shift selected column left</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>&#8679;K</kbd></td>
+  <td class="kb-binding-name">fields-popup.shift-column-right</td>
+  <td>Shift selected column right</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>Space</kbd></td>
+  <td class="kb-binding-name">fields-popup.toggle-column-visible</td>
+  <td>Toggle selected column visible</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>a</kbd></td>
+  <td class="kb-binding-name">fields-popup.add-column</td>
+  <td>Add new column</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>d</kbd></td>
+  <td class="kb-binding-name">fields-popup.delete-column</td>
+  <td>Delete selected column</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>&#8679;R</kbd></td>
+  <td class="kb-binding-name">fields-popup.reset-columns</td>
+  <td>Reset columns to that of the result-set</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>^C</kbd>/<kbd>Esc</kbd></td>
+  <td class="kb-binding-name">fields-popup.close</td>
+  <td>Close field popup</td>
+</tr>
+</tbody>
 </table>
 
 </div>
 
-## Commands
-
-### del-attr
-
-```
-:del-attr <attribute>
-```
-
-Alias: `da`
-
-Deletes _attribute_ from the currently selected item; or if there are any marked items, the marked items.
-
-### delete
-
-```
-:delete
-```
-
-Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
-the table straight away.
-
-### echo
-
-```
-:echo [message ...]
-```
-
-Displays _message_ in the status bar.  Mainly used for debugging.
-
-### export
-
-```
-:export <filename>
-```
-
-Writes the currently loaded items as a CSV file to _filename_.
-
-### new-item
-
-```
-:new-item
-```
-
-Creates a new item.  When executed, the value for the partition key and sort key will be prompted.
-The new item will not be written to the table until it is committed with the `put` command.
-
-### put
-
-```
-:put
-```
-
-Alias: `w`
-
-Commits all new and modified items to the table.
-
-### quit
-
-```
-:quit
-```
-
-Alias: `q`
-
-Quits Dynamo-Browse.
-
-### rebind
-
-```
-:rebind <bindingName> <key>
-```
-
-Rebinds the action with _bindingName_ to _key_.  This will replace any existing binding for that action.
-See [Key Bindings](#key-bindings) with "Show binding names" checked to see available binding names.
-
-### set-attr
-
-```
-:set-attr [type] <attributeName>
-```
-
-Alias: `sa`
-
-Modifies the value of _attribute_ of the currently selected item; or if there are any marked items, the marked items.
-
-The value of _type_ can be use to specify the type of the attribute.  It can be one of the following (case insensitive):
-
-- `-S`: string value
-- `-N`: number value
-- `-BOOL`: boolean value
-- `-NULL`: null value
-
-If unset, the attribute type will not be changed.  _type_ must be set if multiple items have been marked.
-
-### table
-
-```
-:table
-```
-
-Select the table to display.
-
-### unmark
-
-```
-:unmark
-```
-
-Unmark all marked items.

@@ -9,7 +9,8 @@ weight = 30
 
 A query or scan over the table can be made by entering a query expression.
 Query expressions are a built-in expression language which translates to either a DynamoDB query
-or scan, depending on the expression.
+or scan, depending on the expression.  Details of the query expression can be found in the
+[Query Expressions references](/docs/dynamo-browse/reference/query-expressions/).
 
 To run a query, press <kbd>?</kbd>, and enter the query expression.
 
@@ -17,15 +18,6 @@ To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without enterin
 
 While the query is running, a progress indicator will spin in the status bar, indicating activity.  A
 query can be cancelled while this progress indicator is visible by pressing <kbd>^C</kbd>.
-
-<div class="framed">
-  Note that the query expression language is still under early development and may change in the future.
-</div>
-
-The types of query expressions that are supported are:
-
-- `attr = "value"`: matches items where attribute _attr_ matches the string _value_
-- `attr ^= "value"`: matches items where attribute _attr_ has the prefix _value_
 
 ## Filtering
 

@@ -40,7 +40,7 @@ Note that filtering is case sensitive.
 
 The columns of the result-set can be adjusted by opening up the _Fields Popup_.  This popup can be opened by pressing <kbd>f</kbd>.
 
-XXX - Screenshot
+{{< image src="/images/dynamo-browse/fields-popup.png" alt="dynamo-browse" position="center" >}}
 
 While this popup is opened, the following changes can be applied to the displayed columns of the main table:
 

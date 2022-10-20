@@ -3,6 +3,8 @@ title = "The Audax Toolset"
 layout = "single"
 +++
 
+{{< image src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse" position="center" >}}
+
 The Audax Toolset is a set of small, terminal based UI (TUI, sometimes called "Rougelike") tools for
 administering AWS services.
 
@@ -11,9 +13,7 @@ common AWS services, such as DynamoDB, without having to learn incantations with
 go to the AWS console itself.  This keeps you focused on your task and saves you from
 breaking concentration, especially if you do a lot in the terminal.
 
-{{< image src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse" position="center" >}}
-
-## The Toolset
+## Getting Started
 
 The set of tools available are:
 

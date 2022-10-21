@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
   
-    <title>Filtering and Querying :: Audax Toolset</title>
+    <title>Querying And Viewing Results :: Audax Toolset</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
-To set the filter, press /, and enter the substring you wish to filter on.
-To clear the filter, press /, and press Enter without entering any value.
-When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
-Filtering will only consist the items that are in the current result-set." />
+<meta name="description" content="Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression.
+To clear a query, press ?, and press Enter without entering any value." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://audax.tools/docs/dynamo-browse/filtering-querying/" />
@@ -39,12 +37,10 @@ Filtering will only consist the items that are in the current result-set." />
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Filtering and Querying">
-<meta property="og:description" content="Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
-To set the filter, press /, and enter the substring you wish to filter on.
-To clear the filter, press /, and press Enter without entering any value.
-When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
-Filtering will only consist the items that are in the current result-set." />
+<meta property="og:title" content="Querying And Viewing Results">
+<meta property="og:description" content="Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression.
+To clear a query, press ?, and press Enter without entering any value." />
 <meta property="og:url" content="https://audax.tools/docs/dynamo-browse/filtering-querying/" />
 <meta property="og:site_name" content="Audax Toolset" />
 
@@ -96,6 +92,10 @@ Filtering will only consist the items that are in the current result-set." />
         
       
         
+          <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
+        
+      
+        
           <li><a href="/docs/dynamo-browse">Docs</a></li>
         
       
@@ -112,6 +112,10 @@ Filtering will only consist the items that are in the current result-set." />
     
       
         <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
       
     
       
@@ -134,7 +138,7 @@ Filtering will only consist the items that are in the current result-set." />
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://audax.tools/docs/dynamo-browse/filtering-querying/">Filtering and Querying</a></h1>
+    <a href="https://audax.tools/docs/dynamo-browse/filtering-querying/">Querying And Viewing Results</a></h1>
   <div class="post-meta">
     
     
@@ -148,7 +152,21 @@ Filtering will only consist the items that are in the current result-set." />
   
 
   <div class="post-content"><div>
-        <h2 id="filtering">Filtering<a href="#filtering" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+        <h2 id="querying">Querying<a href="#querying" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+  <img src="/images/dynamo-browse/query-items.png"  alt="Items with query applied"  class="center"  />
+
+
+<p>A query or scan over the table can be performed by entering a <em>Query Expression</em>.
+Query expressions are a built-in expression language which translates to either a DynamoDB query
+or scan, depending on the expression.  Details about the Query Expression language can be found in the
+<a href="/docs/dynamo-browse/reference/query-expressions/">Query Expressions references</a>.</p>
+<p>To run a query, press <kbd>?</kbd>, and enter the query expression.</p>
+<p>To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without entering any value.</p>
+<p>While the query is running, a spinner indicating activity will be shown in the status bar.  A running
+query can be cancelled while this spinner is visible by pressing <kbd>^C</kbd>.  You have the option
+to view any partial results that have been retrieved at the time.</p>
+<h2 id="filtering">Filtering<a href="#filtering" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 
   <img src="/images/dynamo-browse/filter-items.png"  alt="Items with filter applied"  class="center"  />
 
@@ -160,25 +178,6 @@ Filtering will only consist the items that are in the current result-set." />
 <p>Filtering will only consist the items that are in the current result-set.  It will not result in a call to the actual
 table itself.</p>
 <p>Note that filtering is case sensitive.</p>
-<h2 id="querying">Querying<a href="#querying" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
-  <img src="/images/dynamo-browse/query-items.png"  alt="Items with query applied"  class="center"  />
-
-
-<p>A query or scan over the table can be made by entering a query expression.
-Query expressions are a built-in expression language which translates to either a DynamoDB query
-or scan, depending on the expression.</p>
-<p>To run a query, press <kbd>?</kbd>, and enter the query expression.</p>
-<p>To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without entering any value.</p>
-<div class="framed">
-  Note that the query expression language is still under early development and may change in the future.
-  At the moment, all query expressions result in a table scan.
-</div>
-<p>The types of query expressions that are supported are:</p>
-<ul>
-<li><code>attr = &quot;value&quot;</code>: matches items where attribute <em>attr</em> matches the string <em>value</em></li>
-<li><code>attr ^= &quot;value&quot;</code>: matches items where attribute <em>attr</em> has the prefix <em>value</em></li>
-</ul>
 
       </div></div>
 

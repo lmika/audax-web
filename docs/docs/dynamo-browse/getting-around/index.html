@@ -92,6 +92,10 @@ This mode consists of three panes:
         
       
         
+          <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
+        
+      
+        
           <li><a href="/docs/dynamo-browse">Docs</a></li>
         
       
@@ -108,6 +112,10 @@ This mode consists of three panes:
     
       
         <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
       
     
       
@@ -207,6 +215,58 @@ following layout configurations:</p>
 <p>Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
 default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
 screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse order.</p>
+<h2 id="adjusting-the-displayed-columns">Adjusting The Displayed Columns<a href="#adjusting-the-displayed-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The columns of the result-set can be adjusted by opening up the <em>Fields Popup</em>.  This popup can be opened by pressing <kbd>f</kbd>.</p>
+
+  <img src="/images/dynamo-browse/fields-popup.png"  alt="dynamo-browse"  class="center"  />
+
+
+<p>While this popup is opened, the following changes can be applied to the displayed columns of the main table:</p>
+<ul>
+<li>Columns can be hidden</li>
+<li>The order columns appear in the main table can be rearranged</li>
+<li>New columns can be added</li>
+</ul>
+<p>The popup will display the list of columns of the main result-set table.  Pressing <kbd>↑</kbd>/<kbd>i</kbd>
+or <kbd>↓</kbd>/<kbd>k</kbd> will move the selection indicator to the column to apply the operation.  Pressing
+<kbd>←</kbd>/<kbd>j</kbd> or <kbd>→</kbd>/<kbd>l</kbd> will scroll the main table left or right so that any
+operations can be previewed.</p>
+<p>To reset the columns to the top-level fields of the current result set, press <kbd>⇧ R</kbd>.</p>
+<p>To close the popup, press <kbd>Escape</kbd>.</p>
+<h3 id="showing-and-hiding-columns">Showing And Hiding Columns<a href="#showing-and-hiding-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>In the Fields Popup, each row has a symbol indicating whether the row is currently visible (<code>.</code>) or hidden (<code>✕</code>).  Pressing
+<kbd>Space</kbd> will toggle whether the currently selected column is shown or hidden.</p>
+<h3 id="re-arranging-the-order-of-columns">Re-arranging The Order Of Columns<a href="#re-arranging-the-order-of-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
+left or right.</p>
+<p>Press <kbd>⇧ I</kbd> to the selected row up, which will move the corresponding column left.</p>
+<p>Press <kbd>⇧ K</kbd> to the selected row down, which will move the corresponding column right.</p>
+<h3 id="adding-and-removing-columns">Adding And Removing Columns<a href="#adding-and-removing-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>New columns can be added in the table.  The value of these columns will be determined by the result of a query expression,
+and can be used to expose fields that are not at the top level.</p>
+<p>Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
+with authors structured as so:</p>
+<pre><code>{
+  &quot;book&quot;: {&quot;S&quot;: &quot;The Lord Of The Rings&quot;},
+  &quot;author&quot;: {&quot;M&quot;: {
+    &quot;firstName&quot;: {&quot;S&quot;: &quot;John&quot;},
+    &quot;middleName&quot;: {&quot;S&quot;: &quot;Ronald Reuel&quot;},
+    &quot;lastName&quot;: {&quot;S&quot;: &quot;Tolkien&quot;},
+  }}
+}
+</code></pre><p>If you wanted to show the the author&rsquo;s first and last name in the main table, rather than just see the description <code>(3 items)</code>, you
+can add a new column with an expression selecting the fields of the author map.  The expressions that can be used here
+are as follows:</p>
+<ul>
+<li>First name: <code>author.firstName</code></li>
+<li>Last name: <code>author.lastName</code></li>
+</ul>
+<p>This can be extended to expressions that perform comparisons or operations.  For example, the expression <code>author.firstName ^= &quot;J&quot;</code> can be
+use in a new column to display <code>True</code> for any first name that begins with a J.</p>
+<p>To add a new column, press <kbd>a</kbd> while the Fields Popup is visible.  You&rsquo;ll be prompted to enter a query expression,
+which will be evaluated over each row within the result-set when displaying the table.</p>
+<p>Any column, that was either retrieved from the result-set or added by the user, can be deleted by selecting the column
+within the Fields Popup and pressing <kbd>d</kbd>.</p>
 <h2 id="entering-commands">Entering Commands<a href="#entering-commands" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.</p>
 <p>The list of available commands can be found within the <a href="/docs/dynamo-browse/reference/#commands">reference section</a>.</p>
@@ -232,7 +292,7 @@ screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse
         
         <span class="button next">
             <a href="https://audax.tools/docs/dynamo-browse/filtering-querying/">
-                <span class="button__text">Filtering and Querying</span>
+                <span class="button__text">Querying And Viewing Results</span>
                 <span class="button__icon">→</span>
             </a>
         </span>

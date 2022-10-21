@@ -75,6 +75,76 @@ Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, whi
 default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
 screen.  Pressing <kbd>&#8679; W</kbd> will cycle through the layouts in the reverse order.
 
+## Adjusting The Displayed Columns
+
+The columns of the result-set can be adjusted by opening up the _Fields Popup_.  This popup can be opened by pressing <kbd>f</kbd>.
+
+{{< image src="/images/dynamo-browse/fields-popup.png" alt="dynamo-browse" position="center" >}}
+
+While this popup is opened, the following changes can be applied to the displayed columns of the main table:
+
+- Columns can be hidden
+- The order columns appear in the main table can be rearranged 
+- New columns can be added
+
+The popup will display the list of columns of the main result-set table.  Pressing <kbd>&uarr;</kbd>/<kbd>i</kbd>
+or <kbd>&darr;</kbd>/<kbd>k</kbd> will move the selection indicator to the column to apply the operation.  Pressing
+<kbd>&larr;</kbd>/<kbd>j</kbd> or <kbd>&rarr;</kbd>/<kbd>l</kbd> will scroll the main table left or right so that any
+operations can be previewed.
+
+To reset the columns to the top-level fields of the current result set, press <kbd>&#8679; R</kbd>.
+
+To close the popup, press <kbd>Escape</kbd>.
+
+### Showing And Hiding Columns
+
+In the Fields Popup, each row has a symbol indicating whether the row is currently visible (`.`) or hidden (`✕`).  Pressing
+<kbd>Space</kbd> will toggle whether the currently selected column is shown or hidden.
+
+### Re-arranging The Order Of Columns
+
+The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
+left or right.
+
+Press <kbd>&#8679; I</kbd> to the selected row up, which will move the corresponding column left.
+
+Press <kbd>&#8679; K</kbd> to the selected row down, which will move the corresponding column right.
+
+### Adding And Removing Columns
+
+New columns can be added in the table.  The value of these columns will be determined by the result of a query expression,
+and can be used to expose fields that are not at the top level.
+
+Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
+with authors structured as so:
+
+```
+{
+  "book": {"S": "The Lord Of The Rings"},
+  "author": {"M": {
+    "firstName": {"S": "John"},
+    "middleName": {"S": "Ronald Reuel"},
+    "lastName": {"S": "Tolkien"},
+  }}
+}
+```
+
+If you wanted to show the the author's first and last name in the main table, rather than just see the description `(3 items)`, you
+can add a new column with an expression selecting the fields of the author map.  The expressions that can be used here
+are as follows:
+
+- First name: `author.firstName`
+- Last name: `author.lastName` 
+
+This can be extended to expressions that perform comparisons or operations.  For example, the expression `author.firstName ^= "J"` can be
+use in a new column to display `True` for any first name that begins with a J.
+
+To add a new column, press <kbd>a</kbd> while the Fields Popup is visible.  You'll be prompted to enter a query expression,
+which will be evaluated over each row within the result-set when displaying the table.
+
+Any column, that was either retrieved from the result-set or added by the user, can be deleted by selecting the column
+within the Fields Popup and pressing <kbd>d</kbd>. 
+
 ## Entering Commands
 
 Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.

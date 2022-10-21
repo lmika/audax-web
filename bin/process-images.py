@@ -9,6 +9,7 @@ images = [
 	'filter-items.png',
 	'query-items.png',
 	'modified-items.png',
+	'fields-popup.png'
 ]
 
 for image in images:

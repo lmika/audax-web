@@ -23,12 +23,17 @@ publishDir = "docs"
 	url = "/download"
 	weight = 20
 [[menu.main]]
+	identifier = "dynamo-browse"
+	name = "Dynamo-Browse"
+	url = "/dynamo-browse"
+	weight = 30
+[[menu.main]]
 	identifier = "docs"
 	name = "Docs"
 	url = "/docs/dynamo-browse"
-	weight = 30
+	weight = 40
 [[menu.main]]
 	identifier = "updates"
 	name = "Updates"
 	url = "/updates"
-	weight = 40
+	weight = 50

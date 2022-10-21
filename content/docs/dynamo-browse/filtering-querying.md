@@ -1,7 +1,24 @@
 +++
-title = "Filtering and Querying"
+title = "Querying And Viewing Results"
 weight = 30
 +++
+
+## Querying
+
+{{< image src="/images/dynamo-browse/query-items.png" alt="Items with query applied" position="center" >}}
+
+A query or scan over the table can be performed by entering a _Query Expression_.
+Query expressions are a built-in expression language which translates to either a DynamoDB query
+or scan, depending on the expression.  Details about the Query Expression language can be found in the
+[Query Expressions references](/docs/dynamo-browse/reference/query-expressions/).
+
+To run a query, press <kbd>?</kbd>, and enter the query expression.
+
+To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without entering any value.
+
+While the query is running, a spinner indicating activity will be shown in the status bar.  A running
+query can be cancelled while this spinner is visible by pressing <kbd>^C</kbd>.  You have the option
+to view any partial results that have been retrieved at the time.
 
 ## Filtering
 
@@ -19,25 +36,3 @@ Filtering will only consist the items that are in the current result-set.  It wi
 table itself.
 
 Note that filtering is case sensitive.
-
-## Querying
-
-{{< image src="/images/dynamo-browse/query-items.png" alt="Items with query applied" position="center" >}}
-
-A query or scan over the table can be made by entering a query expression.
-Query expressions are a built-in expression language which translates to either a DynamoDB query
-or scan, depending on the expression.
-
-To run a query, press <kbd>?</kbd>, and enter the query expression.
-
-To clear a query, press <kbd>?</kbd>, and press <kbd>Enter</kbd> without entering any value.
-
-<div class="framed">
-  Note that the query expression language is still under early development and may change in the future.
-  At the moment, all query expressions result in a table scan.
-</div>
-
-The types of query expressions that are supported are:
-
-- `attr = "value"`: matches items where attribute _attr_ matches the string _value_
-- `attr ^= "value"`: matches items where attribute _attr_ has the prefix _value_

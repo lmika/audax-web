@@ -15,4 +15,4 @@ breaking concentration, especially if you do a lot in the terminal.
 
 The set of tools available are:
 
-- [dynamo-browse](/docs/dynamo-browse): Browse DynamoDB tables
+- [Dynamo-Browse](/dynamo-browse): Browse DynamoDB tables

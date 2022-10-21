@@ -12,6 +12,7 @@ layout = "single"
 - [Getting Around](/docs/dynamo-browse/getting-around)
 	- [The Back-stack](/docs/dynamo-browse/getting-around#the-back-stack)
 	- [Adjusting The Layout](/docs/dynamo-browse/getting-around#adjusting-the-layout)
+	- [Adjusting The Displayed Columns](/docs/dynamo-browse/getting-around#adjusting-the-displayed-columns)
 	- [Entering Commands](/docs/dynamo-browse/getting-around#entering-commands)
 - [Filtering and Querying](/docs/dynamo-browse/filtering-querying)
 	- [Filtering](/docs/dynamo-browse/filtering-querying#filtering)

@@ -6,7 +6,7 @@
     <description>Recent content in The Audax Toolset on Audax Toolset</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Sep 2022 09:41:00 +1000</lastBuildDate><atom:link href="https://audax.tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 10:46:00 +1100</lastBuildDate><atom:link href="https://audax.tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launching and Quitting</title>
       <link>https://audax.tools/docs/dynamo-browse/launching/</link>
@@ -127,6 +127,58 @@ following layout configurations:&lt;/p&gt;
 &lt;p&gt;Pressing &lt;kbd&gt;w&lt;/kbd&gt; will cycle forward though these layouts.  For example, while in the
 default layout, pressing &lt;kbd&gt;w&lt;/kbd&gt; will switch to the second layout, where both the table view take up half the
 screen.  Pressing &lt;kbd&gt;⇧ W&lt;/kbd&gt; will cycle through the layouts in the reverse order.&lt;/p&gt;
+&lt;h2 id=&#34;adjusting-the-displayed-columns&#34;&gt;Adjusting The Displayed Columns&lt;/h2&gt;
+&lt;p&gt;The columns of the result-set can be adjusted by opening up the &lt;em&gt;Fields Popup&lt;/em&gt;.  This popup can be opened by pressing &lt;kbd&gt;f&lt;/kbd&gt;.&lt;/p&gt;
+
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/fields-popup.png&#34;  alt=&#34;dynamo-browse&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;While this popup is opened, the following changes can be applied to the displayed columns of the main table:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Columns can be hidden&lt;/li&gt;
+&lt;li&gt;The order columns appear in the main table can be rearranged&lt;/li&gt;
+&lt;li&gt;New columns can be added&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The popup will display the list of columns of the main result-set table.  Pressing &lt;kbd&gt;↑&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;
+or &lt;kbd&gt;↓&lt;/kbd&gt;/&lt;kbd&gt;k&lt;/kbd&gt; will move the selection indicator to the column to apply the operation.  Pressing
+&lt;kbd&gt;←&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt; or &lt;kbd&gt;→&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt; will scroll the main table left or right so that any
+operations can be previewed.&lt;/p&gt;
+&lt;p&gt;To reset the columns to the top-level fields of the current result set, press &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;To close the popup, press &lt;kbd&gt;Escape&lt;/kbd&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;showing-and-hiding-columns&#34;&gt;Showing And Hiding Columns&lt;/h3&gt;
+&lt;p&gt;In the Fields Popup, each row has a symbol indicating whether the row is currently visible (&lt;code&gt;.&lt;/code&gt;) or hidden (&lt;code&gt;✕&lt;/code&gt;).  Pressing
+&lt;kbd&gt;Space&lt;/kbd&gt; will toggle whether the currently selected column is shown or hidden.&lt;/p&gt;
+&lt;h3 id=&#34;re-arranging-the-order-of-columns&#34;&gt;Re-arranging The Order Of Columns&lt;/h3&gt;
+&lt;p&gt;The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
+left or right.&lt;/p&gt;
+&lt;p&gt;Press &lt;kbd&gt;⇧ I&lt;/kbd&gt; to the selected row up, which will move the corresponding column left.&lt;/p&gt;
+&lt;p&gt;Press &lt;kbd&gt;⇧ K&lt;/kbd&gt; to the selected row down, which will move the corresponding column right.&lt;/p&gt;
+&lt;h3 id=&#34;adding-and-removing-columns&#34;&gt;Adding And Removing Columns&lt;/h3&gt;
+&lt;p&gt;New columns can be added in the table.  The value of these columns will be determined by the result of a query expression,
+and can be used to expose fields that are not at the top level.&lt;/p&gt;
+&lt;p&gt;Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
+with authors structured as so:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;book&amp;quot;: {&amp;quot;S&amp;quot;: &amp;quot;The Lord Of The Rings&amp;quot;},
+  &amp;quot;author&amp;quot;: {&amp;quot;M&amp;quot;: {
+    &amp;quot;firstName&amp;quot;: {&amp;quot;S&amp;quot;: &amp;quot;John&amp;quot;},
+    &amp;quot;middleName&amp;quot;: {&amp;quot;S&amp;quot;: &amp;quot;Ronald Reuel&amp;quot;},
+    &amp;quot;lastName&amp;quot;: {&amp;quot;S&amp;quot;: &amp;quot;Tolkien&amp;quot;},
+  }}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you wanted to show the the author&amp;rsquo;s first and last name in the main table, rather than just see the description &lt;code&gt;(3 items)&lt;/code&gt;, you
+can add a new column with an expression selecting the fields of the author map.  The expressions that can be used here
+are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First name: &lt;code&gt;author.firstName&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Last name: &lt;code&gt;author.lastName&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This can be extended to expressions that perform comparisons or operations.  For example, the expression &lt;code&gt;author.firstName ^= &amp;quot;J&amp;quot;&lt;/code&gt; can be
+use in a new column to display &lt;code&gt;True&lt;/code&gt; for any first name that begins with a J.&lt;/p&gt;
+&lt;p&gt;To add a new column, press &lt;kbd&gt;a&lt;/kbd&gt; while the Fields Popup is visible.  You&amp;rsquo;ll be prompted to enter a query expression,
+which will be evaluated over each row within the result-set when displaying the table.&lt;/p&gt;
+&lt;p&gt;Any column, that was either retrieved from the result-set or added by the user, can be deleted by selecting the column
+within the Fields Popup and pressing &lt;kbd&gt;d&lt;/kbd&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;entering-commands&#34;&gt;Entering Commands&lt;/h2&gt;
 &lt;p&gt;Commands can be entered by pressing &lt;kbd&gt;:&lt;/kbd&gt; and entering the command, with any arguments, at the prompt.&lt;/p&gt;
 &lt;p&gt;The list of available commands can be found within the &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/reference/#commands&#34;&gt;reference section&lt;/a&gt;.&lt;/p&gt;
@@ -134,17 +186,29 @@ screen.  Pressing &lt;kbd&gt;⇧ W&lt;/kbd&gt; will cycle through the layouts in
     </item>
     
     <item>
-      <title>Filtering and Querying</title>
+      <title>Querying And Viewing Results</title>
       <link>https://audax.tools/docs/dynamo-browse/filtering-querying/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://audax.tools/docs/dynamo-browse/filtering-querying/</guid>
-      <description>Filtering The displayed items of the current result-set can be filtered down to those that contain a specific substring.
-To set the filter, press /, and enter the substring you wish to filter on.
-To clear the filter, press /, and press Enter without entering any value.
-When a filter is set, any item that does not have a top-level attribute containing the substring will be hidden.
-Filtering will only consist the items that are in the current result-set.</description>
-      <content>&lt;h2 id=&#34;filtering&#34;&gt;Filtering&lt;/h2&gt;
+      <description>Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression.
+To clear a query, press ?, and press Enter without entering any value.</description>
+      <content>&lt;h2 id=&#34;querying&#34;&gt;Querying&lt;/h2&gt;
+
+  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
+
+
+&lt;p&gt;A query or scan over the table can be performed by entering a &lt;em&gt;Query Expression&lt;/em&gt;.
+Query expressions are a built-in expression language which translates to either a DynamoDB query
+or scan, depending on the expression.  Details about the Query Expression language can be found in the
+&lt;a href=&#34;https://audax.tools/docs/dynamo-browse/reference/query-expressions/&#34;&gt;Query Expressions references&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To run a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and enter the query expression.&lt;/p&gt;
+&lt;p&gt;To clear a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and press &lt;kbd&gt;Enter&lt;/kbd&gt; without entering any value.&lt;/p&gt;
+&lt;p&gt;While the query is running, a spinner indicating activity will be shown in the status bar.  A running
+query can be cancelled while this spinner is visible by pressing &lt;kbd&gt;^C&lt;/kbd&gt;.  You have the option
+to view any partial results that have been retrieved at the time.&lt;/p&gt;
+&lt;h2 id=&#34;filtering&#34;&gt;Filtering&lt;/h2&gt;
 
   &lt;img src=&#34;https://audax.tools/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
 
@@ -156,25 +220,6 @@ Filtering will only consist the items that are in the current result-set.</descr
 &lt;p&gt;Filtering will only consist the items that are in the current result-set.  It will not result in a call to the actual
 table itself.&lt;/p&gt;
 &lt;p&gt;Note that filtering is case sensitive.&lt;/p&gt;
-&lt;h2 id=&#34;querying&#34;&gt;Querying&lt;/h2&gt;
-
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
-
-
-&lt;p&gt;A query or scan over the table can be made by entering a query expression.
-Query expressions are a built-in expression language which translates to either a DynamoDB query
-or scan, depending on the expression.&lt;/p&gt;
-&lt;p&gt;To run a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and enter the query expression.&lt;/p&gt;
-&lt;p&gt;To clear a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and press &lt;kbd&gt;Enter&lt;/kbd&gt; without entering any value.&lt;/p&gt;
-&lt;div class=&#34;framed&#34;&gt;
-  Note that the query expression language is still under early development and may change in the future.
-  At the moment, all query expressions result in a table scan.
-&lt;/div&gt;
-&lt;p&gt;The types of query expressions that are supported are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;attr = &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; matches the string &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;attr ^= &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; has the prefix &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
     </item>
     
@@ -287,14 +332,13 @@ to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Reference</title>
-      <link>https://audax.tools/docs/dynamo-browse/reference/</link>
+      <title>Key Bindings</title>
+      <link>https://audax.tools/docs/dynamo-browse/reference/key-bindings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/dynamo-browse/reference/</guid>
-      <description>Key Bindings  Show binding names    Key Binding Name Action     &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Shift displayed columns left   &amp;rarr;/l table.</description>
-      <content>&lt;h1 id=&#34;key-bindings&#34;&gt;Key Bindings&lt;/h1&gt;
-&lt;div data-controller=&#34;keybindings&#34;&gt;
+      <guid>https://audax.tools/docs/dynamo-browse/reference/key-bindings/</guid>
+      <description>Show binding names    Key Binding Name Action     Main View Mode   &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Scroll displayed columns left   &amp;rarr;/l table.</description>
+      <content>&lt;div data-controller=&#34;keybindings&#34;&gt;
 &lt;label&gt;
 	&lt;input type=&#34;checkbox&#34; id=&#34;show-kb-binding-names&#34; 
     data-keybindings-target=&#34;showBindingNames&#34; data-action=&#34;keybindings#bindingNamesChanged&#34;&gt; Show binding names
@@ -308,6 +352,9 @@ to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td colspan=&#34;2&#34;&gt;Main View Mode&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
   &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;uarr;&lt;/kbd&gt;/&lt;kbd&gt;i&lt;/kbd&gt;&lt;/td&gt;
   &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-up&lt;/td&gt;
@@ -341,12 +388,12 @@ to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
 &lt;tr&gt;
   &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;larr;&lt;/kbd&gt;/&lt;kbd&gt;j&lt;/kbd&gt;&lt;/td&gt;
   &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-left&lt;/td&gt;
-  &lt;td&gt;Shift displayed columns left&lt;/td&gt;
+  &lt;td&gt;Scroll displayed columns left&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;rarr;&lt;/kbd&gt;/&lt;kbd&gt;l&lt;/kbd&gt;&lt;/td&gt;
   &lt;td class=&#34;kb-binding-name&#34;&gt;table.move-right&lt;/td&gt;
-  &lt;td&gt;Shift displayed columns right&lt;/td&gt;
+  &lt;td&gt;Scroll displayed columns right&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;Backspace&lt;/kbd&gt;&lt;/td&gt;
@@ -404,13 +451,97 @@ to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
   &lt;td&gt;Enter command&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;f&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.show-fields-popup&lt;/td&gt;
+  &lt;td&gt;Show fields popup&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;view.cancel-running-job&lt;/td&gt;
+  &lt;td&gt;Cancel running operation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
   &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;/&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
   &lt;td class=&#34;kb-binding-name&#34;&gt;view.quit&lt;/td&gt;
   &lt;td&gt;Quit&lt;/td&gt;
-&lt;/tr&gt;&lt;/tbody&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan=&#34;2&#34;&gt;Field Popup Mode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;#8679;I&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.shift-column-left&lt;/td&gt;
+  &lt;td&gt;Shift selected column left&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;#8679;K&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.shift-column-right&lt;/td&gt;
+  &lt;td&gt;Shift selected column right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;Space&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.toggle-column-visible&lt;/td&gt;
+  &lt;td&gt;Toggle selected column visible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;a&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.add-column&lt;/td&gt;
+  &lt;td&gt;Add new column&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;d&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.delete-column&lt;/td&gt;
+  &lt;td&gt;Delete selected column&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;&amp;#8679;R&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.reset-columns&lt;/td&gt;
+  &lt;td&gt;Reset columns to that of the result-set&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class=&#34;kb-key-binding&#34;&gt;&lt;kbd&gt;^C&lt;/kbd&gt;/&lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+  &lt;td class=&#34;kb-binding-name&#34;&gt;fields-popup.close&lt;/td&gt;
+  &lt;td&gt;Close field popup&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Commands</title>
+      <link>https://audax.tools/docs/dynamo-browse/reference/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/docs/dynamo-browse/reference/commands/</guid>
+      <description>del-attr delete echo export mark   new-item put quit rebind set   set-attr table unmark     del-attr :del-attr &amp;lt;attribute&amp;gt; Alias: da
+Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
+delete :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
+echo :echo [message .</description>
+      <content>&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#del-attr&#34;&gt;del-attr&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#delete&#34;&gt;delete&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#echo&#34;&gt;echo&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#export&#34;&gt;export&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#mark&#34;&gt;mark&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#new-item&#34;&gt;new-item&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#put&#34;&gt;put&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#quit&#34;&gt;quit&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#rebind&#34;&gt;rebind&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#set&#34;&gt;set&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#set-attr&#34;&gt;set-attr&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#table&#34;&gt;table&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#unmark&#34;&gt;unmark&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 &lt;h3 id=&#34;del-attr&#34;&gt;del-attr&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:del-attr &amp;lt;attribute&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;da&lt;/code&gt;&lt;/p&gt;
@@ -425,6 +556,14 @@ the table straight away.&lt;/p&gt;
 &lt;h3 id=&#34;export&#34;&gt;export&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:export &amp;lt;filename&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Writes the currently loaded items as a CSV file to &lt;em&gt;filename&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;mark&#34;&gt;mark&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:mark [all | none | toggle]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Mark the rows in the following way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;all&lt;/code&gt;: will mark all rows.  This is the default when invoked without an argument.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt;: will unmark all rows.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;toggle&lt;/code&gt;: will toggle all marked and unmarked rows.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;new-item&#34;&gt;new-item&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:new-item
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Creates a new item.  When executed, the value for the partition key and sort key will be prompted.
@@ -441,6 +580,9 @@ The new item will not be written to the table until it is committed with the &lt
 &lt;pre&gt;&lt;code&gt;:rebind &amp;lt;bindingName&amp;gt; &amp;lt;key&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Rebinds the action with &lt;em&gt;bindingName&lt;/em&gt; to &lt;em&gt;key&lt;/em&gt;.  This will replace any existing binding for that action.
 See &lt;a href=&#34;#key-bindings&#34;&gt;Key Bindings&lt;/a&gt; with &amp;ldquo;Show binding names&amp;rdquo; checked to see available binding names.&lt;/p&gt;
+&lt;h3 id=&#34;set&#34;&gt;set&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;:set &amp;lt;name&amp;gt; [value]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Set the value of a setting.  Flag setting types can be enabled without any value.  See &lt;a href=&#34;#settings&#34;&gt;Settings&lt;/a&gt; for possible setting values.&lt;/p&gt;
 &lt;h3 id=&#34;set-attr&#34;&gt;set-attr&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:set-attr [type] &amp;lt;attributeName&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Alias: &lt;code&gt;sa&lt;/code&gt;&lt;/p&gt;
@@ -458,7 +600,144 @@ See &lt;a href=&#34;#key-bindings&#34;&gt;Key Bindings&lt;/a&gt; with &amp;ldquo
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Select the table to display.&lt;/p&gt;
 &lt;h3 id=&#34;unmark&#34;&gt;unmark&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:unmark
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Unmark all marked items.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Unmark all marked items.  This is essentially an alias for &lt;code&gt;mark none&lt;/code&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Query Expression</title>
+      <link>https://audax.tools/docs/dynamo-browse/reference/query-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/docs/dynamo-browse/reference/query-expressions/</guid>
+      <description>Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
+Note that the query expression language is still under early development and may change in the future.  The expression is represented in EBNF form:
+string = &#39;&amp;quot;&#39; .* &#39;&amp;quot;&#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;quot;.</description>
+      <content>&lt;p&gt;Query expression is used to execute queries and scans over items in the DynamoDB table.
+Such expressions can also be used in other areas of Dynamo-Browse, such as populating the
+value of new columns.&lt;/p&gt;
+&lt;div class=&#34;framed&#34;&gt;
+  Note that the query expression language is still under early development and may change in the future.
+&lt;/div&gt;
+&lt;p&gt;The expression is represented in EBNF form:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;string              = &#39;&amp;quot;&#39; .* &#39;&amp;quot;&#39;;
+
+identifier          = [a-zA-Z_][a-zA-Z0-9_]*;
+
+literal             = string;
+
+field               = identifier (&amp;quot;.&amp;quot; identifier)*;
+
+binary_operation    = field ( &amp;quot;=&amp;quot; | &amp;quot;^=&amp;quot; ) literal;
+
+expression          = field
+                    | binary_operation
+                    | expr ( &amp;quot;and&amp;quot; | &amp;quot;or&amp;quot; ) expr
+                    ;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The order of operations, from lowest priority to highest priority are as follows:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Operation&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Symbol&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Disjunction&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;or&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Conjunction&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;and&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Equality&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;=&lt;/code&gt;, &lt;code&gt;^=&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The types of binary operations that are supported are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;attr = &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; matches the string &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;attr ^= &amp;quot;value&amp;quot;&lt;/code&gt;: matches items where attribute &lt;em&gt;attr&lt;/em&gt; has the prefix &lt;em&gt;value&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Launch Flags</title>
+      <link>https://audax.tools/docs/dynamo-browse/reference/launch-flags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/docs/dynamo-browse/reference/launch-flags/</guid>
+      <description>-debug -debug &amp;lt;filename&amp;gt; Enable debug logs, which will be written to filename.
+-default-limit -default-limit &amp;lt;int&amp;gt; Sets the default limit of queries or scans. The default is 1,000 items.
+-local -local [host]:&amp;lt;port&amp;gt; Connect to a local DynamoDB service listening on host:port. The default host is localhost.
+-ro -ro Enable read-only mode.
+-t -t &amp;lt;tableName&amp;gt; Open the table tableName, instead of prompting for a table.
+-w -w &amp;lt;workspaceFile&amp;gt; Use workspaceFile as the workspace file.</description>
+      <content>&lt;h3 id=&#34;-debug&#34;&gt;-debug&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-debug &amp;lt;filename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enable debug logs, which will be written to &lt;em&gt;filename&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;-default-limit&#34;&gt;-default-limit&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-default-limit &amp;lt;int&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sets the default limit of queries or scans.  The default is 1,000 items.&lt;/p&gt;
+&lt;h3 id=&#34;-local&#34;&gt;-local&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-local [host]:&amp;lt;port&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Connect to a local DynamoDB service listening on &lt;em&gt;host&lt;/em&gt;:&lt;em&gt;port&lt;/em&gt;.  The default &lt;em&gt;host&lt;/em&gt; is &lt;code&gt;localhost&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;-ro&#34;&gt;-ro&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-ro
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enable read-only mode.&lt;/p&gt;
+&lt;h3 id=&#34;-t&#34;&gt;-t&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-t &amp;lt;tableName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Open the table &lt;em&gt;tableName&lt;/em&gt;, instead of prompting for a table.&lt;/p&gt;
+&lt;h3 id=&#34;-w&#34;&gt;-w&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;-w &amp;lt;workspaceFile&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Use &lt;em&gt;workspaceFile&lt;/em&gt; as the workspace file.  If unset, a temporary file will be used for the workspace.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Settings</title>
+      <link>https://audax.tools/docs/dynamo-browse/reference/settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://audax.tools/docs/dynamo-browse/reference/settings/</guid>
+      <description>default-limit  Type: int Default: 1000  The maximum number of rows returned from a query or scan.
+ro  Type: flag  Enable read-only mode. When enabled, all modification operations are disabled, and will fail with a Read-only mode error. The rw setting will disable read-only mode.
+rw  Type: flag  Disable read-only mode. The ro setting will enable read-only mode.</description>
+      <content>&lt;h3 id=&#34;default-limit&#34;&gt;default-limit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: int&lt;/li&gt;
+&lt;li&gt;Default: &lt;code&gt;1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The maximum number of rows returned from a query or scan.&lt;/p&gt;
+&lt;h3 id=&#34;ro&#34;&gt;ro&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: flag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enable read-only mode.  When enabled, all modification operations are disabled, and will fail with a &lt;code&gt;Read-only mode&lt;/code&gt; error.
+The &lt;code&gt;rw&lt;/code&gt; setting will disable read-only mode.&lt;/p&gt;
+&lt;h3 id=&#34;rw&#34;&gt;rw&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Type: flag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Disable read-only mode.  The &lt;code&gt;ro&lt;/code&gt; setting will enable read-only mode.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Version 0.1.0 Released</title>
+      <link>https://audax.tools/updates/release-0.1.0/</link>
+      <pubDate>Sat, 22 Oct 2022 10:46:00 +1100</pubDate>
+      
+      <guid>https://audax.tools/updates/release-0.1.0/</guid>
+      <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. The release is available via GitHub or by updated instructions on the Download page. Details of what&amp;rsquo;s in this release can be found on Working Set.</description>
+      <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
+The release is available via &lt;a href=&#34;https://github.com/lmika/audax/releases/tag/v0.1.0&#34;&gt;GitHub&lt;/a&gt;
+or by updated instructions on the &lt;a href=&#34;https://audax.tools/downloads&#34;&gt;Download&lt;/a&gt; page.  Details of what&amp;rsquo;s in this
+release can be found on &lt;a href=&#34;https://workingset.net/2022/10/22/audax-toolset-version.html&#34;&gt;Working Set&lt;/a&gt;.&lt;/p&gt;
 </content>
     </item>
     
@@ -520,31 +799,25 @@ This has now been fix, so that successfully executing &lt;code&gt;set-attr&lt;/c
       
       <guid>https://audax.tools/download/</guid>
       <description>Binary packages can be download from GitHub.
-Install Using Go If you have Go 1.18, you can install using the following command:
-go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.3 Linux To install the Debian package, download the .deb file, and install the package by running:
-sudo apt install ./audax_0.0.3_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
-sudo yum install ./audax_0.0.3_linux_amd64.rpm The source code can be found on GitHub.</description>
+MacOS Using Homebrew If you have Homebrew, you can install using the following command:
+brew tap lmika/audax brew install audax Linux To install the Debian package, download the .deb file, and install the package by running:
+sudo apt install ./audax_0.1.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+sudo yum install ./audax_0.1.0_linux_amd64.rpm Install Using Go If you have Go 1.</description>
       <content>&lt;p&gt;Binary packages can be &lt;a href=&#34;https://github.com/lmika/audax/releases/latest&#34;&gt;download from GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;install-using-go&#34;&gt;Install Using Go&lt;/h2&gt;
-&lt;p&gt;If you have Go 1.18, you can install using the following command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;go install github.com/lmika/audax/cmd/dynamo-browse@v0.0.3
+&lt;h2 id=&#34;macos-using-homebrew&#34;&gt;MacOS Using Homebrew&lt;/h2&gt;
+&lt;p&gt;If you have Homebrew, you can install using the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew tap lmika/audax
+brew install audax
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;linux&#34;&gt;Linux&lt;/h2&gt;
 &lt;p&gt;To install the Debian package, download the &lt;code&gt;.deb&lt;/code&gt; file, and install the package by running:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt install ./audax_0.0.3_linux_amd64.deb
+&lt;pre&gt;&lt;code&gt;sudo apt install ./audax_0.1.0_linux_amd64.deb
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To install the RPM package, download the &lt;code&gt;.rpm&lt;/code&gt; file, and install the package by running:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo yum install ./audax_0.0.3_linux_amd64.rpm
+&lt;pre&gt;&lt;code&gt;sudo yum install ./audax_0.1.0_linux_amd64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;install-using-go&#34;&gt;Install Using Go&lt;/h2&gt;
+&lt;p&gt;If you have Go 1.18, you can install using the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go install github.com/lmika/audax/cmd/dynamo-browse@v0.1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The source code can be &lt;a href=&#34;https://github.com/lmika/audax&#34;&gt;found on GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
-    </item>
-    
-    <item>
-      <title>Download</title>
-      <link>https://audax.tools/install/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://audax.tools/install/</guid>
-      <description></description>
-      <content></content>
     </item>
     
   </channel>

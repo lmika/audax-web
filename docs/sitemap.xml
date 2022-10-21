@@ -23,17 +23,38 @@
   </url>
   
   <url>
-    <loc>https://audax.tools/docs/dynamo-browse/reference/</loc>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/key-bindings/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/commands/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/query-expressions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/launch-flags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/docs/dynamo-browse/reference/settings/</loc>
   </url>
   
   <url>
     <loc>https://audax.tools/</loc>
-    <lastmod>2022-09-04T09:41:00+10:00</lastmod>
+    <lastmod>2022-10-22T10:46:00+11:00</lastmod>
   </url>
   
   <url>
     <loc>https://audax.tools/updates/</loc>
-    <lastmod>2022-09-04T09:41:00+10:00</lastmod>
+    <lastmod>2022-10-22T10:46:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://audax.tools/updates/release-0.1.0/</loc>
+    <lastmod>2022-10-22T10:46:00+11:00</lastmod>
   </url>
   
   <url>
@@ -42,12 +63,11 @@
   </url>
   
   <url>
-    <loc>https://audax.tools/docs/</loc>
-    <priority>0</priority>
+    <loc>https://audax.tools/categories/</loc>
   </url>
   
   <url>
-    <loc>https://audax.tools/categories/</loc>
+    <loc>https://audax.tools/docs/</loc>
   </url>
   
   <url>
@@ -55,7 +75,7 @@
   </url>
   
   <url>
-    <loc>https://audax.tools/install/</loc>
+    <loc>https://audax.tools/dynamo-browse/</loc>
   </url>
   
   <url>

@@ -6,7 +6,21 @@
     <description>Recent content in Updates on Audax Toolset</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Sep 2022 09:41:00 +1000</lastBuildDate><atom:link href="https://audax.tools/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 10:46:00 +1100</lastBuildDate><atom:link href="https://audax.tools/updates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Version 0.1.0 Released</title>
+      <link>https://audax.tools/updates/release-0.1.0/</link>
+      <pubDate>Sat, 22 Oct 2022 10:46:00 +1100</pubDate>
+      
+      <guid>https://audax.tools/updates/release-0.1.0/</guid>
+      <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. The release is available via GitHub or by updated instructions on the Download page. Details of what&amp;rsquo;s in this release can be found on Working Set.</description>
+      <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
+The release is available via &lt;a href=&#34;https://github.com/lmika/audax/releases/tag/v0.1.0&#34;&gt;GitHub&lt;/a&gt;
+or by updated instructions on the &lt;a href=&#34;https://audax.tools/downloads&#34;&gt;Download&lt;/a&gt; page.  Details of what&amp;rsquo;s in this
+release can be found on &lt;a href=&#34;https://workingset.net/2022/10/22/audax-toolset-version.html&#34;&gt;Working Set&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Version 0.0.3 Released</title>
       <link>https://audax.tools/updates/release-0.0.3/</link>

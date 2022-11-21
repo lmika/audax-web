@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation on Dynamo-Browse</title>
-    <link>https://audax.tools/docs/</link>
+    <link>https://dynamobrowse.app/docs/</link>
     <description>Recent content in Documentation on Dynamo-Browse</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://audax.tools/docs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://dynamobrowse.app/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launching and Quitting</title>
-      <link>https://audax.tools/docs/launching/</link>
+      <link>https://dynamobrowse.app/docs/launching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/launching/</guid>
+      <guid>https://dynamobrowse.app/docs/launching/</guid>
       <description>To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:</description>
@@ -26,7 +26,7 @@ and endpoint of the local DynamoDB server.  The hostname can be omitted, and wil
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;selecting-a-table&#34;&gt;Selecting a Table&lt;/h2&gt;
 &lt;p&gt;Upon launch, Dynamo-Browse will present a list of all the tables within the region:&lt;/p&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/table-selection.png&#34;  alt=&#34;Table selection&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;Select the table to view by pressing &lt;kbd&gt;Enter&lt;/kbd&gt;.  Use the following keys to navigate
@@ -56,16 +56,16 @@ The keystroke &lt;kbd&gt;Ctrl+C&lt;/kbd&gt; can also be used to quit.&lt;/p&gt;
     
     <item>
       <title>Getting Around</title>
-      <link>https://audax.tools/docs/getting-around/</link>
+      <link>https://dynamobrowse.app/docs/getting-around/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/getting-around/</guid>
+      <guid>https://dynamobrowse.app/docs/getting-around/</guid>
       <description>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 This mode consists of three panes:
 The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages. Prompts for input will also appear at the bottom.</description>
       <content>&lt;p&gt;After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.&lt;/p&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/main-item-view.png&#34;  alt=&#34;Main item view&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;This mode consists of three panes:&lt;/p&gt;
@@ -129,7 +129,7 @@ screen.  Pressing &lt;kbd&gt;⇧ W&lt;/kbd&gt; will cycle through the layouts in
 &lt;h2 id=&#34;adjusting-the-displayed-columns&#34;&gt;Adjusting The Displayed Columns&lt;/h2&gt;
 &lt;p&gt;The columns of the result-set can be adjusted by opening up the &lt;em&gt;Fields Popup&lt;/em&gt;.  This popup can be opened by pressing &lt;kbd&gt;f&lt;/kbd&gt;.&lt;/p&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/fields-popup.png&#34;  alt=&#34;dynamo-browse&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/fields-popup.png&#34;  alt=&#34;dynamo-browse&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;While this popup is opened, the following changes can be applied to the displayed columns of the main table:&lt;/p&gt;
@@ -180,28 +180,28 @@ which will be evaluated over each row within the result-set when displaying the 
 within the Fields Popup and pressing &lt;kbd&gt;d&lt;/kbd&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;entering-commands&#34;&gt;Entering Commands&lt;/h2&gt;
 &lt;p&gt;Commands can be entered by pressing &lt;kbd&gt;:&lt;/kbd&gt; and entering the command, with any arguments, at the prompt.&lt;/p&gt;
-&lt;p&gt;The list of available commands can be found within the &lt;a href=&#34;https://audax.tools/docs/reference/#commands&#34;&gt;reference section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The list of available commands can be found within the &lt;a href=&#34;https://dynamobrowse.app/docs/reference/#commands&#34;&gt;reference section&lt;/a&gt;.&lt;/p&gt;
 </content>
     </item>
     
     <item>
       <title>Querying And Viewing Results</title>
-      <link>https://audax.tools/docs/filtering-querying/</link>
+      <link>https://dynamobrowse.app/docs/filtering-querying/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/filtering-querying/</guid>
+      <guid>https://dynamobrowse.app/docs/filtering-querying/</guid>
       <description>Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
 To run a query, press ?, and enter the query expression.
 To clear a query, press ?, and press Enter without entering any value.</description>
       <content>&lt;h2 id=&#34;querying&#34;&gt;Querying&lt;/h2&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/query-items.png&#34;  alt=&#34;Items with query applied&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;A query or scan over the table can be performed by entering a &lt;em&gt;Query Expression&lt;/em&gt;.
 Query expressions are a built-in expression language which translates to either a DynamoDB query
 or scan, depending on the expression.  Details about the Query Expression language can be found in the
-&lt;a href=&#34;https://audax.tools/docs/reference/query-expressions/&#34;&gt;Query Expressions references&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://dynamobrowse.app/docs/reference/query-expressions/&#34;&gt;Query Expressions references&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To run a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and enter the query expression.&lt;/p&gt;
 &lt;p&gt;To clear a query, press &lt;kbd&gt;?&lt;/kbd&gt;, and press &lt;kbd&gt;Enter&lt;/kbd&gt; without entering any value.&lt;/p&gt;
 &lt;p&gt;While the query is running, a spinner indicating activity will be shown in the status bar.  A running
@@ -209,7 +209,7 @@ query can be cancelled while this spinner is visible by pressing &lt;kbd&gt;^C&l
 to view any partial results that have been retrieved at the time.&lt;/p&gt;
 &lt;h2 id=&#34;filtering&#34;&gt;Filtering&lt;/h2&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/filter-items.png&#34;  alt=&#34;Items with filter applied&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;p&gt;The displayed items of the current result-set can be filtered down to those that contain a specific substring.&lt;/p&gt;
@@ -224,10 +224,10 @@ table itself.&lt;/p&gt;
     
     <item>
       <title>Editing Items</title>
-      <link>https://audax.tools/docs/editing-items/</link>
+      <link>https://dynamobrowse.app/docs/editing-items/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/editing-items/</guid>
+      <guid>https://dynamobrowse.app/docs/editing-items/</guid>
       <description>Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
 Marking Items Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
 To mark or unmark the selected item, press m.
@@ -235,7 +235,7 @@ The command unmark can be used to clear all marked items.</description>
       <content>&lt;p&gt;Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items,
 and modifying their attribute values.&lt;/p&gt;
 
-  &lt;img src=&#34;https://audax.tools/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
+  &lt;img src=&#34;https://dynamobrowse.app/images/dynamo-browse/modified-items.png&#34;  alt=&#34;Item indicators&#34;  class=&#34;center&#34;  /&gt;
 
 
 &lt;h2 id=&#34;marking-items&#34;&gt;Marking Items&lt;/h2&gt;
@@ -296,10 +296,10 @@ current query.  This can be done by pressing &lt;kbd&gt;⇧ R&lt;/kbd&gt;.&lt;/p
     
     <item>
       <title>Customising Dynamo-Browse</title>
-      <link>https://audax.tools/docs/customising/</link>
+      <link>https://dynamobrowse.app/docs/customising/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/customising/</guid>
+      <guid>https://dynamobrowse.app/docs/customising/</guid>
       <description>Some commands can be used to customise Dynamo-Browse, such as modify key bindings. The effect of these commands will only be applied for the duration of the session: they are currently not tracked within the workspace file. So in order to keep customisations across relaunches, these commands can be added to an RC file.
 The RC File The RC file is a text file containing commands that will be executed by Dynamo-Browse upon launch.</description>
       <content>&lt;p&gt;Some commands can be used to customise Dynamo-Browse, such as modify key bindings.
@@ -314,7 +314,7 @@ By default, the RC file is located at the following path:&lt;/p&gt;
 command can be entered here.  If this file is found, Dynamo-Browse will invoke each command before loading
 or prompting the table.&lt;/p&gt;
 &lt;h2 id=&#34;rebinding-keys&#34;&gt;Rebinding Keys&lt;/h2&gt;
-&lt;p&gt;The default key bindings of Dynamo-Browse can be changed using the &lt;a href=&#34;https://audax.tools/docs/reference/#rebind&#34;&gt;rebind&lt;/a&gt; command.  This takes
+&lt;p&gt;The default key bindings of Dynamo-Browse can be changed using the &lt;a href=&#34;https://dynamobrowse.app/docs/reference/#rebind&#34;&gt;rebind&lt;/a&gt; command.  This takes
 a binding name corresponding to the particular action to invoke, and the key
 to which it should be mapped to.&lt;/p&gt;
 &lt;p&gt;Putting these commands in the RC file will effectively change the default bindings of Dynamo-Browse.&lt;/p&gt;
@@ -325,17 +325,17 @@ rebind &amp;#34;view.prompt-for-table&amp;#34; &amp;#34;T&amp;#34;
 rebind &amp;#34;view.prompt-for-command&amp;#34; &amp;#34;esc&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;At the moment each binding name can only be mapped to a single key.  It&amp;rsquo;s also currently not possible
 to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
-&lt;p&gt;A list of available binding names can be found the the &lt;a href=&#34;https://audax.tools/docs/reference/#key-bindings&#34;&gt;reference&lt;/a&gt;
+&lt;p&gt;A list of available binding names can be found the the &lt;a href=&#34;https://dynamobrowse.app/docs/reference/#key-bindings&#34;&gt;reference&lt;/a&gt;
 (check the &amp;ldquo;Show binding names&amp;rdquo; checkbox).  Note that some bindings may not have default key bindings.&lt;/p&gt;
 </content>
     </item>
     
     <item>
       <title>Key Bindings</title>
-      <link>https://audax.tools/docs/reference/key-bindings/</link>
+      <link>https://dynamobrowse.app/docs/reference/key-bindings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/reference/key-bindings/</guid>
+      <guid>https://dynamobrowse.app/docs/reference/key-bindings/</guid>
       <description>Show binding names Key Binding Name Action Main View Mode &amp;uarr;/i table.move-up Move selection up &amp;darr;/k table.move-down Move selection down PgUp/&amp;#8679;I table.page-up Page up PgDn/&amp;#8679;K table.page-down Page down Home/0 table.goto-top Move selection to first item End/$ table.goto-bottom Move selection to last item &amp;larr;/j table.move-left Scroll displayed columns left &amp;rarr;/l table.move-right Scroll displayed columns right Backspace view.view-back Go back \ view.view-forward Go forward w view.cycle-layout-forward Cycle forward through layout &amp;#8679;W view.</description>
       <content>&lt;div data-controller=&#34;keybindings&#34;&gt;
 &lt;label&gt;
@@ -510,10 +510,10 @@ to setup bindings for commands.  These may be supported in the future.&lt;/p&gt;
     
     <item>
       <title>Commands</title>
-      <link>https://audax.tools/docs/reference/commands/</link>
+      <link>https://dynamobrowse.app/docs/reference/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/reference/commands/</guid>
+      <guid>https://dynamobrowse.app/docs/reference/commands/</guid>
       <description>del-attr delete echo export mark new-item put quit rebind set set-attr table unmark del-attr :del-attr &amp;lt;attribute&amp;gt; Alias: da
 Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
 delete :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
@@ -605,10 +605,10 @@ See &lt;a href=&#34;#key-bindings&#34;&gt;Key Bindings&lt;/a&gt; with &amp;ldquo
     
     <item>
       <title>Query Expression</title>
-      <link>https://audax.tools/docs/reference/query-expressions/</link>
+      <link>https://dynamobrowse.app/docs/reference/query-expressions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/reference/query-expressions/</guid>
+      <guid>https://dynamobrowse.app/docs/reference/query-expressions/</guid>
       <description>Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
 Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
 string = &amp;#39;&amp;#34;&amp;#39; .* &amp;#39;&amp;#34;&amp;#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;#34;.</description>
@@ -666,10 +666,10 @@ expression          = field
     
     <item>
       <title>Launch Flags</title>
-      <link>https://audax.tools/docs/reference/launch-flags/</link>
+      <link>https://dynamobrowse.app/docs/reference/launch-flags/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/reference/launch-flags/</guid>
+      <guid>https://dynamobrowse.app/docs/reference/launch-flags/</guid>
       <description>-debug -debug &amp;lt;filename&amp;gt; Enable debug logs, which will be written to filename.
 -default-limit -default-limit &amp;lt;int&amp;gt; Sets the default limit of queries or scans. The default is 1,000 items.
 -local -local [host]:&amp;lt;port&amp;gt; Connect to a local DynamoDB service listening on host:port. The default host is localhost.
@@ -699,10 +699,10 @@ expression          = field
     
     <item>
       <title>Settings</title>
-      <link>https://audax.tools/docs/reference/settings/</link>
+      <link>https://dynamobrowse.app/docs/reference/settings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://audax.tools/docs/reference/settings/</guid>
+      <guid>https://dynamobrowse.app/docs/reference/settings/</guid>
       <description>default-limit Type: int Default: 1000 The maximum number of rows returned from a query or scan.
 ro Type: flag Enable read-only mode. When enabled, all modification operations are disabled, and will fail with a Read-only mode error. The rw setting will disable read-only mode.
 rw Type: flag Disable read-only mode. The ro setting will enable read-only mode.</description>

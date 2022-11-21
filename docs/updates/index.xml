@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Updates on Dynamo-Browse</title>
-    <link>https://audax.tools/updates/</link>
+    <link>https://dynamobrowse.app/updates/</link>
     <description>Recent content in Updates on Dynamo-Browse</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 10:46:00 +1100</lastBuildDate><atom:link href="https://audax.tools/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 10:46:00 +1100</lastBuildDate><atom:link href="https://dynamobrowse.app/updates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Version 0.1.0 Released</title>
-      <link>https://audax.tools/updates/release-0.1.0/</link>
+      <link>https://dynamobrowse.app/updates/release-0.1.0/</link>
       <pubDate>Sat, 22 Oct 2022 10:46:00 +1100</pubDate>
       
-      <guid>https://audax.tools/updates/release-0.1.0/</guid>
+      <guid>https://dynamobrowse.app/updates/release-0.1.0/</guid>
       <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. The release is available via GitHub or by updated instructions on the Download page. Details of what&amp;rsquo;s in this release can be found on Working Set.</description>
       <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
 The release is available via &lt;a href=&#34;https://github.com/lmika/audax/releases/tag/v0.1.0&#34;&gt;GitHub&lt;/a&gt;
-or by updated instructions on the &lt;a href=&#34;https://audax.tools/download&#34;&gt;Download&lt;/a&gt; page.  Details of what&amp;rsquo;s in this
+or by updated instructions on the &lt;a href=&#34;https://dynamobrowse.app/download&#34;&gt;Download&lt;/a&gt; page.  Details of what&amp;rsquo;s in this
 release can be found on &lt;a href=&#34;https://workingset.net/2022/10/22/audax-toolset-version.html&#34;&gt;Working Set&lt;/a&gt;.&lt;/p&gt;
 </content>
     </item>
     
     <item>
       <title>Version 0.0.3 Released</title>
-      <link>https://audax.tools/updates/release-0.0.3/</link>
+      <link>https://dynamobrowse.app/updates/release-0.0.3/</link>
       <pubDate>Sun, 04 Sep 2022 09:41:00 +1000</pubDate>
       
-      <guid>https://audax.tools/updates/release-0.0.3/</guid>
+      <guid>https://dynamobrowse.app/updates/release-0.0.3/</guid>
       <description>Version 0.0.3 of the Audax Toolset has been released, and is now available for download. This release contains the following new features for Dynamo-Browse:
 Back-stack And Workspaces Switching to a new table, changing the filter, or running a query will now preserve the previous view in a back-stack, similar to how a web browser tracks which webpages you&amp;rsquo;ve visited. Pressing Backspace will go back through the back-stack, restoring the view to the previously viewed table, filter, or query.</description>
       <content>&lt;p&gt;Version 0.0.3 of the Audax Toolset has been released, and is now available for download.
@@ -37,7 +37,7 @@ view in a back-stack, similar to how a web browser tracks which webpages you&amp
 Pressing &lt;kbd&gt;Backspace&lt;/kbd&gt; will go back through the back-stack, restoring the view to the
 previously viewed table, filter, or query.  After going backwards, you can go forwards again
 by pressing &lt;kbd&gt;\&lt;/kbd&gt;.&lt;/p&gt;
-&lt;p&gt;See &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://dynamobrowse.app/docs/dynamo-browse/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
 &lt;p&gt;The back-stack is maintained in a workspace, which is a file that tracks any session information.
 By default, the workspace file is created in the temporary directory, but the new &lt;code&gt;-w&lt;/code&gt; launch
 flag can now be used to specify which workspace file to use.  When launching Dynamo-Browse with
@@ -64,7 +64,7 @@ The attribute of multiple items can be copied to the clipboard by marking them f
 &lt;h2 id=&#34;rebindable-keys&#34;&gt;Rebindable Keys&lt;/h2&gt;
 &lt;p&gt;This release adds the &lt;code&gt;rebind&lt;/code&gt; command, which can be used to bind keyboard action to different keys.  This command
 can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
-More information about this can be found in &lt;a href=&#34;https://audax.tools/docs/dynamo-browse/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
+More information about this can be found in &lt;a href=&#34;https://dynamobrowse.app/docs/dynamo-browse/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;small-ui-fix&#34;&gt;Small UI Fix&lt;/h2&gt;
 &lt;p&gt;One small UI bug has been fixed.  Previously, any errors that were raised during incorrect usage of &lt;code&gt;set-attr&lt;/code&gt; or
 &lt;code&gt;del-attr&lt;/code&gt; were not being properly cleared after the command was re-entered and executed successfully.

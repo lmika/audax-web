@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Commands :: Dynamo-Browse</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="del-attr delete echo export mark new-item put quit rebind set set-attr table unmark del-attr :del-attr &amp;lt;attribute&amp;gt; Alias: da
+Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
+delete :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
+echo :echo [message ...] Displays message in the status bar. Mainly used for debugging." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://audax.tools/docs/reference/commands/" />
+
+
+
+
+<link rel="stylesheet" href="https://audax.tools/assets/style.css">
+
+  <link rel="stylesheet" href="https://audax.tools/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="https://audax.tools/style.css">
+
+
+<link rel="apple-touch-icon" href="https://audax.tools/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://audax.tools/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Commands">
+<meta property="og:description" content="del-attr delete echo export mark new-item put quit rebind set set-attr table unmark del-attr :del-attr &amp;lt;attribute&amp;gt; Alias: da
+Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
+delete :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
+echo :echo [message ...] Displays message in the status bar. Mainly used for debugging." />
+<meta property="og:url" content="https://audax.tools/docs/reference/commands/" />
+<meta property="og:site_name" content="Dynamo-Browse" />
+
+  
+    <meta property="og:image" content="https://audax.tools/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+<script defer data-domain="audax.tools" src="https://plausible.io/js/plausible.js"></script>
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://audax.tools/">
+  <div class="logo">
+    Dynamo-Browse
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs">Documentation</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs">Documentation</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://audax.tools/docs/reference/commands/">Commands</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <table>
+<tr>
+<td><a href="#del-attr">del-attr</a></td>
+<td><a href="#delete">delete</a></td>
+<td><a href="#echo">echo</a></td>
+<td><a href="#export">export</a></td>
+<td><a href="#mark">mark</a></td>
+</tr>
+<tr>
+<td><a href="#new-item">new-item</a></td>
+<td><a href="#put">put</a></td>
+<td><a href="#quit">quit</a></td>
+<td><a href="#rebind">rebind</a></td>
+<td><a href="#set">set</a></td>
+</tr>
+<tr>
+<td><a href="#set-attr">set-attr</a></td>
+<td><a href="#table">table</a></td>
+<td><a href="#unmark">unmark</a></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<h3 id="del-attr">del-attr<a href="#del-attr" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:del-attr &lt;attribute&gt;
+</code></pre><p>Alias: <code>da</code></p>
+<p>Deletes <em>attribute</em> from the currently selected item; or if there are any marked items, the marked items.</p>
+<h3 id="delete">delete<a href="#delete" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:delete
+</code></pre><p>Deletes the marked items.  Unlike the other commands that modify items, this command will be executed on
+the table straight away.</p>
+<h3 id="echo">echo<a href="#echo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:echo [message ...]
+</code></pre><p>Displays <em>message</em> in the status bar.  Mainly used for debugging.</p>
+<h3 id="export">export<a href="#export" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:export &lt;filename&gt;
+</code></pre><p>Writes the currently loaded items as a CSV file to <em>filename</em>.</p>
+<h3 id="mark">mark<a href="#mark" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:mark [all | none | toggle]
+</code></pre><p>Mark the rows in the following way:</p>
+<ul>
+<li><code>all</code>: will mark all rows.  This is the default when invoked without an argument.</li>
+<li><code>none</code>: will unmark all rows.</li>
+<li><code>toggle</code>: will toggle all marked and unmarked rows.</li>
+</ul>
+<h3 id="new-item">new-item<a href="#new-item" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:new-item
+</code></pre><p>Creates a new item.  When executed, the value for the partition key and sort key will be prompted.
+The new item will not be written to the table until it is committed with the <code>put</code> command.</p>
+<h3 id="put">put<a href="#put" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:put
+</code></pre><p>Alias: <code>w</code></p>
+<p>Commits all new and modified items to the table.</p>
+<h3 id="quit">quit<a href="#quit" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:quit
+</code></pre><p>Alias: <code>q</code></p>
+<p>Quits Dynamo-Browse.</p>
+<h3 id="rebind">rebind<a href="#rebind" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:rebind &lt;bindingName&gt; &lt;key&gt;
+</code></pre><p>Rebinds the action with <em>bindingName</em> to <em>key</em>.  This will replace any existing binding for that action.
+See <a href="#key-bindings">Key Bindings</a> with &ldquo;Show binding names&rdquo; checked to see available binding names.</p>
+<h3 id="set">set<a href="#set" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:set &lt;name&gt; [value]
+</code></pre><p>Set the value of a setting.  Flag setting types can be enabled without any value.  See <a href="#settings">Settings</a> for possible setting values.</p>
+<h3 id="set-attr">set-attr<a href="#set-attr" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:set-attr [type] &lt;attributeName&gt;
+</code></pre><p>Alias: <code>sa</code></p>
+<p>Modifies the value of <em>attribute</em> of the currently selected item; or if there are any marked items, the marked items.</p>
+<p>The value of <em>type</em> can be use to specify the type of the attribute.  It can be one of the following (case insensitive):</p>
+<ul>
+<li><code>-S</code>: string value</li>
+<li><code>-N</code>: number value</li>
+<li><code>-BOOL</code>: boolean value</li>
+<li><code>-NULL</code>: null value</li>
+</ul>
+<p>If unset, the attribute type will not be changed.  <em>type</em> must be set if multiple items have been marked.</p>
+<h3 id="table">table<a href="#table" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:table
+</code></pre><p>Select the table to display.</p>
+<h3 id="unmark">unmark<a href="#unmark" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<pre tabindex="0"><code>:unmark
+</code></pre><p>Unmark all marked items.  This is essentially an alias for <code>mark none</code>.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://audax.tools/docs/reference/key-bindings/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Key Bindings</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://audax.tools/docs/reference/query-expressions/">
+                <span class="button__text">Query Expression</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://audax.tools/assets/main.js"></script>
+<script src="https://audax.tools/assets/prism.js"></script>
+
+
+
+
+<script src="https://audax.tools/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
+
+
+  
+</div>
+
+</body>
+</html>

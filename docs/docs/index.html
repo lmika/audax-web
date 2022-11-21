@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   
-    <title>Documentation :: Audax Toolset</title>
+    <title>Documentation :: Dynamo-Browse</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The following documentation is available:
- Dynamo-Browse User Manual  " />
+<meta name="description" content="Table Of Contents Launching and Quitting Selecting a Table Selecting a Workspace Quitting Getting Around The Back-stack Adjusting The Layout Adjusting The Displayed Columns Entering Commands Filtering and Querying Filtering Querying Editing Items Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes Customising Dynamo-Browse The RC File Rebinding Keys References
+Key Bindings Commands Query Expressions Launch Flags Settings " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://audax.tools/docs/" />
@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="https://audax.tools/assets/style.css">
 
-  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+  <link rel="stylesheet" href="https://audax.tools/assets/blue.css">
 
 
 
@@ -26,7 +26,7 @@
 
 <link rel="apple-touch-icon" href="https://audax.tools/img/apple-touch-icon-192x192.png">
 
-  <link rel="shortcut icon" href="https://audax.tools/img/favicon/orange.png">
+  <link rel="shortcut icon" href="https://audax.tools/img/favicon/blue.png">
 
 
 
@@ -37,13 +37,13 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Documentation">
-<meta property="og:description" content="The following documentation is available:
- Dynamo-Browse User Manual  " />
+<meta property="og:description" content="Table Of Contents Launching and Quitting Selecting a Table Selecting a Workspace Quitting Getting Around The Back-stack Adjusting The Layout Adjusting The Displayed Columns Entering Commands Filtering and Querying Filtering Querying Editing Items Marking Items Modifying Attributes Deleting Attributes Adding Items Deleting Items Committing Changes Backing Out of Changes Customising Dynamo-Browse The RC File Rebinding Keys References
+Key Bindings Commands Query Expressions Launch Flags Settings " />
 <meta property="og:url" content="https://audax.tools/docs/" />
-<meta property="og:site_name" content="Audax Toolset" />
+<meta property="og:site_name" content="Dynamo-Browse" />
 
   
-    <meta property="og:image" content="img/favicon/%!s().png">
+    <meta property="og:image" content="https://audax.tools/img/favicon/blue.png">
   
 
 <meta property="og:image:width" content="2048">
@@ -53,7 +53,7 @@
 
 
 
-  <link href="/docs/index.xml" rel="alternate" type="application/rss+xml" title="Audax Toolset" />
+  <link href="/docs/index.xml" rel="alternate" type="application/rss+xml" title="Dynamo-Browse" />
 
 
 
@@ -63,7 +63,7 @@
 <script defer data-domain="audax.tools" src="https://plausible.io/js/plausible.js"></script>
 
 </head>
-<body class="">
+<body class="blue">
 
 
 <div class="container center headings--one-size">
@@ -73,7 +73,7 @@
     <div class="header__logo">
       <a href="https://audax.tools/">
   <div class="logo">
-    Audax Toolset
+    Dynamo-Browse
   </div>
 </a>
 
@@ -92,11 +92,7 @@
         
       
         
-          <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
-        
-      
-        
-          <li><a href="/docs/dynamo-browse">Docs</a></li>
+          <li><a href="/docs">Documentation</a></li>
         
       
         
@@ -115,11 +111,7 @@
       
     
       
-        <li><a href="/dynamo-browse">Dynamo-Browse</a></li>
-      
-    
-      
-        <li><a href="/docs/dynamo-browse">Docs</a></li>
+        <li><a href="/docs">Documentation</a></li>
       
     
       
@@ -152,9 +144,54 @@
   
 
   <div class="post-content"><div>
-        <p>The following documentation is available:</p>
+        <h2 id="table-of-contents">Table Of Contents<a href="#table-of-contents" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <ul>
-<li><a href="/docs/dynamo-browse">Dynamo-Browse User Manual</a></li>
+<li><a href="/docs/launching">Launching and Quitting</a>
+<ul>
+<li><a href="/docs/launching#selecting-a-table">Selecting a Table</a></li>
+<li><a href="/docs/launching#selecting-a-workspace">Selecting a Workspace</a></li>
+<li><a href="/docs/launching#quitting">Quitting</a></li>
+</ul>
+</li>
+<li><a href="/docs/getting-around">Getting Around</a>
+<ul>
+<li><a href="/docs/getting-around#the-back-stack">The Back-stack</a></li>
+<li><a href="/docs/getting-around#adjusting-the-layout">Adjusting The Layout</a></li>
+<li><a href="/docs/getting-around#adjusting-the-displayed-columns">Adjusting The Displayed Columns</a></li>
+<li><a href="/docs/getting-around#entering-commands">Entering Commands</a></li>
+</ul>
+</li>
+<li><a href="/docs/filtering-querying">Filtering and Querying</a>
+<ul>
+<li><a href="/docs/filtering-querying#filtering">Filtering</a></li>
+<li><a href="/docs/filtering-querying#querying">Querying</a></li>
+</ul>
+</li>
+<li><a href="/docs/editing-items">Editing Items</a>
+<ul>
+<li><a href="/docs/editing-items#marking-items">Marking Items</a></li>
+<li><a href="/docs/editing-items#modifying-attributes">Modifying Attributes</a></li>
+<li><a href="/docs/editing-items#deleting-attributes">Deleting Attributes</a></li>
+<li><a href="/docs/editing-items#adding-items">Adding Items</a></li>
+<li><a href="/docs/editing-items#deleting-items">Deleting Items</a></li>
+<li><a href="/docs/editing-items#committing-changes">Committing Changes</a></li>
+<li><a href="/docs/editing-items#backing-out-of-changes">Backing Out of Changes</a></li>
+</ul>
+</li>
+<li><a href="/docs/customising">Customising Dynamo-Browse</a>
+<ul>
+<li><a href="/docs/customising#rc-file">The RC File</a></li>
+<li><a href="/docs/customising#rebinding-keys">Rebinding Keys</a></li>
+</ul>
+</li>
+</ul>
+<p>References</p>
+<ul>
+<li><a href="/docs/reference/key-bindings">Key Bindings</a></li>
+<li><a href="/docs/reference/commands">Commands</a></li>
+<li><a href="/docs/reference/query-expressions">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags">Launch Flags</a></li>
+<li><a href="/docs/reference/settings">Settings</a></li>
 </ul>
 
       </div></div>
@@ -189,7 +226,7 @@
 
 
 
-<script src="https://audax.tools/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
+<script src="https://audax.tools/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
 
 
   

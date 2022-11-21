@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Query Expression :: Dynamo-Browse</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
+Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
+string = &amp;#39;&amp;#34;&amp;#39; .* &amp;#39;&amp;#34;&amp;#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;#34;." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://audax.tools/docs/reference/query-expressions/" />
+
+
+
+
+<link rel="stylesheet" href="https://audax.tools/assets/style.css">
+
+  <link rel="stylesheet" href="https://audax.tools/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="https://audax.tools/style.css">
+
+
+<link rel="apple-touch-icon" href="https://audax.tools/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://audax.tools/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Query Expression">
+<meta property="og:description" content="Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
+Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
+string = &amp;#39;&amp;#34;&amp;#39; .* &amp;#39;&amp;#34;&amp;#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;#34;." />
+<meta property="og:url" content="https://audax.tools/docs/reference/query-expressions/" />
+<meta property="og:site_name" content="Dynamo-Browse" />
+
+  
+    <meta property="og:image" content="https://audax.tools/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+<script defer data-domain="audax.tools" src="https://plausible.io/js/plausible.js"></script>
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://audax.tools/">
+  <div class="logo">
+    Dynamo-Browse
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs">Documentation</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs">Documentation</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://audax.tools/docs/reference/query-expressions/">Query Expression</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Query expression is used to execute queries and scans over items in the DynamoDB table.
+Such expressions can also be used in other areas of Dynamo-Browse, such as populating the
+value of new columns.</p>
+<div class="framed">
+  Note that the query expression language is still under early development and may change in the future.
+</div>
+<p>The expression is represented in EBNF form:</p>
+<pre tabindex="0"><code>string              = &#39;&#34;&#39; .* &#39;&#34;&#39;;
+
+identifier          = [a-zA-Z_][a-zA-Z0-9_]*;
+
+literal             = string;
+
+field               = identifier (&#34;.&#34; identifier)*;
+
+binary_operation    = field ( &#34;=&#34; | &#34;^=&#34; ) literal;
+
+expression          = field
+                    | binary_operation
+                    | expr ( &#34;and&#34; | &#34;or&#34; ) expr
+                    ;
+</code></pre><p>The order of operations, from lowest priority to highest priority are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Disjunction</td>
+<td style="text-align:left"><code>or</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Conjunction</td>
+<td style="text-align:left"><code>and</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Equality</td>
+<td style="text-align:left"><code>=</code>, <code>^=</code></td>
+</tr>
+</tbody>
+</table>
+<p>The types of binary operations that are supported are:</p>
+<ul>
+<li><code>attr = &quot;value&quot;</code>: matches items where attribute <em>attr</em> matches the string <em>value</em></li>
+<li><code>attr ^= &quot;value&quot;</code>: matches items where attribute <em>attr</em> has the prefix <em>value</em></li>
+</ul>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://audax.tools/docs/reference/commands/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Commands</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://audax.tools/docs/reference/launch-flags/">
+                <span class="button__text">Launch Flags</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://audax.tools/assets/main.js"></script>
+<script src="https://audax.tools/assets/prism.js"></script>
+
+
+
+
+<script src="https://audax.tools/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
+
+
+  
+</div>
+
+</body>
+</html>

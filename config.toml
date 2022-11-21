@@ -1,6 +1,6 @@
 baseURL = "https://audax.tools/"
 languageCode = "en-us"
-title = "Audax Toolset"
+title = "Dynamo-Browse"
 
 theme = "terminal"
 
@@ -10,11 +10,12 @@ publishDir = "docs"
   unsafe = true
  
 [params]
+	themeColor = "blue"
 	contentTypeName = "docs"
 	centerTheme = true
 	
 [params.Logo]
-	logoText = "Audax Toolset"
+	logoText = "Dynamo-Browse"
 
 [menu]
 [[menu.main]]
@@ -23,14 +24,9 @@ publishDir = "docs"
 	url = "/download"
 	weight = 20
 [[menu.main]]
-	identifier = "dynamo-browse"
-	name = "Dynamo-Browse"
-	url = "/dynamo-browse"
-	weight = 30
-[[menu.main]]
 	identifier = "docs"
-	name = "Docs"
-	url = "/docs/dynamo-browse"
+	name = "Documentation"
+	url = "/docs"
 	weight = 40
 [[menu.main]]
 	identifier = "updates"

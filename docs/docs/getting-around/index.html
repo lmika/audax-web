@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Getting Around :: Dynamo-Browse</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages. Prompts for input will also appear at the bottom." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://audax.tools/docs/getting-around/" />
+
+
+
+
+<link rel="stylesheet" href="https://audax.tools/assets/style.css">
+
+  <link rel="stylesheet" href="https://audax.tools/assets/blue.css">
+
+
+
+<link rel="stylesheet" href="https://audax.tools/style.css">
+
+
+<link rel="apple-touch-icon" href="https://audax.tools/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://audax.tools/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Getting Around">
+<meta property="og:description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages. Prompts for input will also appear at the bottom." />
+<meta property="og:url" content="https://audax.tools/docs/getting-around/" />
+<meta property="og:site_name" content="Dynamo-Browse" />
+
+  
+    <meta property="og:image" content="https://audax.tools/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+<script defer data-domain="audax.tools" src="https://plausible.io/js/plausible.js"></script>
+
+</head>
+<body class="blue">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://audax.tools/">
+  <div class="logo">
+    Dynamo-Browse
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/download">Download</a></li>
+        
+      
+        
+          <li><a href="/docs">Documentation</a></li>
+        
+      
+        
+          <li><a href="/updates">Updates</a></li>
+        
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/download">Download</a></li>
+      
+    
+      
+        <li><a href="/docs">Documentation</a></li>
+      
+    
+      
+        <li><a href="/updates">Updates</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://audax.tools/docs/getting-around/">Getting Around</a></h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.</p>
+
+  <img src="/images/dynamo-browse/main-item-view.png"  alt="Main item view"  class="center"  />
+
+
+<p>This mode consists of three panes:</p>
+<ul>
+<li>The top pane displays the result-set of the last scan or query.  The table name is at the top-left.</li>
+<li>The middle pane displays the attributes of the currently selected item, along with their type.</li>
+<li>The bottom pane displays the current query or filter, plus any messages.  Prompts for input will
+also appear at the bottom.</li>
+</ul>
+<p>The result-set is sorted in ascending order based on the value and type of the partition and sort key.
+Up to 1,000 rows will be displayed for the current result-set.</p>
+<p>Since DynamoDB does not require all items to have the same attribute (unless they are pre-defined), any
+attribute not set for a column is indicated with a grey tilde character <code>~</code>.</p>
+<p>Use the following keys to change the currently selected row, which is highlighted in purple:</p>
+<ul>
+<li><kbd>↑</kbd>/<kbd>i</kbd>: Move selection up</li>
+<li><kbd>↓</kbd>/<kbd>k</kbd>: Move selection down</li>
+<li><kbd>PgUp</kbd>/<kbd>⇧ I</kbd>: Page up</li>
+<li><kbd>PgDn</kbd>/<kbd>⇧ K</kbd>: Page down</li>
+<li><kbd>Home</kbd>/<kbd>0</kbd>: First row</li>
+<li><kbd>End</kbd>/<kbd>$</kbd>: Last row</li>
+</ul>
+<p>The columns of the table
+consist of the top-level attributes of the result-set.  The partition key, sort key, plus any explicitly defined
+attributes will always be displayed from the left margin onwards.  The other attributes are determined
+from the results of the last scan or query, and may change depending on the result.</p>
+<p>The display columns of the table can be scrolled across by using the following keys:</p>
+<ul>
+<li><kbd>←</kbd>/<kbd>j</kbd>: Scroll to the left</li>
+<li><kbd>→</kbd>/<kbd>l</kbd>: Scroll to the right</li>
+</ul>
+<p>The attributes of the currently selected item will appear in the middle pane.  Both the type and the value of each
+attribute will be displayed.  Any nested attributes will be indented, and will below their parent item.  A value
+displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
+such as the length.</p>
+<h2 id="the-back-stack">The Back-stack<a href="#the-back-stack" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Changes to the view of Dynamo-Browse will be maintained in back-stack, similar to how a
+web-browse keeps track of the webpages you&rsquo;ve visited.  This stack will record the
+currently viewed table, filter, or query, allowing you to &ldquo;go back&rdquo; to a previous view
+by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\</kbd> will allow you to go forward through the stack.</p>
+<p>The back-stack is preserved in the workspace file, and can be restored by launching Dynamo-Browse with the <code>-w</code>
+switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
+table, filter, or query from the session that was previously using the workspace.</p>
+<div class="framed">
+  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+  through the back-stack will execute any queries or filters against the actual table itself.
+</div>
+<h2 id="adjusting-the-layout">Adjusting The Layout<a href="#adjusting-the-layout" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The horizontal size of the item table and currently selected item pane can be changed to one of the
+following layout configurations:</p>
+<ul>
+<li>Item view taking up 14 rows on the bottom with the table pane taking up the rest of the vertical space (the default)</li>
+<li>Item view and table view taking up half of the available space</li>
+<li>Table view taking up 7 rows on the top with the item view taking up the rest of the vertical space</li>
+<li>Table view hidden</li>
+<li>Item view hidden</li>
+</ul>
+<p>Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
+default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
+screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse order.</p>
+<h2 id="adjusting-the-displayed-columns">Adjusting The Displayed Columns<a href="#adjusting-the-displayed-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The columns of the result-set can be adjusted by opening up the <em>Fields Popup</em>.  This popup can be opened by pressing <kbd>f</kbd>.</p>
+
+  <img src="/images/dynamo-browse/fields-popup.png"  alt="dynamo-browse"  class="center"  />
+
+
+<p>While this popup is opened, the following changes can be applied to the displayed columns of the main table:</p>
+<ul>
+<li>Columns can be hidden</li>
+<li>The order columns appear in the main table can be rearranged</li>
+<li>New columns can be added</li>
+</ul>
+<p>The popup will display the list of columns of the main result-set table.  Pressing <kbd>↑</kbd>/<kbd>i</kbd>
+or <kbd>↓</kbd>/<kbd>k</kbd> will move the selection indicator to the column to apply the operation.  Pressing
+<kbd>←</kbd>/<kbd>j</kbd> or <kbd>→</kbd>/<kbd>l</kbd> will scroll the main table left or right so that any
+operations can be previewed.</p>
+<p>To reset the columns to the top-level fields of the current result set, press <kbd>⇧ R</kbd>.</p>
+<p>To close the popup, press <kbd>Escape</kbd>.</p>
+<h3 id="showing-and-hiding-columns">Showing And Hiding Columns<a href="#showing-and-hiding-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>In the Fields Popup, each row has a symbol indicating whether the row is currently visible (<code>.</code>) or hidden (<code>✕</code>).  Pressing
+<kbd>Space</kbd> will toggle whether the currently selected column is shown or hidden.</p>
+<h3 id="re-arranging-the-order-of-columns">Re-arranging The Order Of Columns<a href="#re-arranging-the-order-of-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
+left or right.</p>
+<p>Press <kbd>⇧ I</kbd> to the selected row up, which will move the corresponding column left.</p>
+<p>Press <kbd>⇧ K</kbd> to the selected row down, which will move the corresponding column right.</p>
+<h3 id="adding-and-removing-columns">Adding And Removing Columns<a href="#adding-and-removing-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>New columns can be added in the table.  The value of these columns will be determined by the result of a query expression,
+and can be used to expose fields that are not at the top level.</p>
+<p>Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
+with authors structured as so:</p>
+<pre tabindex="0"><code>{
+  &#34;book&#34;: {&#34;S&#34;: &#34;The Lord Of The Rings&#34;},
+  &#34;author&#34;: {&#34;M&#34;: {
+    &#34;firstName&#34;: {&#34;S&#34;: &#34;John&#34;},
+    &#34;middleName&#34;: {&#34;S&#34;: &#34;Ronald Reuel&#34;},
+    &#34;lastName&#34;: {&#34;S&#34;: &#34;Tolkien&#34;},
+  }}
+}
+</code></pre><p>If you wanted to show the the author&rsquo;s first and last name in the main table, rather than just see the description <code>(3 items)</code>, you
+can add a new column with an expression selecting the fields of the author map.  The expressions that can be used here
+are as follows:</p>
+<ul>
+<li>First name: <code>author.firstName</code></li>
+<li>Last name: <code>author.lastName</code></li>
+</ul>
+<p>This can be extended to expressions that perform comparisons or operations.  For example, the expression <code>author.firstName ^= &quot;J&quot;</code> can be
+use in a new column to display <code>True</code> for any first name that begins with a J.</p>
+<p>To add a new column, press <kbd>a</kbd> while the Fields Popup is visible.  You&rsquo;ll be prompted to enter a query expression,
+which will be evaluated over each row within the result-set when displaying the table.</p>
+<p>Any column, that was either retrieved from the result-set or added by the user, can be deleted by selecting the column
+within the Fields Popup and pressing <kbd>d</kbd>.</p>
+<h2 id="entering-commands">Entering Commands<a href="#entering-commands" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.</p>
+<p>The list of available commands can be found within the <a href="/docs/reference/#commands">reference section</a>.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://audax.tools/docs/launching/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Launching and Quitting</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://audax.tools/docs/filtering-querying/">
+                <span class="button__text">Querying And Viewing Results</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  
+
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://audax.tools/assets/main.js"></script>
+<script src="https://audax.tools/assets/prism.js"></script>
+
+
+
+
+<script src="https://audax.tools/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
+
+
+  
+</div>
+
+</body>
+</html>

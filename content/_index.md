@@ -1,18 +1,24 @@
 +++
-title = "The Audax Toolset"
+title = "Dynamo-Browse"
 layout = "single"
 +++
 
-The Audax Toolset is a set of small, terminal based UI (TUI, sometimes called "Rougelike") tools for
-administering AWS services.
+{{< image src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse" position="center" >}}
 
-They were built to make it easy to do quick things with
-common AWS services, such as DynamoDB, without having to learn incantations with the CLI or
-go to the AWS console itself.  This keeps you focused on your task and saves you from
-breaking concentration, especially if you do a lot in the terminal.
+Dynamo-Browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
+With it, you can quickly connect to and browse the contents of a DynamoDB table
+in your AWS account or local machine.  There are some basic facilities for
+editing as well.
 
-## The Toolset
 
-The set of tools available are:
 
-- [Dynamo-Browse](/dynamo-browse): Browse DynamoDB tables
+## Getting Started
+
+Instructions for installing Dynamo-Browse can be found on the [Downloads page](/download).
+
+This video gives a brief introduction of how to use Dynamo-Browse to view the items of a DynamoDB table:
+
+{{< youtube cQnTIg1_tfg >}}
+
+More information about the tool can be found within the [Dynamo-Browse user manual](/dynamo-browse/docs).  
+

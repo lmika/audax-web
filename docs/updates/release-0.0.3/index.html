@@ -60,7 +60,7 @@ Back-stack And Workspaces Switching to a new table, changing the filter, or runn
 
 
 
-<script defer data-domain="audax.tools" src="https://plausible.io/js/plausible.js"></script>
+<script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
 
 </head>
 <body class="blue">
@@ -157,7 +157,7 @@ view in a back-stack, similar to how a web browser tracks which webpages you&rsq
 Pressing <kbd>Backspace</kbd> will go back through the back-stack, restoring the view to the
 previously viewed table, filter, or query.  After going backwards, you can go forwards again
 by pressing <kbd>\</kbd>.</p>
-<p>See <a href="/docs/dynamo-browse/getting-around/#the-back-stack">The Back-stack</a> for more information on how this works.</p>
+<p>See <a href="/docs/getting-around/#the-back-stack">The Back-stack</a> for more information on how this works.</p>
 <p>The back-stack is maintained in a workspace, which is a file that tracks any session information.
 By default, the workspace file is created in the temporary directory, but the new <code>-w</code> launch
 flag can now be used to specify which workspace file to use.  When launching Dynamo-Browse with
@@ -184,7 +184,7 @@ The attribute of multiple items can be copied to the clipboard by marking them f
 <h2 id="rebindable-keys">Rebindable Keys<a href="#rebindable-keys" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>This release adds the <code>rebind</code> command, which can be used to bind keyboard action to different keys.  This command
 can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
-More information about this can be found in <a href="/docs/dynamo-browse/customising/">Customising Dynamo-Browse</a>.</p>
+More information about this can be found in <a href="/docs/customising/">Customising Dynamo-Browse</a>.</p>
 <h2 id="small-ui-fix">Small UI Fix<a href="#small-ui-fix" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>One small UI bug has been fixed.  Previously, any errors that were raised during incorrect usage of <code>set-attr</code> or
 <code>del-attr</code> were not being properly cleared after the command was re-entered and executed successfully.

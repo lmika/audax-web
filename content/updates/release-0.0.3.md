@@ -13,7 +13,7 @@ Pressing <kbd>Backspace</kbd> will go back through the back-stack, restoring the
 previously viewed table, filter, or query.  After going backwards, you can go forwards again
 by pressing <kbd>\\</kbd>.
 
-See [The Back-stack](/docs/dynamo-browse/getting-around/#the-back-stack) for more information on how this works.
+See [The Back-stack](/docs/getting-around/#the-back-stack) for more information on how this works.
 
 The back-stack is maintained in a workspace, which is a file that tracks any session information.
 By default, the workspace file is created in the temporary directory, but the new `-w` launch
@@ -47,7 +47,7 @@ The attribute of multiple items can be copied to the clipboard by marking them f
 
 This release adds the `rebind` command, which can be used to bind keyboard action to different keys.  This command
 can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
-More information about this can be found in [Customising Dynamo-Browse](/docs/dynamo-browse/customising/).
+More information about this can be found in [Customising Dynamo-Browse](/docs/customising/).
 
 ## Small UI Fix
 

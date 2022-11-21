@@ -20,5 +20,5 @@ This video gives a brief introduction of how to use Dynamo-Browse to view the it
 
 {{< youtube cQnTIg1_tfg >}}
 
-More information about the tool can be found within the [Dynamo-Browse user manual](/dynamo-browse/docs).  
+More information about the tool can be found within the [Dynamo-Browse user manual](/docs).  
 

@@ -37,7 +37,7 @@ view in a back-stack, similar to how a web browser tracks which webpages you&amp
 Pressing &lt;kbd&gt;Backspace&lt;/kbd&gt; will go back through the back-stack, restoring the view to the
 previously viewed table, filter, or query.  After going backwards, you can go forwards again
 by pressing &lt;kbd&gt;\&lt;/kbd&gt;.&lt;/p&gt;
-&lt;p&gt;See &lt;a href=&#34;https://dynamobrowse.app/docs/dynamo-browse/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&#34;https://dynamobrowse.app/docs/getting-around/#the-back-stack&#34;&gt;The Back-stack&lt;/a&gt; for more information on how this works.&lt;/p&gt;
 &lt;p&gt;The back-stack is maintained in a workspace, which is a file that tracks any session information.
 By default, the workspace file is created in the temporary directory, but the new &lt;code&gt;-w&lt;/code&gt; launch
 flag can now be used to specify which workspace file to use.  When launching Dynamo-Browse with
@@ -64,7 +64,7 @@ The attribute of multiple items can be copied to the clipboard by marking them f
 &lt;h2 id=&#34;rebindable-keys&#34;&gt;Rebindable Keys&lt;/h2&gt;
 &lt;p&gt;This release adds the &lt;code&gt;rebind&lt;/code&gt; command, which can be used to bind keyboard action to different keys.  This command
 can be included in an RC file, which is a list of commands that Dyanmo-Browse will execute on launch.
-More information about this can be found in &lt;a href=&#34;https://dynamobrowse.app/docs/dynamo-browse/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
+More information about this can be found in &lt;a href=&#34;https://dynamobrowse.app/docs/customising/&#34;&gt;Customising Dynamo-Browse&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;small-ui-fix&#34;&gt;Small UI Fix&lt;/h2&gt;
 &lt;p&gt;One small UI bug has been fixed.  Previously, any errors that were raised during incorrect usage of &lt;code&gt;set-attr&lt;/code&gt; or
 &lt;code&gt;del-attr&lt;/code&gt; were not being properly cleared after the command was re-entered and executed successfully.

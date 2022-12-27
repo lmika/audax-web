@@ -1,12 +1,11 @@
-+++
-title = "Editing Items"
-weight = 40
-+++
+# Editing Items
 
 Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items,
 and modifying their attribute values.
 
-{{< image src="/images/dynamo-browse/modified-items.png" alt="Item indicators" position="center" >}}
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/modified-items.png" alt="Item indicators">
+</figure>
 
 ## Marking Items
 
@@ -89,4 +88,4 @@ or "putted" to the table.  To put the changes, use the `put` command or `w` alia
 ## Backing Out of Changes
 
 Any modified items can be reverted back to what they are in the actual table by rerunning the
-current query.  This can be done by pressing <kbd>&#8679; R</kbd>. 
+current query.  This can be done by pressing <kbd>&#8679;R</kbd>. 

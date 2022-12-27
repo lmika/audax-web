@@ -1,154 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
 <head>
-  
-    <title>Getting Around :: Dynamo-Browse</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
-This mode consists of three panes:
-The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages. Prompts for input will also appear at the bottom." />
-<meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="https://dynamobrowse.app/docs/getting-around/" />
-
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/assets/style.css">
-
-  <link rel="stylesheet" href="https://dynamobrowse.app/assets/blue.css">
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/style.css">
-
-
-<link rel="apple-touch-icon" href="https://dynamobrowse.app/img/apple-touch-icon-192x192.png">
-
-  <link rel="shortcut icon" href="https://dynamobrowse.app/img/favicon/blue.png">
-
-
-
-<meta name="twitter:card" content="summary" />
-
-
-
-<meta property="og:locale" content="en" />
+<meta name="description" content="Getting Around #  After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+ This mode consists of three panes:
+ The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Getting Around #  After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+ This mode consists of three panes:
+ The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Getting Around">
-<meta property="og:description" content="After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
-This mode consists of three panes:
-The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages. Prompts for input will also appear at the bottom." />
 <meta property="og:url" content="https://dynamobrowse.app/docs/getting-around/" />
-<meta property="og:site_name" content="Dynamo-Browse" />
 
-  
-    <meta property="og:image" content="https://dynamobrowse.app/img/favicon/blue.png">
-  
-
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-
-
-
-
-
-
-
-
-
-<script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
-
+<title>Getting Around | Dynamo-Browse</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.66383e8055be54e12a49ae1389ed3be7289e0b863913af00c3ccc9de529f8dd9.css" integrity="sha256-Zjg&#43;gFW&#43;VOEqSa4Tie075yieC4Y5E68Aw8zJ3lKfjdk=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e08e12eab28a85481cde0b8b4dd0cab9c1a71a1305bc8f53c5389d7143d9c8b9.js" integrity="sha256-4I4S6rKKhUgc3guLTdDKucGnGhMFvI9TxTidcUPZyLk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
 </head>
-<body class="blue">
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Dynamo-Browse</span>
+  </a>
+</h2>
 
 
-<div class="container center headings--one-size">
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
 
-  <header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      <a href="https://dynamobrowse.app/">
-  <div class="logo">
-    Dynamo-Browse
-  </div>
-</a>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/download/">Download</a></li>
+<li><a href="https://github.com/lmika/audax/releases">Releases</a></li>
+<li><a href="https://github.com/lmika/audax">Github</a>
+<br></li>
+</ul>
+<p><a href="/docs/"><strong>User Guide</strong></a></p>
+<ul>
+<li><a href="/docs/launching/">Launching</a></li>
+<li><a href="/docs/getting-around/"class=active>Getting Around</a></li>
+<li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
+<li><a href="/docs/editing-items/">Editing Items</a></li>
+<li><a href="/docs/customising/">Customising</a>
+<br></li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="/docs/reference/key-bindings/">Key Bindings</a></li>
+<li><a href="/docs/reference/commands/">Commands</a></li>
+<li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
+<li><a href="/docs/reference/settings/">Settings</a>
+<br></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Getting Around</strong>
+
+  <label for="toc-control">
     
-      <div class="menu-trigger">menu</div>
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
-  </div>
+  </label>
+</div>
+
+
   
-    <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
+  <aside class="hidden clearfix">
     
-      
-        
-          <li><a href="/download">Download</a></li>
-        
-      
-        
-          <li><a href="/docs">Documentation</a></li>
-        
-      
-        
-          <li><a href="/updates">Updates</a></li>
-        
-      
-    
-
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/download">Download</a></li>
-      
-    
-      
-        <li><a href="/docs">Documentation</a></li>
-      
-    
-      
-        <li><a href="/updates">Updates</a></li>
-      
-    
-    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-back-stack">The Back-stack</a></li>
+    <li><a href="#adjusting-the-layout">Adjusting The Layout</a></li>
+    <li><a href="#adjusting-the-displayed-columns">Adjusting The Displayed Columns</a>
+      <ul>
+        <li><a href="#showing-and-hiding-columns">Showing And Hiding Columns</a></li>
+        <li><a href="#re-arranging-the-order-of-columns">Re-arranging The Order Of Columns</a></li>
+        <li><a href="#adding-and-removing-columns">Adding And Removing Columns</a></li>
+      </ul>
+    </li>
+    <li><a href="#entering-commands">Entering Commands</a></li>
   </ul>
 </nav>
 
+
+
+  </aside>
   
-</header>
+ 
+      </header>
 
-
-  <div class="content">
-    
-<div class="post">
-  <h1 class="post-title">
-    <a href="https://dynamobrowse.app/docs/getting-around/">Getting Around</a></h1>
-  <div class="post-meta">
-    
-    
-    
-  </div>
-
-  
-  
-
-
-  
-
-  <div class="post-content"><div>
-        <p>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.</p>
-
-  <img src="/images/dynamo-browse/main-item-view.png"  alt="Main item view"  class="center"  />
-
-
+      
+      
+  <article class="markdown"><h1 id="getting-around">
+  Getting Around
+  <a class="anchor" href="#getting-around">#</a>
+</h1>
+<p>After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.</p>
+<figure class="screenshot">
+  <img src="/images/dynamo-browse/main-item-view.png" alt="Main item view">
+</figure>
 <p>This mode consists of three panes:</p>
 <ul>
 <li>The top pane displays the result-set of the last scan or query.  The table name is at the top-left.</li>
@@ -164,8 +172,8 @@ attribute not set for a column is indicated with a grey tilde character <code>~<
 <ul>
 <li><kbd>↑</kbd>/<kbd>i</kbd>: Move selection up</li>
 <li><kbd>↓</kbd>/<kbd>k</kbd>: Move selection down</li>
-<li><kbd>PgUp</kbd>/<kbd>⇧ I</kbd>: Page up</li>
-<li><kbd>PgDn</kbd>/<kbd>⇧ K</kbd>: Page down</li>
+<li><kbd>PgUp</kbd>/<kbd>⇧I</kbd>: Page up</li>
+<li><kbd>PgDn</kbd>/<kbd>⇧K</kbd>: Page down</li>
 <li><kbd>Home</kbd>/<kbd>0</kbd>: First row</li>
 <li><kbd>End</kbd>/<kbd>$</kbd>: Last row</li>
 </ul>
@@ -182,7 +190,10 @@ from the results of the last scan or query, and may change depending on the resu
 attribute will be displayed.  Any nested attributes will be indented, and will below their parent item.  A value
 displayed in grey does not represent the actual value of the item, but indicates some meta-information about the item,
 such as the length.</p>
-<h2 id="the-back-stack">The Back-stack<a href="#the-back-stack" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="the-back-stack">
+  The Back-stack
+  <a class="anchor" href="#the-back-stack">#</a>
+</h2>
 <p>Changes to the view of Dynamo-Browse will be maintained in back-stack, similar to how a
 web-browse keeps track of the webpages you&rsquo;ve visited.  This stack will record the
 currently viewed table, filter, or query, allowing you to &ldquo;go back&rdquo; to a previous view
@@ -194,7 +205,10 @@ table, filter, or query from the session that was previously using the workspace
   Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
   through the back-stack will execute any queries or filters against the actual table itself.
 </div>
-<h2 id="adjusting-the-layout">Adjusting The Layout<a href="#adjusting-the-layout" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="adjusting-the-layout">
+  Adjusting The Layout
+  <a class="anchor" href="#adjusting-the-layout">#</a>
+</h2>
 <p>The horizontal size of the item table and currently selected item pane can be changed to one of the
 following layout configurations:</p>
 <ul>
@@ -206,13 +220,15 @@ following layout configurations:</p>
 </ul>
 <p>Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
 default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
-screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse order.</p>
-<h2 id="adjusting-the-displayed-columns">Adjusting The Displayed Columns<a href="#adjusting-the-displayed-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+screen.  Pressing <kbd>⇧W</kbd> will cycle through the layouts in the reverse order.</p>
+<h2 id="adjusting-the-displayed-columns">
+  Adjusting The Displayed Columns
+  <a class="anchor" href="#adjusting-the-displayed-columns">#</a>
+</h2>
 <p>The columns of the result-set can be adjusted by opening up the <em>Fields Popup</em>.  This popup can be opened by pressing <kbd>f</kbd>.</p>
-
-  <img src="/images/dynamo-browse/fields-popup.png"  alt="dynamo-browse"  class="center"  />
-
-
+<figure class="screenshot">
+  <img src="/images/dynamo-browse/fields-popup.png" alt="dynamo-browse">
+</figure>
 <p>While this popup is opened, the following changes can be applied to the displayed columns of the main table:</p>
 <ul>
 <li>Columns can be hidden</li>
@@ -223,27 +239,36 @@ screen.  Pressing <kbd>⇧ W</kbd> will cycle through the layouts in the reverse
 or <kbd>↓</kbd>/<kbd>k</kbd> will move the selection indicator to the column to apply the operation.  Pressing
 <kbd>←</kbd>/<kbd>j</kbd> or <kbd>→</kbd>/<kbd>l</kbd> will scroll the main table left or right so that any
 operations can be previewed.</p>
-<p>To reset the columns to the top-level fields of the current result set, press <kbd>⇧ R</kbd>.</p>
+<p>To reset the columns to the top-level fields of the current result set, press <kbd>⇧R</kbd>.</p>
 <p>To close the popup, press <kbd>Escape</kbd>.</p>
-<h3 id="showing-and-hiding-columns">Showing And Hiding Columns<a href="#showing-and-hiding-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="showing-and-hiding-columns">
+  Showing And Hiding Columns
+  <a class="anchor" href="#showing-and-hiding-columns">#</a>
+</h3>
 <p>In the Fields Popup, each row has a symbol indicating whether the row is currently visible (<code>.</code>) or hidden (<code>✕</code>).  Pressing
 <kbd>Space</kbd> will toggle whether the currently selected column is shown or hidden.</p>
-<h3 id="re-arranging-the-order-of-columns">Re-arranging The Order Of Columns<a href="#re-arranging-the-order-of-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="re-arranging-the-order-of-columns">
+  Re-arranging The Order Of Columns
+  <a class="anchor" href="#re-arranging-the-order-of-columns">#</a>
+</h3>
 <p>The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
 left or right.</p>
-<p>Press <kbd>⇧ I</kbd> to the selected row up, which will move the corresponding column left.</p>
-<p>Press <kbd>⇧ K</kbd> to the selected row down, which will move the corresponding column right.</p>
-<h3 id="adding-and-removing-columns">Adding And Removing Columns<a href="#adding-and-removing-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Press <kbd>⇧I</kbd> to the selected row up, which will move the corresponding column left.</p>
+<p>Press <kbd>⇧K</kbd> to the selected row down, which will move the corresponding column right.</p>
+<h3 id="adding-and-removing-columns">
+  Adding And Removing Columns
+  <a class="anchor" href="#adding-and-removing-columns">#</a>
+</h3>
 <p>New columns can be added in the table.  The value of these columns will be determined by the result of a query expression,
 and can be used to expose fields that are not at the top level.</p>
 <p>Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
 with authors structured as so:</p>
-<pre tabindex="0"><code>{
-  &#34;book&#34;: {&#34;S&#34;: &#34;The Lord Of The Rings&#34;},
-  &#34;author&#34;: {&#34;M&#34;: {
-    &#34;firstName&#34;: {&#34;S&#34;: &#34;John&#34;},
-    &#34;middleName&#34;: {&#34;S&#34;: &#34;Ronald Reuel&#34;},
-    &#34;lastName&#34;: {&#34;S&#34;: &#34;Tolkien&#34;},
+<pre><code>{
+  &quot;book&quot;: {&quot;S&quot;: &quot;The Lord Of The Rings&quot;},
+  &quot;author&quot;: {&quot;M&quot;: {
+    &quot;firstName&quot;: {&quot;S&quot;: &quot;John&quot;},
+    &quot;middleName&quot;: {&quot;S&quot;: &quot;Ronald Reuel&quot;},
+    &quot;lastName&quot;: {&quot;S&quot;: &quot;Tolkien&quot;},
   }}
 }
 </code></pre><p>If you wanted to show the the author&rsquo;s first and last name in the main table, rather than just see the description <code>(3 items)</code>, you
@@ -259,72 +284,88 @@ use in a new column to display <code>True</code> for any first name that begins 
 which will be evaluated over each row within the result-set when displaying the table.</p>
 <p>Any column, that was either retrieved from the result-set or added by the user, can be deleted by selecting the column
 within the Fields Popup and pressing <kbd>d</kbd>.</p>
-<h2 id="entering-commands">Entering Commands<a href="#entering-commands" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="entering-commands">
+  Entering Commands
+  <a class="anchor" href="#entering-commands">#</a>
+</h2>
 <p>Commands can be entered by pressing <kbd>:</kbd> and entering the command, with any arguments, at the prompt.</p>
 <p>The list of available commands can be found within the <a href="/docs/reference/#commands">reference section</a>.</p>
+</article>
+ 
+      
 
-      </div></div>
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
 
-  
-  
-<div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h"></span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://dynamobrowse.app/docs/launching/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Launching and Quitting</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://dynamobrowse.app/docs/filtering-querying/">
-                <span class="button__text">Querying And Viewing Results</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+
+
+
+
 </div>
 
-  
 
-  
-  
 
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
   
+  <div class="book-comments">
+
 </div>
-
-  </div>
-
   
-    <footer class="footer">
-  <div class="footer__inner">
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
     
-      <div class="copyright">
-        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
-    
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-back-stack">The Back-stack</a></li>
+    <li><a href="#adjusting-the-layout">Adjusting The Layout</a></li>
+    <li><a href="#adjusting-the-displayed-columns">Adjusting The Displayed Columns</a>
+      <ul>
+        <li><a href="#showing-and-hiding-columns">Showing And Hiding Columns</a></li>
+        <li><a href="#re-arranging-the-order-of-columns">Re-arranging The Order Of Columns</a></li>
+        <li><a href="#adding-and-removing-columns">Adding And Removing Columns</a></li>
+      </ul>
+    </li>
+    <li><a href="#entering-commands">Entering Commands</a></li>
+  </ul>
+</nav>
+
+
+ 
       </div>
-  </div>
-</footer>
+    </aside>
+    
+  </main>
 
-<script src="https://dynamobrowse.app/assets/main.js"></script>
-<script src="https://dynamobrowse.app/assets/prism.js"></script>
-
-
-
-
-<script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
-
-
-  
-</div>
+  <script src="https://dynamobrowse.app/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

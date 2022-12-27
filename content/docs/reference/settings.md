@@ -1,23 +1,20 @@
-+++
-title = "Settings"
-weight = 105
-+++
+# Settings
 
-### default-limit
+## default-limit
 
 - Type: int
 - Default: `1000`
 
 The maximum number of rows returned from a query or scan.
 
-### ro
+## ro
 
 - Type: flag
 
 Enable read-only mode.  When enabled, all modification operations are disabled, and will fail with a `Read-only mode` error.
 The `rw` setting will disable read-only mode.
 
-### rw
+## rw
 
 - Type: flag
 

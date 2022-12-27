@@ -1,7 +1,4 @@
-+++
-title = "Customising Dynamo-Browse"
-weight = 50
-+++
+# Customising Dynamo-Browse
 
 Some commands can be used to customise Dynamo-Browse, such as modify key bindings.
 The effect of these commands will only be applied for the duration of the session: they are currently not
@@ -23,7 +20,7 @@ or prompting the table.
 
 ## Rebinding Keys
 
-The default key bindings of Dynamo-Browse can be changed using the [rebind](/docs/reference/#rebind) command.  This takes
+The default key bindings of Dynamo-Browse can be changed using the [rebind](/docs/reference/commands#rebind) command.  This takes
 a binding name corresponding to the particular action to invoke, and the key
 to which it should be mapped to.
 
@@ -40,5 +37,5 @@ rebind "view.prompt-for-command" "esc"
 At the moment each binding name can only be mapped to a single key.  It's also currently not possible
 to setup bindings for commands.  These may be supported in the future.
 
-A list of available binding names can be found the the [reference](/docs/reference/#key-bindings)
+A list of available binding names can be found the the [reference](/docs/reference/key-bindings)
 (check the "Show binding names" checkbox).  Note that some bindings may not have default key bindings. 

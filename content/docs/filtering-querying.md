@@ -1,11 +1,10 @@
-+++
-title = "Querying And Viewing Results"
-weight = 30
-+++
+# Querying And Viewing Results
 
 ## Querying
 
-{{< image src="/images/dynamo-browse/query-items.png" alt="Items with query applied" position="center" >}}
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/query-items.png" alt="Items with query applied">
+</figure>
 
 A query or scan over the table can be performed by entering a _Query Expression_.
 Query expressions are a built-in expression language which translates to either a DynamoDB query
@@ -22,7 +21,9 @@ to view any partial results that have been retrieved at the time.
 
 ## Filtering
 
-{{< image src="/images/dynamo-browse/filter-items.png" alt="Items with filter applied" position="center" >}}
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/filter-items.png" alt="Items with filter applied">
+</figure>
 
 The displayed items of the current result-set can be filtered down to those that contain a specific substring.
 

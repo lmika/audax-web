@@ -1,163 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
 <head>
-  
-    <title>Launching and Quitting :: Dynamo-Browse</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="To launch Dynamo-Browse, run the following command at the terminal:
+<meta name="description" content="Launching And Quitting #  To launch Dynamo-Browse, run the following command at the terminal:
+dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
+To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Launching And Quitting #  To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
-<meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="https://dynamobrowse.app/docs/launching/" />
-
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/assets/style.css">
-
-  <link rel="stylesheet" href="https://dynamobrowse.app/assets/blue.css">
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/style.css">
-
-
-<link rel="apple-touch-icon" href="https://dynamobrowse.app/img/apple-touch-icon-192x192.png">
-
-  <link rel="shortcut icon" href="https://dynamobrowse.app/img/favicon/blue.png">
-
-
-
-<meta name="twitter:card" content="summary" />
-
-
-
-<meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Launching and Quitting">
-<meta property="og:description" content="To launch Dynamo-Browse, run the following command at the terminal:
-dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
-To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:" />
 <meta property="og:url" content="https://dynamobrowse.app/docs/launching/" />
-<meta property="og:site_name" content="Dynamo-Browse" />
 
-  
-    <meta property="og:image" content="https://dynamobrowse.app/img/favicon/blue.png">
-  
-
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-
-
-
-
-
-
-
-
-
-<script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
-
+<title>Launching | Dynamo-Browse</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.66383e8055be54e12a49ae1389ed3be7289e0b863913af00c3ccc9de529f8dd9.css" integrity="sha256-Zjg&#43;gFW&#43;VOEqSa4Tie075yieC4Y5E68Aw8zJ3lKfjdk=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e08e12eab28a85481cde0b8b4dd0cab9c1a71a1305bc8f53c5389d7143d9c8b9.js" integrity="sha256-4I4S6rKKhUgc3guLTdDKucGnGhMFvI9TxTidcUPZyLk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
 </head>
-<body class="blue">
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Dynamo-Browse</span>
+  </a>
+</h2>
 
 
-<div class="container center headings--one-size">
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
 
-  <header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      <a href="https://dynamobrowse.app/">
-  <div class="logo">
-    Dynamo-Browse
-  </div>
-</a>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/download/">Download</a></li>
+<li><a href="https://github.com/lmika/audax/releases">Releases</a></li>
+<li><a href="https://github.com/lmika/audax">Github</a>
+<br></li>
+</ul>
+<p><a href="/docs/"><strong>User Guide</strong></a></p>
+<ul>
+<li><a href="/docs/launching/"class=active>Launching</a></li>
+<li><a href="/docs/getting-around/">Getting Around</a></li>
+<li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
+<li><a href="/docs/editing-items/">Editing Items</a></li>
+<li><a href="/docs/customising/">Customising</a>
+<br></li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="/docs/reference/key-bindings/">Key Bindings</a></li>
+<li><a href="/docs/reference/commands/">Commands</a></li>
+<li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
+<li><a href="/docs/reference/settings/">Settings</a>
+<br></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Launching</strong>
+
+  <label for="toc-control">
     
-      <div class="menu-trigger">menu</div>
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
-  </div>
+  </label>
+</div>
+
+
   
-    <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
+  <aside class="hidden clearfix">
     
-      
-        
-          <li><a href="/download">Download</a></li>
-        
-      
-        
-          <li><a href="/docs">Documentation</a></li>
-        
-      
-        
-          <li><a href="/updates">Updates</a></li>
-        
-      
-    
-
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/download">Download</a></li>
-      
-    
-      
-        <li><a href="/docs">Documentation</a></li>
-      
-    
-      
-        <li><a href="/updates">Updates</a></li>
-      
-    
-    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#selecting-a-table">Selecting a Table</a></li>
+    <li><a href="#selecting-a-workspace">Selecting a Workspace</a></li>
+    <li><a href="#quitting">Quitting</a></li>
   </ul>
 </nav>
 
+
+
+  </aside>
   
-</header>
+ 
+      </header>
 
-
-  <div class="content">
-    
-<div class="post">
-  <h1 class="post-title">
-    <a href="https://dynamobrowse.app/docs/launching/">Launching and Quitting</a></h1>
-  <div class="post-meta">
-    
-    
-    
-  </div>
-
-  
-  
-
-
-  
-
-  <div class="post-content"><div>
-        <p>To launch Dynamo-Browse, run the following command at the terminal:</p>
-<pre tabindex="0"><code>dynamo-browse
+      
+      
+  <article class="markdown"><h1 id="launching-and-quitting">
+  Launching And Quitting
+  <a class="anchor" href="#launching-and-quitting">#</a>
+</h1>
+<p>To launch Dynamo-Browse, run the following command at the terminal:</p>
+<pre><code>dynamo-browse
 </code></pre><p>This will use your current AWS configuration and region, which can be changed by setting
 the relevant <code>AWS_</code> environment variables.</p>
 <p>To connect to a local instance of DynamoDB, such as one
 running in a Docker container, use the <code>--local</code> flag.  This takes as the argument the hostname
 and endpoint of the local DynamoDB server.  The hostname can be omitted, and will default to <code>localhost</code>:</p>
-<pre tabindex="0"><code>dynamo-browse --local :8080
-</code></pre><h2 id="selecting-a-table">Selecting a Table<a href="#selecting-a-table" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<pre><code>dynamo-browse --local :8080
+</code></pre><h2 id="selecting-a-table">
+  Selecting a Table
+  <a class="anchor" href="#selecting-a-table">#</a>
+</h2>
 <p>Upon launch, Dynamo-Browse will present a list of all the tables within the region:</p>
-
-  <img src="/images/dynamo-browse/table-selection.png"  alt="Table selection"  class="center"  />
-
-
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/table-selection.png" alt="Table selection">
+</figure>
 <p>Select the table to view by pressing <kbd>Enter</kbd>.  Use the following keys to navigate
 the items within the list:</p>
 <ul>
@@ -167,75 +171,94 @@ the items within the list:</p>
 <p>Once the table is selected, the table will be scanned and Dynamo-Browse will be presented in
 <a href="#view-mode">View Mode</a>.  Another table can be selected from within view mode using the <code>:table</code> command.</p>
 <p>Dynamo-Browse can also be launched directly in view mode by specifying a table using the <code>-t</code> flag:</p>
-<pre tabindex="0"><code>dynamo-browse -t user-accounts
-</code></pre><h2 id="selecting-a-workspace">Selecting a Workspace<a href="#selecting-a-workspace" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<pre><code>dynamo-browse -t user-accounts
+</code></pre><h2 id="selecting-a-workspace">
+  Selecting a Workspace
+  <a class="anchor" href="#selecting-a-workspace">#</a>
+</h2>
 <p>Dynamo-Browse tracks session state, such as the back-stack, in a workspace file.  By default the workspace
 file will be a new file created within the temporary directory, but a specific workspace filename can be
 specified by using the <code>-w</code> flag:</p>
-<pre tabindex="0"><code>dynamo-browse -w my-workspace.ws
+<pre><code>dynamo-browse -w my-workspace.ws
 </code></pre><p>If the workspace filename references an existing file, Dynamo-Browse will restore the workspace and use it for the duration of
 the session.  If the workspace filename references a non-existing file, Dynamo-Browse will initialise a new workspace
 using the specified filename.</p>
 <p>Only one running instance of Dynamo-Browse can use a single workspace file at any one time.</p>
-<h2 id="quitting">Quitting<a href="#quitting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>To quit dynamodb-browse, enter the command <code>q</code> by pressing <kbd>:</kbd>, then typing <kbd>q</kbd><kbd>Enter</kbd>.
+<h2 id="quitting">
+  Quitting
+  <a class="anchor" href="#quitting">#</a>
+</h2>
+<p>To quit dynamodb-browse, enter the command <code>q</code> by pressing <kbd>:</kbd>, then typing <kbd>q</kbd> <kbd>Enter</kbd>.
 The keystroke <kbd>Ctrl+C</kbd> can also be used to quit.</p>
+</article>
+ 
+      
 
-      </div></div>
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
 
-  
-  
-<div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h"></span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        
-        <span class="button next">
-            <a href="https://dynamobrowse.app/docs/getting-around/">
-                <span class="button__text">Getting Around</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+
+
+
+
 </div>
 
-  
 
-  
-  
 
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
   
+  <div class="book-comments">
+
 </div>
-
-  </div>
-
   
-    <footer class="footer">
-  <div class="footer__inner">
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
     
-      <div class="copyright">
-        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
-    
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#selecting-a-table">Selecting a Table</a></li>
+    <li><a href="#selecting-a-workspace">Selecting a Workspace</a></li>
+    <li><a href="#quitting">Quitting</a></li>
+  </ul>
+</nav>
+
+
+ 
       </div>
-  </div>
-</footer>
+    </aside>
+    
+  </main>
 
-<script src="https://dynamobrowse.app/assets/main.js"></script>
-<script src="https://dynamobrowse.app/assets/prism.js"></script>
-
-
-
-
-<script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
-
-
-  
-</div>
+  <script src="https://dynamobrowse.app/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

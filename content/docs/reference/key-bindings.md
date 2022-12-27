@@ -1,7 +1,4 @@
-+++
-title = "Key Bindings"
-weight = 101
-+++
+# Key Bindings
 
 <div data-controller="keybindings">
 

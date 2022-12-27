@@ -1,154 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" dir="ltr">
 <head>
-  
-    <title>Querying And Viewing Results :: Dynamo-Browse</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
-To run a query, press ?, and enter the query expression.
-To clear a query, press ?, and press Enter without entering any value." />
-<meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
-<link rel="canonical" href="https://dynamobrowse.app/docs/filtering-querying/" />
-
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/assets/style.css">
-
-  <link rel="stylesheet" href="https://dynamobrowse.app/assets/blue.css">
-
-
-
-<link rel="stylesheet" href="https://dynamobrowse.app/style.css">
-
-
-<link rel="apple-touch-icon" href="https://dynamobrowse.app/img/apple-touch-icon-192x192.png">
-
-  <link rel="shortcut icon" href="https://dynamobrowse.app/img/favicon/blue.png">
-
-
-
-<meta name="twitter:card" content="summary" />
-
-
-
-<meta property="og:locale" content="en" />
+<meta name="description" content="Querying And Viewing Results #  Querying #   A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Querying And Viewing Results #  Querying #   A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression." />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Querying And Viewing Results">
-<meta property="og:description" content="Querying A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
-To run a query, press ?, and enter the query expression.
-To clear a query, press ?, and press Enter without entering any value." />
 <meta property="og:url" content="https://dynamobrowse.app/docs/filtering-querying/" />
-<meta property="og:site_name" content="Dynamo-Browse" />
 
-  
-    <meta property="og:image" content="https://dynamobrowse.app/img/favicon/blue.png">
-  
-
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-
-
-
-
-
-
-
-
-
-<script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
-
+<title>Filtering Querying | Dynamo-Browse</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.66383e8055be54e12a49ae1389ed3be7289e0b863913af00c3ccc9de529f8dd9.css" integrity="sha256-Zjg&#43;gFW&#43;VOEqSa4Tie075yieC4Y5E68Aw8zJ3lKfjdk=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.e08e12eab28a85481cde0b8b4dd0cab9c1a71a1305bc8f53c5389d7143d9c8b9.js" integrity="sha256-4I4S6rKKhUgc3guLTdDKucGnGhMFvI9TxTidcUPZyLk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
 </head>
-<body class="blue">
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Dynamo-Browse</span>
+  </a>
+</h2>
 
 
-<div class="container center headings--one-size">
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
 
-  <header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      <a href="https://dynamobrowse.app/">
-  <div class="logo">
-    Dynamo-Browse
-  </div>
-</a>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/download/">Download</a></li>
+<li><a href="https://github.com/lmika/audax/releases">Releases</a></li>
+<li><a href="https://github.com/lmika/audax">Github</a>
+<br></li>
+</ul>
+<p><a href="/docs/"><strong>User Guide</strong></a></p>
+<ul>
+<li><a href="/docs/launching/">Launching</a></li>
+<li><a href="/docs/getting-around/">Getting Around</a></li>
+<li><a href="/docs/filtering-querying/"class=active>Filtering And Querying</a></li>
+<li><a href="/docs/editing-items/">Editing Items</a></li>
+<li><a href="/docs/customising/">Customising</a>
+<br></li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="/docs/reference/key-bindings/">Key Bindings</a></li>
+<li><a href="/docs/reference/commands/">Commands</a></li>
+<li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
+<li><a href="/docs/reference/settings/">Settings</a>
+<br></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Filtering Querying</strong>
+
+  <label for="toc-control">
     
-      <div class="menu-trigger">menu</div>
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
-  </div>
+  </label>
+</div>
+
+
   
-    <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
+  <aside class="hidden clearfix">
     
-      
-        
-          <li><a href="/download">Download</a></li>
-        
-      
-        
-          <li><a href="/docs">Documentation</a></li>
-        
-      
-        
-          <li><a href="/updates">Updates</a></li>
-        
-      
-    
-
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/download">Download</a></li>
-      
-    
-      
-        <li><a href="/docs">Documentation</a></li>
-      
-    
-      
-        <li><a href="/updates">Updates</a></li>
-      
-    
-    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#querying">Querying</a></li>
+    <li><a href="#filtering">Filtering</a></li>
   </ul>
 </nav>
 
+
+
+  </aside>
   
-</header>
+ 
+      </header>
 
-
-  <div class="content">
-    
-<div class="post">
-  <h1 class="post-title">
-    <a href="https://dynamobrowse.app/docs/filtering-querying/">Querying And Viewing Results</a></h1>
-  <div class="post-meta">
-    
-    
-    
-  </div>
-
-  
-  
-
-
-  
-
-  <div class="post-content"><div>
-        <h2 id="querying">Querying<a href="#querying" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
-  <img src="/images/dynamo-browse/query-items.png"  alt="Items with query applied"  class="center"  />
-
-
+      
+      
+  <article class="markdown"><h1 id="querying-and-viewing-results">
+  Querying And Viewing Results
+  <a class="anchor" href="#querying-and-viewing-results">#</a>
+</h1>
+<h2 id="querying">
+  Querying
+  <a class="anchor" href="#querying">#</a>
+</h2>
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/query-items.png" alt="Items with query applied">
+</figure>
 <p>A query or scan over the table can be performed by entering a <em>Query Expression</em>.
 Query expressions are a built-in expression language which translates to either a DynamoDB query
 or scan, depending on the expression.  Details about the Query Expression language can be found in the
@@ -158,11 +159,13 @@ or scan, depending on the expression.  Details about the Query Expression langua
 <p>While the query is running, a spinner indicating activity will be shown in the status bar.  A running
 query can be cancelled while this spinner is visible by pressing <kbd>^C</kbd>.  You have the option
 to view any partial results that have been retrieved at the time.</p>
-<h2 id="filtering">Filtering<a href="#filtering" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-
-  <img src="/images/dynamo-browse/filter-items.png"  alt="Items with filter applied"  class="center"  />
-
-
+<h2 id="filtering">
+  Filtering
+  <a class="anchor" href="#filtering">#</a>
+</h2>
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/filter-items.png" alt="Items with filter applied">
+</figure>
 <p>The displayed items of the current result-set can be filtered down to those that contain a specific substring.</p>
 <p>To set the filter, press <kbd>/</kbd>, and enter the substring you wish to filter on.</p>
 <p>To clear the filter, press <kbd>/</kbd>, and press <kbd>Enter</kbd> without entering any value.</p>
@@ -170,69 +173,74 @@ to view any partial results that have been retrieved at the time.</p>
 <p>Filtering will only consist the items that are in the current result-set.  It will not result in a call to the actual
 table itself.</p>
 <p>Note that filtering is case sensitive.</p>
+</article>
+ 
+      
 
-      </div></div>
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
 
-  
-  
-<div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h"></span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://dynamobrowse.app/docs/getting-around/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Getting Around</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://dynamobrowse.app/docs/editing-items/">
-                <span class="button__text">Editing Items</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+
+
+
+
 </div>
 
-  
 
-  
-  
 
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
   
+  <div class="book-comments">
+
 </div>
-
-  </div>
-
   
-    <footer class="footer">
-  <div class="footer__inner">
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
     
-      <div class="copyright">
-        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
-    
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#querying">Querying</a></li>
+    <li><a href="#filtering">Filtering</a></li>
+  </ul>
+</nav>
+
+
+ 
       </div>
-  </div>
-</footer>
+    </aside>
+    
+  </main>
 
-<script src="https://dynamobrowse.app/assets/main.js"></script>
-<script src="https://dynamobrowse.app/assets/prism.js"></script>
-
-
-
-
-<script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
-
-
-  
-</div>
+  <script src="https://dynamobrowse.app/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

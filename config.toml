@@ -2,17 +2,16 @@ baseURL = "https://dynamobrowse.app/"
 languageCode = "en-us"
 title = "Dynamo-Browse"
 
-theme = "terminal"
+theme = "hugo-book"
 
 publishDir = "docs"
 
 [markup.goldmark.renderer]
   unsafe = true
  
-[params]
-	themeColor = "blue"
-	contentTypeName = "docs"
-	centerTheme = true
+[params]	
+	BookTheme = "auto"
+	BookMenuBundle = "/menu"
 	
 [params.Logo]
 	logoText = "Dynamo-Browse"

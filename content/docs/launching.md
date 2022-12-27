@@ -1,7 +1,4 @@
-+++
-title = "Launching and Quitting"
-weight = 10
-+++
+# Launching And Quitting
 
 To launch Dynamo-Browse, run the following command at the terminal:
 
@@ -24,7 +21,9 @@ dynamo-browse --local :8080
 
 Upon launch, Dynamo-Browse will present a list of all the tables within the region:
 
-{{< image src="/images/dynamo-browse/table-selection.png" alt="Table selection" position="center" >}}
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/table-selection.png" alt="Table selection">
+</figure>
 
 Select the table to view by pressing <kbd>Enter</kbd>.  Use the following keys to navigate
 the items within the list:
@@ -59,5 +58,5 @@ Only one running instance of Dynamo-Browse can use a single workspace file at an
 
 ## Quitting
 
-To quit dynamodb-browse, enter the command `q` by pressing <kbd>:</kbd>, then typing <kbd>q</kbd><kbd>Enter</kbd>.
+To quit dynamodb-browse, enter the command `q` by pressing <kbd>:</kbd>, then typing <kbd>q</kbd> <kbd>Enter</kbd>.
 The keystroke <kbd>Ctrl+C</kbd> can also be used to quit.

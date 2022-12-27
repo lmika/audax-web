@@ -1,9 +1,16 @@
 +++
 title = "Dynamo-Browse"
-layout = "single"
+bookToc = false
 +++
 
-{{< image src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse" position="center" >}}
+<div class="site-header">
+	<img src="/images/dynamo-browse/dynamo-browse-logo.png">
+	<h1>Dynamo-Browse</h1>
+</div>
+
+<figure class="screenshot">
+	<img src="/images/dynamo-browse/main-item-view.png" alt="dynamo-browse">
+</figure>
 
 Dynamo-Browse is a terminal-based UI (TUI) app for working with DynamoDB tables.
 With it, you can quickly connect to and browse the contents of a DynamoDB table

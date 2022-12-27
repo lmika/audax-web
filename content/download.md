@@ -1,7 +1,8 @@
 +++
-title = "Download"
 layout = "single"
 +++
+
+# Download
 
 Binary packages can be [download from GitHub](https://github.com/lmika/audax/releases/latest).
 

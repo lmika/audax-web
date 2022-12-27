@@ -1,7 +1,4 @@
-+++
-title = "Documentation"
-layout = "single"
-+++
+# User Guide
 
 ## Table Of Contents
 

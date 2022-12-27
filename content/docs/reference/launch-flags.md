@@ -1,9 +1,6 @@
-+++
-title = "Launch Flags"
-weight = 104
-+++
+# Launch Flags
 
-### -debug
+## -debug
 
 ```
 -debug <filename>
@@ -11,7 +8,7 @@ weight = 104
 
 Enable debug logs, which will be written to _filename_.
 
-### -default-limit
+## -default-limit
 
 ```
 -default-limit <int>
@@ -19,7 +16,7 @@ Enable debug logs, which will be written to _filename_.
 
 Sets the default limit of queries or scans.  The default is 1,000 items.
 
-### -local
+## -local
 
 ```
 -local [host]:<port>
@@ -27,7 +24,7 @@ Sets the default limit of queries or scans.  The default is 1,000 items.
 
 Connect to a local DynamoDB service listening on _host_:_port_.  The default _host_ is `localhost`.
 
-### -ro
+## -ro
 
 ```
 -ro
@@ -35,7 +32,7 @@ Connect to a local DynamoDB service listening on _host_:_port_.  The default _ho
 
 Enable read-only mode.
 
-### -t
+## -t
 
 ```
 -t <tableName>
@@ -43,7 +40,7 @@ Enable read-only mode.
 
 Open the table _tableName_, instead of prompting for a table.
 
-### -w
+## -w
 
 ```
 -w <workspaceFile>

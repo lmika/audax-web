@@ -1,15 +1,12 @@
-+++
-title = "Query Expression"
-weight = 103
-+++
+# Query Expression
 
 Query expression is used to execute queries and scans over items in the DynamoDB table.
 Such expressions can also be used in other areas of Dynamo-Browse, such as populating the
 value of new columns.
 
-<div class="framed">
+{{< hint warning >}}
   Note that the query expression language is still under early development and may change in the future.
-</div>
+{{< /hint >}}
 
 The expression is represented in EBNF form:
 

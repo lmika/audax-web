@@ -1,11 +1,10 @@
-+++
-title = "Getting Around"
-weight = 20
-+++
+# Getting Around
 
 After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
 
-{{< image src="/images/dynamo-browse/main-item-view.png" alt="Main item view" position="center" >}}
+<figure class="screenshot">
+  <img src="/images/dynamo-browse/main-item-view.png" alt="Main item view">
+</figure>
 
 This mode consists of three panes:
 
@@ -24,8 +23,8 @@ Use the following keys to change the currently selected row, which is highlighte
 
 - <kbd>&uarr;</kbd>/<kbd>i</kbd>: Move selection up
 - <kbd>&darr;</kbd>/<kbd>k</kbd>: Move selection down
-- <kbd>PgUp</kbd>/<kbd>&#8679; I</kbd>: Page up
-- <kbd>PgDn</kbd>/<kbd>&#8679; K</kbd>: Page down
+- <kbd>PgUp</kbd>/<kbd>&#8679;I</kbd>: Page up
+- <kbd>PgDn</kbd>/<kbd>&#8679;K</kbd>: Page down
 - <kbd>Home</kbd>/<kbd>0</kbd>: First row
 - <kbd>End</kbd>/<kbd>$</kbd>: Last row
 
@@ -73,13 +72,15 @@ following layout configurations:
 
 Pressing <kbd>w</kbd> will cycle forward though these layouts.  For example, while in the
 default layout, pressing <kbd>w</kbd> will switch to the second layout, where both the table view take up half the
-screen.  Pressing <kbd>&#8679; W</kbd> will cycle through the layouts in the reverse order.
+screen.  Pressing <kbd>&#8679;W</kbd> will cycle through the layouts in the reverse order.
 
 ## Adjusting The Displayed Columns
 
 The columns of the result-set can be adjusted by opening up the _Fields Popup_.  This popup can be opened by pressing <kbd>f</kbd>.
 
-{{< image src="/images/dynamo-browse/fields-popup.png" alt="dynamo-browse" position="center" >}}
+<figure class="screenshot">
+  <img src="/images/dynamo-browse/fields-popup.png" alt="dynamo-browse">
+</figure>
 
 While this popup is opened, the following changes can be applied to the displayed columns of the main table:
 
@@ -92,7 +93,7 @@ or <kbd>&darr;</kbd>/<kbd>k</kbd> will move the selection indicator to the colum
 <kbd>&larr;</kbd>/<kbd>j</kbd> or <kbd>&rarr;</kbd>/<kbd>l</kbd> will scroll the main table left or right so that any
 operations can be previewed.
 
-To reset the columns to the top-level fields of the current result set, press <kbd>&#8679; R</kbd>.
+To reset the columns to the top-level fields of the current result set, press <kbd>&#8679;R</kbd>.
 
 To close the popup, press <kbd>Escape</kbd>.
 
@@ -106,9 +107,9 @@ In the Fields Popup, each row has a symbol indicating whether the row is current
 The currently selected row can be moved up or down the table.  This will move the corresponding column in the main table either
 left or right.
 
-Press <kbd>&#8679; I</kbd> to the selected row up, which will move the corresponding column left.
+Press <kbd>&#8679;I</kbd> to the selected row up, which will move the corresponding column left.
 
-Press <kbd>&#8679; K</kbd> to the selected row down, which will move the corresponding column right.
+Press <kbd>&#8679;K</kbd> to the selected row down, which will move the corresponding column right.
 
 ### Adding And Removing Columns
 

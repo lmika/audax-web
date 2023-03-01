@@ -1,0 +1,42 @@
+module: ext
+docs: |
+  Provides access to the extension points scripts can used to extend the functionality of Dynamo-Browse.
+  
+  This module is only available for scripts loaded using the [load-script]() command.
+symbols:
+  - name: command
+    syntax: ext.command(name, fn)
+    docs: |
+      Defines a new command, which can be invoked by entering _name_ within the main view mode.
+      The parameter _fn_ must be a function, which will be executed when the _name_ command is entered
+      while in view mode.
+      
+      The command can accept arguments, which will be passed in to the parameters of _fn_. The number
+      of command arguments must match the number of parameters, except for any function arguments with
+      a default value.
+    example: |
+      ext.command("add", func(x, y) {
+        sum := x + y
+        ui.print("x + y = ", sum)
+      })
+  - name: key_binding
+    syntax: ext.key_binding(name, options, fn)
+    docs: |
+      Defines a new key binding, which can be invoked while viewing the table.
+      
+      The _name_ parameter defines the binding name. The binding names will be prefixed with
+      `ext.<script_basename>`. This name can be used with the [rebind]() command.
+      
+      The _option_ parameter defines a map of options. The only valid option is
+      `default`, which is the default key to use for this binding. If unset, the binding will
+      have no key binding and can only be bound using the [rebind]() command.
+      
+      The _fn_ parameter is the function that will be invoked when the key is pressed.
+      It must accept no parameters.
+    example: |
+      // Script name: sayhello.tm
+      //
+      // This binding can be rebound with the command "rebind ext.sayhello.hello <key>"
+      ext.key_binding("hello", {"default": "H"}, func() {
+        ui.print("Hello")
+      })

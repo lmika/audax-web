@@ -1,0 +1,56 @@
+module: session
+docs: |
+  Provides access to the currently viewed table and result-set.
+symbols:
+  - name: query
+    syntax: session.query(expression, [options])
+    docs: |
+      Executes a query against a DynamoDB table.  This returns a `Result` object which, when unrapped, will return a
+      a resultset if the query was successful.  A query with no results will be an empty result-set.
+      
+      The _expression_ is the query expression to execute. This is similar to the type of expressions entered
+      after pression <kbd>?</kbd>.
+      
+      The _options_ map can contain the following key/value pairs:
+        
+      - `table`: the DynamoDB table to execute the query against. Default is the currently displayed table.
+      - `args`: A map containing names and values that can be used as placeholders in the query expression.
+    example: |
+      out := session.query("pk = $key", {
+        table: "some-table",
+        args: {
+          key: "my partition key"
+        }
+      }
+      if (out.is_ok()) {
+        session.set_result_set(out.unwrap())
+      } else {
+        ui.print("Something happened")
+      }
+  - name: current_table
+    syntax: session.current_table()
+    docs: |
+      Returns information about the currently displayed table. This will be returned as a `table` object.  If no
+      table is displayed, this function will return `nil`.
+  - name: result_set
+    syntax: session.result_set()
+    docs: |
+      Returns the currently displayed result set. This is the set of items that are shown to the user in the items
+      table. This will be returned as a `resultset` object.
+      
+      Note that this only contains the items of the current result set that exists in memory.  As such, it will be
+      capped to the configured query limit. 
+  - name: selected_item
+    syntax: session.selected_item()
+    docs: |
+      Returns the item currently highlighted in the items table. This will be returned as an `item` object.  If no
+      item is highlighted, it will return `nil`.
+  - name: set_result_set
+    syntax: session.set_result_set(new_result_set)
+    docs: |
+      Replaces the currently displayed result-set with a new one. This can be used alongside the `query` function
+      to display the results of a query.
+      
+      Changing the displayed result-set will trigger a redraw of the viewport and will push a new history record to
+      the backstack. Therefore, it's not recommended to call this method too often during a script execution session.
+      At most once with the final result-set you'd like to show the user is considered best practice.

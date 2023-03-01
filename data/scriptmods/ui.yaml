@@ -1,0 +1,18 @@
+module: ui
+docs: |
+  Provides control over the user interface.
+symbols:
+  - name: print
+    syntax: ui.print(args...)
+    docs: |
+      Displays a message in the status bar.
+  - name: prompt
+    syntax: ui.prompt(message)
+    docs: |
+      Request a line of input from the user, using _message_ as the prompt.
+      
+      This function will return the user's input as a string, or `nil` if the user cancels
+      the prompt by pressing <kbd>Esc</kbd>
+    example: |
+      line := ui.prompt("What is your name? ")
+      ui.print("Hello, ", line)

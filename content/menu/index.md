@@ -12,6 +12,7 @@ headless = true
 - [Filtering And Querying]({{< relref "/docs/filtering-querying" >}})
 - [Editing Items]({{< relref "/docs/editing-items" >}})
 - [Customising]({{< relref "/docs/customising" >}})
+- [Scripting]({{< relref "/docs/scripting" >}})
 <br>
 
 **References**
@@ -20,4 +21,5 @@ headless = true
 - [Query Expressions]({{< relref "/docs/reference/query-expressions" >}})
 - [Launch Flags]({{< relref "/docs/reference/launch-flags" >}})
 - [Settings]({{< relref "/docs/reference/settings" >}})
+- [Script API]({{< relref "/docs/reference/script-api" >}})
 <br>

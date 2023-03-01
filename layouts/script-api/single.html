@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="markdown">
+  {{ partial "docs/post-meta" . }}
+  {{- .Content -}}
+  
+  <!-- API Data -->
+  {{ range sort $.Site.Data.scriptmods }}
+  <section>
+	  {{ if eq .type "type" }}
+	    <h2>
+			Type: {{ .module }}
+			<a class="anchor" href="#type-{{.module}}">#</a>
+		</h2>
+	  {{ else }}
+	  	<h2>
+		  	Module: {{ .module }}
+		  	<a class="anchor" href="#module-{{.module}}">#</a>
+	  	</h2>
+	  {{ end }}
+	  
+	  {{ $.RenderString .docs }}
+	  
+	  {{ $moduleName := .module }}
+	  {{ range sort .symbols "name" }}	  	
+	  	<h3>
+			  {{$moduleName}}.{{ .name }}
+			  <a class="anchor" href="{{$moduleName}}-{{.name}}">#</a>
+	  	</h3>
+		<pre><code>{{ .syntax }}</code></pre>
+		{{ $.RenderString .docs }}
+		
+		{{if .example}}
+			<h4>Example</h4>
+			<pre><code>{{ .example }}</code></pre>
+		{{end}}
+	  {{ end }}
+  </section>
+  {{end}}
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}

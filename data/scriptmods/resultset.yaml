@@ -1,0 +1,20 @@
+module: resultset
+type: type
+docs: |
+  Holds a collection of items returned from a query, or presented to a user.
+  
+  A specific item of a result-set can be retrived using the subscript option.  For example, `result[21]` will
+  return the 21st item of the result-set from the first item. A negative index can be used to retrieve an
+  item from the last item.
+  
+  There is no guarantee to the ordering of items within the result-set, although items are usually
+  ordered based on the partition and sort key.
+symbols:
+  - name: length
+    syntax: resultset.length
+    docs: |
+      Returns the number of items within the result set.
+  - name: table
+    syntax: resultset.table
+    docs: |
+      Returns information about the table this result set belongs to.

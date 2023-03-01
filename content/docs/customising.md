@@ -38,4 +38,4 @@ At the moment each binding name can only be mapped to a single key.  It's also c
 to setup bindings for commands.  These may be supported in the future.
 
 A list of available binding names can be found the the [reference](/docs/reference/key-bindings)
-(check the "Show binding names" checkbox).  Note that some bindings may not have default key bindings. 
+(check the "Show binding names" checkbox).  Note that some bindings may not have default key bindings.

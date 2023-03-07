@@ -1,0 +1,16 @@
+module: table_index
+type: type
+docs: |
+  Provides information about an DynamoDB index.
+symbols:
+  - name: name
+    syntax: table_index.name
+    docs: |
+      Returns the name of the index.
+  - name: keys
+    syntax: table_index.keys
+    docs: |
+      Returns the keys of the index. This will be returned as a map with the following names:
+        
+        - `hash`: the attribute name of the partition (hash) key
+        - `range`: the attribute name of the sort (range) key, or `nil` if one is not defined.

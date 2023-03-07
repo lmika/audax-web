@@ -1,0 +1,20 @@
+module: table
+type: type
+docs: |
+  Provides information about a DynamoDB table.
+symbols:
+  - name: name
+    syntax: table.name
+    docs: |
+      Returns the name of the table.
+  - name: keys
+    syntax: table.keys
+    docs: |
+      Returns the keys of the table. This will be returned as a map with the following names:
+        
+        - `hash`: the attribute name of the partition (hash) key
+        - `range`: the attribute name of the sort (range) key, or `nil` if one is not defined.
+  - name: gsis
+    syntax: table.gsis
+    docs: |
+      Returns a list of the GSIs used by this table.  The elements of the list will have the type table_index

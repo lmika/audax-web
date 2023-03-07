@@ -7,12 +7,12 @@
   {{ range sort $.Site.Data.scriptmods }}
   <section>
 	  {{ if eq .type "type" }}
-	    <h2>
+	    <h2 id="type-{{.module}}">
 			Type: {{ .module }}
 			<a class="anchor" href="#type-{{.module}}">#</a>
 		</h2>
 	  {{ else }}
-	  	<h2>
+	  	<h2 id="module-{{.module}}">
 		  	Module: {{ .module }}
 		  	<a class="anchor" href="#module-{{.module}}">#</a>
 	  	</h2>
@@ -22,7 +22,7 @@
 	  
 	  {{ $moduleName := .module }}
 	  {{ range sort .symbols "name" }}	  	
-	  	<h3>
+	  	<h3 id="{{$moduleName}}-{{.name}}">
 			  {{$moduleName}}.{{ .name }}
 			  <a class="anchor" href="{{$moduleName}}-{{.name}}">#</a>
 	  	</h3>
@@ -40,5 +40,23 @@
 {{ end }}
 
 {{ define "toc" }}
-  {{ partial "docs/toc" . }}
+<nav id="TableOfContents">
+	<ul>
+	{{ range sort $.Site.Data.scriptmods }}
+	  {{ if eq .type "type" }}
+	  	<li><a href="#type-{{.module}}">{{ .module }}</a></li>
+	  {{ else }}
+	  	<li><a href="#module-{{.module}}">{{ .module }}</a></li>
+	  {{ end }}
+	  {{/*
+	  	<ul>
+	    	{{ $moduleName := .module }}
+			{{ range sort .symbols "name" }}	  	
+				<li><a href="#{{$moduleName}}-{{.name}}">{{ .name }}</a></li>
+			{{ end }}		  
+	  	</ul>
+	  */}}
+	{{ end }}
+	</ul>
+</nav>
 {{ end }}

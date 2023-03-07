@@ -54,10 +54,10 @@ The back-stack is preserved in the workspace file, and can be restored by launch
 switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
 table, filter, or query from the session that was previously using the workspace.
 
-<div class="framed">
-  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+{{<hint info>}}
+  **Note:** the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
   through the back-stack will execute any queries or filters against the actual table itself.
-</div>
+{{</hint>}}
 
 ## Adjusting The Layout
 

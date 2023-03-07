@@ -1,0 +1,48 @@
+module: item
+type: type
+docs: |
+  A single record from a DynamoDB table.
+  
+  Item values are converted to tamarin types using the following:
+    
+  | Attribute Type | Tamarin Type |
+  |:---------------|:-------------|
+  | S              | string       |
+  | N              | int, float \[1\] |
+  | BOOL           | bool         |
+  | NULL           | nil          |
+  | L              | list         |
+  | M              | map          |
+  | SS             | set, with string values |
+  | NS             | set, with number values |
+  
+  Notes:
+        
+  - \[1\]: int will be used if the value can be parsed as an integer, otherwise it will be returned as a float.
+  - Byte array (B or BS) values are currently not supported.
+    
+symbols:
+  - name: result_set
+    syntax: item.result_set
+    docs: |
+      Returns the result-set this item is a member of.
+  - name: index
+    syntax: item.index
+    docs: |
+      Returns the index of this item within the result set.
+      
+      ```
+      item.result_set[item.index] == item
+      ```
+  - name: attr
+    syntax: item.attr(expression)
+    docs: |
+      Returns the attribute value from the query expression.      
+  - name: set_attr
+    syntax: item.set_attr(expression, value)
+    docs: |
+      Sets the value of the attribute.
+  - name: delete_attr
+    syntax: item.delete_attr(expression)
+    docs: |
+      Delete the attribute.

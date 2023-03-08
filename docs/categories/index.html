@@ -9,13 +9,12 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dynamobrowse.app/categories/" />
-
 <title>Categories | Dynamo-Browse</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.66383e8055be54e12a49ae1389ed3be7289e0b863913af00c3ccc9de529f8dd9.css" integrity="sha256-Zjg&#43;gFW&#43;VOEqSa4Tie075yieC4Y5E68Aw8zJ3lKfjdk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e08e12eab28a85481cde0b8b4dd0cab9c1a71a1305bc8f53c5389d7143d9c8b9.js" integrity="sha256-4I4S6rKKhUgc3guLTdDKucGnGhMFvI9TxTidcUPZyLk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3e2a99f5b2236c1fe64b9c430ace5365f44b26acd90b97b255b97b8a70037a68.js" integrity="sha256-PiqZ9bIjbB/mS5xDCs5TZfRLJqzZC5eyVbl7inADemg=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://dynamobrowse.app/categories/index.xml" title="Dynamo-Browse" />
 <!--
 Made with Book Theme
@@ -66,7 +65,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/getting-around/">Getting Around</a></li>
 <li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
 <li><a href="/docs/editing-items/">Editing Items</a></li>
-<li><a href="/docs/customising/">Customising</a>
+<li><a href="/docs/customising/">Customising</a></li>
+<li><a href="/docs/scripting/">Scripting</a>
 <br></li>
 </ul>
 <p><strong>References</strong></p>
@@ -75,7 +75,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/reference/commands/">Commands</a></li>
 <li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
 <li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
-<li><a href="/docs/reference/settings/">Settings</a>
+<li><a href="/docs/reference/settings/">Settings</a></li>
+<li><a href="/docs/reference/script-api/">Script API</a>
 <br></li>
 </ul>
 
@@ -93,7 +94,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -156,8 +157,6 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-
-
  
       
 
@@ -173,9 +172,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  
@@ -223,7 +220,7 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     
   </main>
 
-  <script src="https://dynamobrowse.app/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
+  <script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
 
 </body>
 </html>

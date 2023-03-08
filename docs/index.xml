@@ -12,8 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/customising/</guid>
-      <description>Customising Dynamo-Browse #  Some commands can be used to customise Dynamo-Browse, such as modify key bindings. The effect of these commands will only be applied for the duration of the session: they are currently not tracked within the workspace file. So in order to keep customisations across relaunches, these commands can be added to an RC file.
-The RC File #  The RC file is a text file containing commands that will be executed by Dynamo-Browse upon launch.</description>
+      <description>Customising Dynamo-Browse # Some commands can be used to customise Dynamo-Browse, such as modify key bindings. The effect of these commands will only be applied for the duration of the session: they are currently not tracked within the workspace file. So in order to keep customisations across relaunches, these commands can be added to an RC file.
+The RC File # The RC file is a text file containing commands that will be executed by Dynamo-Browse upon launch.</description>
     </item>
     
     <item>
@@ -22,8 +22,8 @@ The RC File #  The RC file is a text file containing commands that will be execu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/editing-items/</guid>
-      <description>Editing Items #  Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
- Marking Items #  Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
+      <description>Editing Items # Dynamo-Browse offers some basic facilities for editing items — such as creating items, deleting items, and modifying their attribute values.
+Marking Items # Most modifications are applied to items that are marked. A marked item is indicated by a grey background and a bullet indicator (•) on the left side of the table.
 To mark or unmark the selected item, press m.
 The command unmark can be used to clear all marked items.</description>
     </item>
@@ -34,8 +34,9 @@ The command unmark can be used to clear all marked items.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/filtering-querying/</guid>
-      <description>Querying And Viewing Results #  Querying #   A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
-To run a query, press ?, and enter the query expression.</description>
+      <description>Querying And Viewing Results # Querying # A query or scan over the table can be performed by entering a Query Expression. Query expressions are a built-in expression language which translates to either a DynamoDB query or scan, depending on the expression. Details about the Query Expression language can be found in the Query Expressions references.
+To run a query, press ?, and enter the query expression.
+To clear a query, press ?</description>
     </item>
     
     <item>
@@ -44,9 +45,9 @@ To run a query, press ?, and enter the query expression.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/getting-around/</guid>
-      <description>Getting Around #  After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
- This mode consists of three panes:
- The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.</description>
+      <description>Getting Around # After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.</description>
     </item>
     
     <item>
@@ -55,7 +56,7 @@ To run a query, press ?, and enter the query expression.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/launching/</guid>
-      <description>Launching And Quitting #  To launch Dynamo-Browse, run the following command at the terminal:
+      <description>Launching And Quitting # To launch Dynamo-Browse, run the following command at the terminal:
 dynamo-browse This will use your current AWS configuration and region, which can be changed by setting the relevant AWS_ environment variables.
 To connect to a local instance of DynamoDB, such as one running in a Docker container, use the --local flag. This takes as the argument the hostname and endpoint of the local DynamoDB server. The hostname can be omitted, and will default to localhost:</description>
     </item>
@@ -66,11 +67,11 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/commands/</guid>
-      <description>Commands #  del-attr #  :del-attr &amp;lt;attribute&amp;gt; Alias: da
+      <description>Commands # del-attr # :del-attr &amp;lt;attribute&amp;gt; Alias: da
 Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
-delete #  :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
-echo #  :echo [message ...] Displays message in the status bar. Mainly used for debugging.
-export #  :export &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
+delete # :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
+echo # :echo [message ...] Displays message in the status bar. Mainly used for debugging.
+export # :export &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
     </item>
     
     <item>
@@ -79,7 +80,7 @@ export #  :export &amp;lt;filename&amp;gt; Writes the currently loaded items as 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/key-bindings/</guid>
-      <description>Key Bindings #   Show binding names    Key Binding Name Action     Main View Mode   &amp;uarr;/i table.move-up Move selection up   &amp;darr;/k table.move-down Move selection down   PgUp/&amp;#8679;I table.page-up Page up   PgDn/&amp;#8679;K table.page-down Page down   Home/0 table.goto-top Move selection to first item   End/$ table.goto-bottom Move selection to last item   &amp;larr;/j table.move-left Scroll displayed columns left   &amp;rarr;/l table.</description>
+      <description>Key Bindings # Show binding names Key Binding Name Action Main View Mode &amp;uarr;/i table.move-up Move selection up &amp;darr;/k table.move-down Move selection down PgUp/&amp;#8679;I table.page-up Page up PgDn/&amp;#8679;K table.page-down Page down Home/0 table.goto-top Move selection to first item End/$ table.goto-bottom Move selection to last item &amp;larr;/j table.move-left Scroll displayed columns left &amp;rarr;/l table.move-right Scroll displayed columns right Backspace view.view-back Go back \ view.view-forward Go forward w view.cycle-layout-forward Cycle forward through layout &amp;#8679;W view.</description>
     </item>
     
     <item>
@@ -88,11 +89,11 @@ export #  :export &amp;lt;filename&amp;gt; Writes the currently loaded items as 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/launch-flags/</guid>
-      <description>Launch Flags #  -debug #  -debug &amp;lt;filename&amp;gt; Enable debug logs, which will be written to filename.
--default-limit #  -default-limit &amp;lt;int&amp;gt; Sets the default limit of queries or scans. The default is 1,000 items.
--local #  -local [host]:&amp;lt;port&amp;gt; Connect to a local DynamoDB service listening on host:port. The default host is localhost.
--ro #  -ro Enable read-only mode.
--t #  -t &amp;lt;tableName&amp;gt; Open the table tableName, instead of prompting for a table.</description>
+      <description>Launch Flags # -debug # -debug &amp;lt;filename&amp;gt; Enable debug logs, which will be written to filename.
+-default-limit # -default-limit &amp;lt;int&amp;gt; Sets the default limit of queries or scans. The default is 1,000 items.
+-local # -local [host]:&amp;lt;port&amp;gt; Connect to a local DynamoDB service listening on host:port. The default host is localhost.
+-ro # -ro Enable read-only mode.
+-t # -t &amp;lt;tableName&amp;gt; Open the table tableName, instead of prompting for a table.</description>
     </item>
     
     <item>
@@ -101,9 +102,9 @@ export #  :export &amp;lt;filename&amp;gt; Writes the currently loaded items as 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/query-expressions/</guid>
-      <description>Query Expression #  Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
-Note that the query expression language is still under early development and may change in the future.  The expression is represented in EBNF form:
-string = &#39;&amp;quot;&#39; .* &#39;&amp;quot;&#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;quot;.</description>
+      <description>Query Expression # Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
+Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
+string = &amp;#39;&amp;#34;&amp;#39; .* &amp;#39;&amp;#34;&amp;#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;#34;.</description>
     </item>
     
     <item>
@@ -112,9 +113,9 @@ string = &#39;&amp;quot;&#39; .* &#39;&amp;quot;&#39;; identifier = [a-zA-Z_][a-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/settings/</guid>
-      <description>Settings #  default-limit #   Type: int Default: 1000  The maximum number of rows returned from a query or scan.
-ro #   Type: flag  Enable read-only mode. When enabled, all modification operations are disabled, and will fail with a Read-only mode error. The rw setting will disable read-only mode.
-rw #   Type: flag  Disable read-only mode. The ro setting will enable read-only mode.</description>
+      <description>Settings # default-limit # Type: int Default: 1000 The maximum number of rows returned from a query or scan.
+ro # Type: flag Enable read-only mode. When enabled, all modification operations are disabled, and will fail with a Read-only mode error. The rw setting will disable read-only mode.
+rw # Type: flag Disable read-only mode. The ro setting will enable read-only mode.</description>
     </item>
     
     <item>
@@ -123,11 +124,32 @@ rw #   Type: flag  Disable read-only mode. The ro setting will enable read-only 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/download/</guid>
-      <description>Download #  Binary packages can be download from GitHub.
-MacOS Using Homebrew #  If you have Homebrew, you can install using the following command:
-brew tap lmika/audax brew install audax Linux #  To install the Debian package, download the .deb file, and install the package by running:
-sudo apt install ./audax_0.1.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+      <description>Download # Binary packages can be download from GitHub.
+MacOS Using Homebrew # If you have Homebrew, you can install using the following command:
+brew tap lmika/audax brew install audax Linux # To install the Debian package, download the .deb file, and install the package by running:
+sudo apt install ./audax_0.2.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
 sudo yum install .</description>
+    </item>
+    
+    <item>
+      <title>Script API</title>
+      <link>https://dynamobrowse.app/docs/reference/script-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynamobrowse.app/docs/reference/script-api/</guid>
+      <description> Script API # </description>
+    </item>
+    
+    <item>
+      <title>Scripting</title>
+      <link>https://dynamobrowse.app/docs/scripting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynamobrowse.app/docs/scripting/</guid>
+      <description>Scripting # Scripts can be used to automate certain tasks with Dynamo-Browse. They can also be used to define new commands or key bindings.
+Scripting Basics # Dynamo-Browse scripts are written using the Tamarin scripting language, which looks a lot like Go. All features of the language are available in Dynamo-Browse.
+The typical &amp;ldquo;hello world&amp;rdquo; script for Dynamo-Browse is below:
+ui.print(&amp;#34;Hello, world&amp;#34;) This uses the ui package, which is the package used to interact with the Dynamo-Browse user interface.</description>
     </item>
     
   </channel>

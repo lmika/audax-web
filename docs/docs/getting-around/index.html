@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Getting Around #  After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
- This mode consists of three panes:
- The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.">
+<meta name="description" content="Getting Around # After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="Getting Around #  After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
- This mode consists of three panes:
- The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages." />
+<meta property="og:description" content="Getting Around # After selecting a table, Dynamo-Browse will perform a scan and present the results in the default view mode.
+This mode consists of three panes:
+The top pane displays the result-set of the last scan or query. The table name is at the top-left. The middle pane displays the attributes of the currently selected item, along with their type. The bottom pane displays the current query or filter, plus any messages." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dynamobrowse.app/docs/getting-around/" />
+<meta property="og:url" content="https://dynamobrowse.app/docs/getting-around/" /><meta property="article:section" content="docs" />
+
 
 <title>Getting Around | Dynamo-Browse</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.66383e8055be54e12a49ae1389ed3be7289e0b863913af00c3ccc9de529f8dd9.css" integrity="sha256-Zjg&#43;gFW&#43;VOEqSa4Tie075yieC4Y5E68Aw8zJ3lKfjdk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.e08e12eab28a85481cde0b8b4dd0cab9c1a71a1305bc8f53c5389d7143d9c8b9.js" integrity="sha256-4I4S6rKKhUgc3guLTdDKucGnGhMFvI9TxTidcUPZyLk=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.3e2a99f5b2236c1fe64b9c430ace5365f44b26acd90b97b255b97b8a70037a68.js" integrity="sha256-PiqZ9bIjbB/mS5xDCs5TZfRLJqzZC5eyVbl7inADemg=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -69,7 +70,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/getting-around/"class=active>Getting Around</a></li>
 <li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
 <li><a href="/docs/editing-items/">Editing Items</a></li>
-<li><a href="/docs/customising/">Customising</a>
+<li><a href="/docs/customising/">Customising</a></li>
+<li><a href="/docs/scripting/">Scripting</a>
 <br></li>
 </ul>
 <p><strong>References</strong></p>
@@ -78,7 +80,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/docs/reference/commands/">Commands</a></li>
 <li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
 <li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
-<li><a href="/docs/reference/settings/">Settings</a>
+<li><a href="/docs/reference/settings/">Settings</a></li>
+<li><a href="/docs/reference/script-api/">Script API</a>
 <br></li>
 </ul>
 
@@ -96,7 +99,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -201,10 +204,11 @@ by pressing <kbd>Backspace</kbd>.  Pressing <kbd>\</kbd> will allow you to go fo
 <p>The back-stack is preserved in the workspace file, and can be restored by launching Dynamo-Browse with the <code>-w</code>
 switch.  Launching Dynamo-Browse with a workspace that has a non-empty stack will restore the last viewed
 table, filter, or query from the session that was previously using the workspace.</p>
-<div class="framed">
-  Note that the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
-  through the back-stack will execute any queries or filters against the actual table itself.
-</div>
+<blockquote class="book-hint info">
+  <strong>Note:</strong> the back-stack does not preserve the actual items in the workspace.  Going backwards or forwards
+through the back-stack will execute any queries or filters against the actual table itself.
+</blockquote>
+
 <h2 id="adjusting-the-layout">
   Adjusting The Layout
   <a class="anchor" href="#adjusting-the-layout">#</a>
@@ -263,12 +267,12 @@ left or right.</p>
 and can be used to expose fields that are not at the top level.</p>
 <p>Any nested fields of maps or lists will not be included as a column by default.  Consider, for example, a table of books
 with authors structured as so:</p>
-<pre><code>{
-  &quot;book&quot;: {&quot;S&quot;: &quot;The Lord Of The Rings&quot;},
-  &quot;author&quot;: {&quot;M&quot;: {
-    &quot;firstName&quot;: {&quot;S&quot;: &quot;John&quot;},
-    &quot;middleName&quot;: {&quot;S&quot;: &quot;Ronald Reuel&quot;},
-    &quot;lastName&quot;: {&quot;S&quot;: &quot;Tolkien&quot;},
+<pre tabindex="0"><code>{
+  &#34;book&#34;: {&#34;S&#34;: &#34;The Lord Of The Rings&#34;},
+  &#34;author&#34;: {&#34;M&#34;: {
+    &#34;firstName&#34;: {&#34;S&#34;: &#34;John&#34;},
+    &#34;middleName&#34;: {&#34;S&#34;: &#34;Ronald Reuel&#34;},
+    &#34;lastName&#34;: {&#34;S&#34;: &#34;Tolkien&#34;},
   }}
 }
 </code></pre><p>If you wanted to show the the author&rsquo;s first and last name in the main table, rather than just see the description <code>(3 items)</code>, you
@@ -306,9 +310,7 @@ within the Fields Popup and pressing <kbd>d</kbd>.</p>
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  
@@ -353,7 +355,7 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     
   </main>
 
-  <script src="https://dynamobrowse.app/js/bundle.min.1111dbe4000ebf881580af584343b231fca83c4ca2eae63c33709b6031e82d76.js" defer></script>
+  <script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
 
 </body>
 </html>

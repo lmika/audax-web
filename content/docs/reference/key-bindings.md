@@ -109,6 +109,11 @@
   <td class="kb-binding-name">view.rescan</td>
   <td>Rerun last scan/query</td>
 </tr>
+<tr class="kb-binding-name">
+  <td class="kb-key-binding"><kbd>&gt;</kbd></td>
+  <td class="kb-binding-name">view.fetch-next-page</td>
+  <td>Fetch the next page of results</td>
+</tr>
 <tr>
   <td class="kb-key-binding"><kbd>:</kbd></td>
   <td class="kb-binding-name">view.prompt-for-command</td>

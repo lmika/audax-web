@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Scripting # Scripts can be used to automate certain tasks with Dynamo-Browse. They can also be used to define new commands or key bindings.
+Scripting Basics # Dynamo-Browse scripts are written using the Tamarin scripting language, which looks a lot like Go. All features of the language are available in Dynamo-Browse.
+The typical &ldquo;hello world&rdquo; script for Dynamo-Browse is below:
+ui.print(&#34;Hello, world&#34;) This uses the ui package, which is the package used to interact with the Dynamo-Browse user interface.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Scripting" />
+<meta property="og:description" content="Scripting # Scripts can be used to automate certain tasks with Dynamo-Browse. They can also be used to define new commands or key bindings.
+Scripting Basics # Dynamo-Browse scripts are written using the Tamarin scripting language, which looks a lot like Go. All features of the language are available in Dynamo-Browse.
+The typical &ldquo;hello world&rdquo; script for Dynamo-Browse is below:
+ui.print(&#34;Hello, world&#34;) This uses the ui package, which is the package used to interact with the Dynamo-Browse user interface." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynamobrowse.app/docs/scripting/" /><meta property="article:section" content="docs" />
+
+
+<title>Scripting | Dynamo-Browse</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.3e2a99f5b2236c1fe64b9c430ace5365f44b26acd90b97b255b97b8a70037a68.js" integrity="sha256-PiqZ9bIjbB/mS5xDCs5TZfRLJqzZC5eyVbl7inADemg=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Dynamo-Browse</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/download/">Download</a></li>
+<li><a href="https://github.com/lmika/audax/releases">Releases</a></li>
+<li><a href="https://github.com/lmika/audax">Github</a>
+<br></li>
+</ul>
+<p><a href="/docs/"><strong>User Guide</strong></a></p>
+<ul>
+<li><a href="/docs/launching/">Launching</a></li>
+<li><a href="/docs/getting-around/">Getting Around</a></li>
+<li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
+<li><a href="/docs/editing-items/">Editing Items</a></li>
+<li><a href="/docs/customising/">Customising</a></li>
+<li><a href="/docs/scripting/"class=active>Scripting</a>
+<br></li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="/docs/reference/key-bindings/">Key Bindings</a></li>
+<li><a href="/docs/reference/commands/">Commands</a></li>
+<li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
+<li><a href="/docs/reference/settings/">Settings</a></li>
+<li><a href="/docs/reference/script-api/">Script API</a>
+<br></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Scripting</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#scripting-basics">Scripting Basics</a></li>
+    <li><a href="#extension-scripts">Extension Scripts</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="scripting">
+  Scripting
+  <a class="anchor" href="#scripting">#</a>
+</h1>
+<p>Scripts can be used to automate certain tasks with Dynamo-Browse. They can also be used to define
+new commands or key bindings.</p>
+<h2 id="scripting-basics">
+  Scripting Basics
+  <a class="anchor" href="#scripting-basics">#</a>
+</h2>
+<p>Dynamo-Browse scripts are written using the <a href="https://cloudcmds.github.io/tamarin/">Tamarin</a> scripting language,
+which looks a lot like <a href="https://go.dev">Go</a>.  All features of the language are available in Dynamo-Browse.</p>
+<p>The typical &ldquo;hello world&rdquo; script for Dynamo-Browse is below:</p>
+<pre tabindex="0"><code>ui.print(&#34;Hello, world&#34;)
+</code></pre><p>This uses the <a href="/docs/reference/script-api/#module-ui">ui</a> package, which is the package used to interact with
+the Dynamo-Browse user interface.
+A full list of supported packages can be found in the <a href="/docs/reference/script-api/">Script API</a> reference, along
+with the builtins and packages supported by Tamarin itself.</p>
+<blockquote class="book-hint info">
+  <strong>Note:</strong> the <a href="/docs/reference/script-api/#module-ext">ext</a> package is only available to Extension Scripts.
+</blockquote>
+
+<p>To execute this script, use the <code>run-script</code> command:</p>
+<pre tabindex="0"><code>run-script /path/to/script/hello.tm
+</code></pre><p>You&rsquo;ll see that the message &ldquo;Hello, world&rdquo; will appear in the status bar of Dynamo-Browse.</p>
+<!-- TODO: Screenshot -->
+<p>Any <code>print</code> or <code>printf</code> messages will be written to the debug log with the prefix <code>script &lt;filename&gt;</code>.  The
+debug log is turned off by default, but it can be enabled using the <a href="/docs/reference/launch-flags/#-debug">-debug</a> flag on launch.</p>
+<p>Scripts loaded using the <code>run-script</code> command are for ad-hoc automation tasks that are not necessarily designed for
+repeated use. These ad-hoc scripts are executed, then immediately unloaded, and are not generally allowed to extend
+Dynamo-Browse.  In order to do so, you will need to write an Extension Script.</p>
+<h2 id="extension-scripts">
+  Extension Scripts
+  <a class="anchor" href="#extension-scripts">#</a>
+</h2>
+<p>Extension scripts are scripts designed to extend Dynamo-Browse in some way, such as with new commands or key bindings.
+They are traditionally loaded on startup and exist in the predefined &ldquo;script&rdquo; directory. They are usually designed for
+repeated operations, including those that can be bound to command name or keys.</p>
+<p>The following is an example script which will define a &ldquo;goto&rdquo; command.  When invoked, the script will prompt the
+user for the value of the partition key.  It will then perform a query over the currently viewed table for any rows with
+that partition key.  If no error occurred, the results of the query will be shown to the user.</p>
+<pre tabindex="0"><code>// Define a new &#34;goto&#34; command, which can be invoked when the user presses &#39;:&#39; and types in &#39;goto&#39;
+ext.command(&#34;goto&#34;, func() {
+    // Use the information of the current table to get the name of the partition key.
+    pkName := session.current_table().keys[&#34;partition&#34;]
+
+    // Prompt the user for the value to go to.  The user can press Esc, which will cancel
+    // the input and return &#39;nil&#39;.
+    keyVal := ui.prompt(pkName + &#34;? &#34;)
+    if keyVal == nil {
+        return nil
+    }
+
+    // Run a query over the DynamoDB table for any rows with the partition key.  Notice
+    // the use of the &#39;args&#39; option, and the presence of both the name prefix (&#39;:key&#39;)
+    // and value prefix (&#39;$val&#39;).
+    res := session.query(&#34;:key = $val&#34;, {
+        args: {
+            key: pkName,
+            val: keyVal,
+        },
+    })
+    
+    // The query method will return either an error or a result.  If it&#39;s an error, print
+    // a notice and exist.
+    if res.is_err() {
+        ui.print(&#34;Can&#39;t goto: &#34; + res.err_msg())
+        return nil
+    }
+
+    // If no error, unwrap the result object to get the result-set returned from the query.
+    // Then change the current result-set to this one.  This will change the result-set the
+    // user is currently seeing.
+    session.set_result_set(res.unwrap())
+})
+</code></pre><p>To load an extension script, use the <code>load-script</code> command:</p>
+<pre tabindex="0"><code>load-script script.tm
+</code></pre><p>The script must exist in the &ldquo;script&rdquo; directory, which by default is:</p>
+<pre tabindex="0"><code>$HOME/.config/audax/dynamo-browse/scripts
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#scripting-basics">Scripting Basics</a></li>
+    <li><a href="#extension-scripts">Extension Scripts</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

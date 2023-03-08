@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" Script API # ">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Script API" />
+<meta property="og:description" content=" Script API # " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynamobrowse.app/docs/reference/script-api/" /><meta property="article:section" content="docs" />
+
+
+<title>Script API | Dynamo-Browse</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.3e2a99f5b2236c1fe64b9c430ace5365f44b26acd90b97b255b97b8a70037a68.js" integrity="sha256-PiqZ9bIjbB/mS5xDCs5TZfRLJqzZC5eyVbl7inADemg=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <script defer data-domain="dynamobrowse.app" src="https://plausible.io/js/plausible.js"></script>
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Dynamo-Browse</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/download/">Download</a></li>
+<li><a href="https://github.com/lmika/audax/releases">Releases</a></li>
+<li><a href="https://github.com/lmika/audax">Github</a>
+<br></li>
+</ul>
+<p><a href="/docs/"><strong>User Guide</strong></a></p>
+<ul>
+<li><a href="/docs/launching/">Launching</a></li>
+<li><a href="/docs/getting-around/">Getting Around</a></li>
+<li><a href="/docs/filtering-querying/">Filtering And Querying</a></li>
+<li><a href="/docs/editing-items/">Editing Items</a></li>
+<li><a href="/docs/customising/">Customising</a></li>
+<li><a href="/docs/scripting/">Scripting</a>
+<br></li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="/docs/reference/key-bindings/">Key Bindings</a></li>
+<li><a href="/docs/reference/commands/">Commands</a></li>
+<li><a href="/docs/reference/query-expressions/">Query Expressions</a></li>
+<li><a href="/docs/reference/launch-flags/">Launch Flags</a></li>
+<li><a href="/docs/reference/settings/">Settings</a></li>
+<li><a href="/docs/reference/script-api/"class=active>Script API</a>
+<br></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Script API</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+<nav id="TableOfContents">
+	<ul>
+	
+	  
+	  	<li><a href="#module-ext">ext</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-item">item</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-os">os</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-resultset">resultset</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-session">session</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-table">table</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-table_index">table_index</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-ui">ui</a></li>
+	  
+	  
+	
+	</ul>
+</nav>
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  
+
+
+  
+
+  
+
+
+
+<h1 id="script-api">
+  Script API
+  <a class="anchor" href="#script-api">#</a>
+</h1>
+
+  
+  <section>
+	  
+	  	<h2 id="module-ext">
+		  	Module: ext
+		  	<a class="anchor" href="#module-ext">#</a>
+	  	</h2>
+	  
+	  
+	  <p>Provides access to the extension points scripts can used to extend the functionality of Dynamo-Browse.</p>
+<p>This module is only available for scripts loaded using the <a href="">load-script</a> command.</p>
+
+	  
+	  
+	  	  	
+	  	<h3 id="ext-command">
+			  ext.command
+			  <a class="anchor" href="ext-command">#</a>
+	  	</h3>
+		<pre><code>ext.command(name, fn)</code></pre>
+		<p>Defines a new command, which can be invoked by entering <em>name</em> within the main view mode.
+The parameter <em>fn</em> must be a function, which will be executed when the <em>name</em> command is entered
+while in view mode.</p>
+<p>The command can accept arguments, which will be passed in to the parameters of <em>fn</em>. The number
+of command arguments must match the number of parameters, except for any function arguments with
+a default value.</p>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>ext.command(&#34;add&#34;, func(x, y) {
+  sum := x &#43; y
+  ui.print(&#34;x &#43; y = &#34;, sum)
+})
+</code></pre>
+		
+	  	  	
+	  	<h3 id="ext-key_binding">
+			  ext.key_binding
+			  <a class="anchor" href="ext-key_binding">#</a>
+	  	</h3>
+		<pre><code>ext.key_binding(name, options, fn)</code></pre>
+		<p>Defines a new key binding, which can be invoked while viewing the table.</p>
+<p>The <em>name</em> parameter defines the binding name. The binding names will be prefixed with
+<code>ext.&lt;script_basename&gt;</code>. This name can be used with the <a href="">rebind</a> command.</p>
+<p>The <em>option</em> parameter defines a map of options. The only valid option is
+<code>default</code>, which is the default key to use for this binding. If unset, the binding will
+have no key binding and can only be bound using the <a href="">rebind</a> command.</p>
+<p>The <em>fn</em> parameter is the function that will be invoked when the key is pressed.
+It must accept no parameters.</p>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>// Script name: sayhello.tm
+//
+// This binding can be rebound with the command &#34;rebind ext.sayhello.hello &lt;key&gt;&#34;
+ext.key_binding(&#34;hello&#34;, {&#34;default&#34;: &#34;H&#34;}, func() {
+  ui.print(&#34;Hello&#34;)
+})</code></pre>
+		
+	  
+  </section>
+  
+  <section>
+	  
+	    <h2 id="type-item">
+			Type: item
+			<a class="anchor" href="#type-item">#</a>
+		</h2>
+	  
+	  
+	  <p>A single record from a DynamoDB table.</p>
+<p>Item values are converted to tamarin types using the following:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Attribute Type</th>
+<th style="text-align:left">Tamarin Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S</td>
+<td style="text-align:left">string</td>
+</tr>
+<tr>
+<td style="text-align:left">N</td>
+<td style="text-align:left">int, float [1]</td>
+</tr>
+<tr>
+<td style="text-align:left">BOOL</td>
+<td style="text-align:left">bool</td>
+</tr>
+<tr>
+<td style="text-align:left">NULL</td>
+<td style="text-align:left">nil</td>
+</tr>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:left">list</td>
+</tr>
+<tr>
+<td style="text-align:left">M</td>
+<td style="text-align:left">map</td>
+</tr>
+<tr>
+<td style="text-align:left">SS</td>
+<td style="text-align:left">set, with string values</td>
+</tr>
+<tr>
+<td style="text-align:left">NS</td>
+<td style="text-align:left">set, with number values</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>[1]: int will be used if the value can be parsed as an integer, otherwise it will be returned as a float.</li>
+<li>Byte array (B or BS) values are currently not supported.</li>
+</ul>
+
+	  
+	  
+	  	  	
+	  	<h3 id="item-attr">
+			  item.attr
+			  <a class="anchor" href="item-attr">#</a>
+	  	</h3>
+		<pre><code>item.attr(expression)</code></pre>
+		Returns the attribute value from the query expression.
+		
+		
+	  	  	
+	  	<h3 id="item-delete_attr">
+			  item.delete_attr
+			  <a class="anchor" href="item-delete_attr">#</a>
+	  	</h3>
+		<pre><code>item.delete_attr(expression)</code></pre>
+		Delete the attribute.
+		
+		
+	  	  	
+	  	<h3 id="item-index">
+			  item.index
+			  <a class="anchor" href="item-index">#</a>
+	  	</h3>
+		<pre><code>item.index</code></pre>
+		Returns the index of this item within the result set.
+		
+		
+	  	  	
+	  	<h3 id="item-result_set">
+			  item.result_set
+			  <a class="anchor" href="item-result_set">#</a>
+	  	</h3>
+		<pre><code>item.result_set</code></pre>
+		Returns the result-set this item is a member of.
+		
+		
+	  	  	
+	  	<h3 id="item-set_attr">
+			  item.set_attr
+			  <a class="anchor" href="item-set_attr">#</a>
+	  	</h3>
+		<pre><code>item.set_attr(expression, value)</code></pre>
+		Sets the value of the attribute.
+		
+		
+	  
+  </section>
+  
+  <section>
+	  
+	  	<h2 id="module-os">
+		  	Module: os
+		  	<a class="anchor" href="#module-os">#</a>
+	  	</h2>
+	  
+	  
+	  Provides access to the operating system.
+	  
+	  
+	  	  	
+	  	<h3 id="os-env">
+			  os.env
+			  <a class="anchor" href="os-env">#</a>
+	  	</h3>
+		<pre><code>os.env(name)</code></pre>
+		Return the value of the environment variable with the <em>name</em>.  If the environment variable is not
+set, this will return nil.
+		
+		
+	  	  	
+	  	<h3 id="os-exec">
+			  os.exec
+			  <a class="anchor" href="os-exec">#</a>
+	  	</h3>
+		<pre><code>os.exec(comamnd)</code></pre>
+		<p>Executes the passed in command using the default shell.</p>
+<p>This returns a <a href="">Result</a> object which, if the return code is zero, will unwrap to stdout of
+the command as a string.  If the return code is non-zero, the <a href="">Result</a> object will be an error.</p>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>currentDate := os.exec(&#34;date&#34;)
+ui.print(&#34;Current date = &#34;, currentDate.unwrap())
+</code></pre>
+		
+	  
+  </section>
+  
+  <section>
+	  
+	    <h2 id="type-resultset">
+			Type: resultset
+			<a class="anchor" href="#type-resultset">#</a>
+		</h2>
+	  
+	  
+	  <p>Holds a collection of items returned from a query, or presented to a user.</p>
+<p>A specific item of a result-set can be retrived using the subscript option.  For example, <code>result[21]</code> will
+return the 21st item of the result-set from the first item. A negative index can be used to retrieve an
+item from the last item.</p>
+<p>There is no guarantee to the ordering of items within the result-set, although items are usually
+ordered based on the partition and sort key.</p>
+
+	  
+	  
+	  	  	
+	  	<h3 id="resultset-length">
+			  resultset.length
+			  <a class="anchor" href="resultset-length">#</a>
+	  	</h3>
+		<pre><code>resultset.length</code></pre>
+		Returns the number of items within the result set.
+		
+		
+	  	  	
+	  	<h3 id="resultset-table">
+			  resultset.table
+			  <a class="anchor" href="resultset-table">#</a>
+	  	</h3>
+		<pre><code>resultset.table</code></pre>
+		Returns information about the table this result set belongs to.
+		
+		
+	  
+  </section>
+  
+  <section>
+	  
+	  	<h2 id="module-session">
+		  	Module: session
+		  	<a class="anchor" href="#module-session">#</a>
+	  	</h2>
+	  
+	  
+	  Provides access to the currently viewed table and result-set.
+	  
+	  
+	  	  	
+	  	<h3 id="session-current_table">
+			  session.current_table
+			  <a class="anchor" href="session-current_table">#</a>
+	  	</h3>
+		<pre><code>session.current_table()</code></pre>
+		Returns information about the currently displayed table. This will be returned as a <code>table</code> object.  If no
+table is displayed, this function will return <code>nil</code>.
+		
+		
+	  	  	
+	  	<h3 id="session-query">
+			  session.query
+			  <a class="anchor" href="session-query">#</a>
+	  	</h3>
+		<pre><code>session.query(expression, [options])</code></pre>
+		<p>Executes a query against a DynamoDB table.  This returns a <code>Result</code> object which, when unrapped, will return a
+a resultset if the query was successful.  A query with no results will be an empty result-set.</p>
+<p>The <em>expression</em> is the query expression to execute. This is similar to the type of expressions entered
+after pression <kbd>?</kbd>.</p>
+<p>The <em>options</em> map can contain the following key/value pairs:</p>
+<ul>
+<li><code>table</code>: the DynamoDB table to execute the query against. Default is the currently displayed table.</li>
+<li><code>args</code>: A map containing names and values that can be used as placeholders in the query expression.</li>
+</ul>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>out := session.query(&#34;pk = $key&#34;, {
+  table: &#34;some-table&#34;,
+  args: {
+    key: &#34;my partition key&#34;
+  }
+}
+if (out.is_ok()) {
+  session.set_result_set(out.unwrap())
+} else {
+  ui.print(&#34;Something happened&#34;)
+}
+</code></pre>
+		
+	  	  	
+	  	<h3 id="session-result_set">
+			  session.result_set
+			  <a class="anchor" href="session-result_set">#</a>
+	  	</h3>
+		<pre><code>session.result_set()</code></pre>
+		<p>Returns the currently displayed result set. This is the set of items that are shown to the user in the items
+table. This will be returned as a <code>resultset</code> object.</p>
+<p>Note that this only contains the items of the current result set that exists in memory.  As such, it will be
+capped to the configured query limit.</p>
+
+		
+		
+	  	  	
+	  	<h3 id="session-selected_item">
+			  session.selected_item
+			  <a class="anchor" href="session-selected_item">#</a>
+	  	</h3>
+		<pre><code>session.selected_item()</code></pre>
+		Returns the item currently highlighted in the items table. This will be returned as an <code>item</code> object.  If no
+item is highlighted, it will return <code>nil</code>.
+		
+		
+	  	  	
+	  	<h3 id="session-set_result_set">
+			  session.set_result_set
+			  <a class="anchor" href="session-set_result_set">#</a>
+	  	</h3>
+		<pre><code>session.set_result_set(new_result_set)</code></pre>
+		<p>Replaces the currently displayed result-set with a new one. This can be used alongside the <code>query</code> function
+to display the results of a query.</p>
+<p>Changing the displayed result-set will trigger a redraw of the viewport and will push a new history record to
+the backstack. Therefore, it&rsquo;s not recommended to call this method too often during a script execution session.
+At most once with the final result-set you&rsquo;d like to show the user is considered best practice.</p>
+
+		
+		
+	  
+  </section>
+  
+  <section>
+	  
+	    <h2 id="type-table">
+			Type: table
+			<a class="anchor" href="#type-table">#</a>
+		</h2>
+	  
+	  
+	  Provides information about a DynamoDB table.
+	  
+	  
+	  	  	
+	  	<h3 id="table-gsis">
+			  table.gsis
+			  <a class="anchor" href="table-gsis">#</a>
+	  	</h3>
+		<pre><code>table.gsis</code></pre>
+		Returns a list of the GSIs used by this table.  The elements of the list will have the type table_index
+		
+		
+	  	  	
+	  	<h3 id="table-keys">
+			  table.keys
+			  <a class="anchor" href="table-keys">#</a>
+	  	</h3>
+		<pre><code>table.keys</code></pre>
+		<p>Returns the keys of the table. This will be returned as a map with the following names:</p>
+<ul>
+<li><code>hash</code>: the attribute name of the partition (hash) key</li>
+<li><code>range</code>: the attribute name of the sort (range) key, or <code>nil</code> if one is not defined.</li>
+</ul>
+
+		
+		
+	  	  	
+	  	<h3 id="table-name">
+			  table.name
+			  <a class="anchor" href="table-name">#</a>
+	  	</h3>
+		<pre><code>table.name</code></pre>
+		Returns the name of the table.
+		
+		
+	  
+  </section>
+  
+  <section>
+	  
+	    <h2 id="type-table_index">
+			Type: table_index
+			<a class="anchor" href="#type-table_index">#</a>
+		</h2>
+	  
+	  
+	  Provides information about an DynamoDB index.
+	  
+	  
+	  	  	
+	  	<h3 id="table_index-keys">
+			  table_index.keys
+			  <a class="anchor" href="table_index-keys">#</a>
+	  	</h3>
+		<pre><code>table_index.keys</code></pre>
+		<p>Returns the keys of the index. This will be returned as a map with the following names:</p>
+<ul>
+<li><code>hash</code>: the attribute name of the partition (hash) key</li>
+<li><code>range</code>: the attribute name of the sort (range) key, or <code>nil</code> if one is not defined.</li>
+</ul>
+
+		
+		
+	  	  	
+	  	<h3 id="table_index-name">
+			  table_index.name
+			  <a class="anchor" href="table_index-name">#</a>
+	  	</h3>
+		<pre><code>table_index.name</code></pre>
+		Returns the name of the index.
+		
+		
+	  
+  </section>
+  
+  <section>
+	  
+	  	<h2 id="module-ui">
+		  	Module: ui
+		  	<a class="anchor" href="#module-ui">#</a>
+	  	</h2>
+	  
+	  
+	  Provides control over the user interface.
+	  
+	  
+	  	  	
+	  	<h3 id="ui-print">
+			  ui.print
+			  <a class="anchor" href="ui-print">#</a>
+	  	</h3>
+		<pre><code>ui.print(args...)</code></pre>
+		Displays a message in the status bar.
+		
+		
+	  	  	
+	  	<h3 id="ui-prompt">
+			  ui.prompt
+			  <a class="anchor" href="ui-prompt">#</a>
+	  	</h3>
+		<pre><code>ui.prompt(message)</code></pre>
+		<p>Request a line of input from the user, using <em>message</em> as the prompt.</p>
+<p>This function will return the user&rsquo;s input as a string, or <code>nil</code> if the user cancels
+the prompt by pressing <kbd>Esc</kbd></p>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>line := ui.prompt(&#34;What is your name? &#34;)
+ui.print(&#34;Hello, &#34;, line)</code></pre>
+		
+	  
+  </section>
+  
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+<nav id="TableOfContents">
+	<ul>
+	
+	  
+	  	<li><a href="#module-ext">ext</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-item">item</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-os">os</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-resultset">resultset</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-session">session</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-table">table</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#type-table_index">table_index</a></li>
+	  
+	  
+	
+	  
+	  	<li><a href="#module-ui">ui</a></li>
+	  
+	  
+	
+	</ul>
+</nav>
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  <script src="https://dynamobrowse.app/js/bundle.min.8372922b487bf172f56793cc78f9c6336ef50a41bec7028ef2060401b29c9081.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -127,7 +127,7 @@ rw # Type: flag Disable read-only mode. The ro setting will enable read-only mod
       <description>Download # Binary packages can be download from GitHub.
 MacOS Using Homebrew # If you have Homebrew, you can install using the following command:
 brew tap lmika/audax brew install audax Linux # To install the Debian package, download the .deb file, and install the package by running:
-sudo apt install ./audax_0.2.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+sudo apt install ./audax_0.2.1_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
 sudo yum install .</description>
     </item>
     

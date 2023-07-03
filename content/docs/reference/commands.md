@@ -110,6 +110,7 @@ The value of _type_ can be use to specify the type of the attribute.  It can be 
 - `-N`: number value
 - `-BOOL`: boolean value
 - `-NULL`: null value
+- `-TO`: value of an expression
 
 If unset, the attribute type will not be changed.  _type_ must be set if multiple items have been marked.
 

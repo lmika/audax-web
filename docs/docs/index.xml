@@ -71,7 +71,7 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
 Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
 delete # :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
 echo # :echo [message ...] Displays message in the status bar. Mainly used for debugging.
-export # :export &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
+export # :export [-all] &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
     </item>
     
     <item>

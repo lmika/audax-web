@@ -71,7 +71,7 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
 Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
 delete # :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
 echo # :echo [message ...] Displays message in the status bar. Mainly used for debugging.
-export # :export &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
+export # :export [-all] &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
     </item>
     
     <item>
@@ -127,7 +127,7 @@ rw # Type: flag Disable read-only mode. The ro setting will enable read-only mod
       <description>Download # Binary packages can be download from GitHub.
 MacOS Using Homebrew # If you have Homebrew, you can install using the following command:
 brew tap lmika/audax brew install audax Linux # To install the Debian package, download the .deb file, and install the package by running:
-sudo apt install ./audax_0.2.1_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+sudo apt install ./audax_0.3.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
 sudo yum install .</description>
     </item>
     

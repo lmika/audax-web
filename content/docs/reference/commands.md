@@ -30,10 +30,17 @@ Displays _message_ in the status bar.  Mainly used for debugging.
 ## export
 
 ```
-:export <filename>
+:export [-all] <filename>
 ```
 
 Writes the currently loaded items as a CSV file to _filename_.
+
+Only string, numerical, and boolean values will be written to the export; all other value types will be
+black. Exporting will honour the columns currently visible in the table. Filtered items will also be included
+in the exported file.
+
+When called with the `-all` flag, any subsequent pages will be included in the export. If invoked after running
+a query, all items returned from that query will be exported to file.
 
 ## mark
 

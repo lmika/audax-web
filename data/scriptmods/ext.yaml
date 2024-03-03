@@ -19,6 +19,39 @@ symbols:
         sum := x + y
         ui.print("x + y = ", sum)
       })
+  - name: related_items
+    syntax: ext.related_items(table, fn)
+    docs: |
+      Defines a "related item" for a table. These act as quick jumps between tables.
+      When the user presses Shift+O, all the related item functions that match the given
+      table will be evaluated. Each one is to return zero or more related queries, which are presented
+      to the user as a list. When the user selects one, the query will be evaluated and the result set will
+      be shown.
+      
+      The _table_ parameter is the name of the table of the related items managed by this function.
+      If the last character of the table is `*`, then _table_ will be treated as a name prefix.
+      
+      The _fn_ will produce a list of queries that are related to a given item. The function takes the currently
+      selected item as the argument, and is expected to produce a list of maps, with each map having the following
+      fields:
+        
+      - `label`: The label to use for the picker option
+      - `query`: The query expression that will run when the option is chosen
+      - `table`: The table to run the query over. If not set, the current table will be used
+      - `args`: A map of query placeholder values
+      - `on_select`: An optional function that will run in place of a predefined query. If set, the `query` field will
+        be ignored.
+    example: |
+      ext.related_items("user-account", func(item) {
+        return [
+          {
+            "label": "Customer",
+            "table": "billing",
+            "query": "email=$email",
+            "args": {"email": item.attr("email")},
+          },
+        ]
+      })	    
   - name: key_binding
     syntax: ext.key_binding(name, options, fn)
     docs: |

@@ -24,7 +24,7 @@
 	  {{ range sort .symbols "name" }}	  	
 	  	<h3 id="{{$moduleName}}-{{.name}}">
 			  {{$moduleName}}.{{ .name }}
-			  <a class="anchor" href="{{$moduleName}}-{{.name}}">#</a>
+			  <a class="anchor" href="#{{$moduleName}}-{{.name}}">#</a>
 	  	</h3>
 		<pre><code>{{ .syntax }}</code></pre>
 		{{ $.RenderString .docs }}

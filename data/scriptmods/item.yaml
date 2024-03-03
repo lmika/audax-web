@@ -22,8 +22,8 @@ docs: |
   - Byte array (B or BS) values are currently not supported.
     
 symbols:
-  - name: result_set
-    syntax: item.result_set
+  - name: resultset
+    syntax: item.resultset
     docs: |
       Returns the result-set this item is a member of.
   - name: index

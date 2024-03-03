@@ -85,9 +85,19 @@
   <td>Mark/unmark currently selected item</td>
 </tr>
 <tr>
+  <td class="kb-key-binding"><kbd>M</kbd></td>
+  <td class="kb-binding-name">view.toggle-marked-items</td>
+  <td>Toggle marked/unmarked items</td>
+</tr>
+<tr>
   <td class="kb-key-binding"><kbd>c</kbd></td>
   <td class="kb-binding-name">view.copy-item-to-clipboard</td>
   <td>Copy displayed item to pasteboard</td>
+</tr>
+<tr>
+  <td class="kb-key-binding"><kbd>C</kbd></td>
+  <td class="kb-binding-name">view.copy-table-to-clipboard</td>
+  <td>Copy displayed table to pasteboard as a CSV</td>
 </tr>
 <tr>
   <td class="kb-key-binding"><kbd>/</kbd></td>

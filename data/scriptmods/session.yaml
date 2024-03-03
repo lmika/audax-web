@@ -5,8 +5,8 @@ symbols:
   - name: query
     syntax: session.query(expression, [options])
     docs: |
-      Executes a query against a DynamoDB table.  This returns a `Result` object which, when unrapped, will return a
-      a resultset if the query was successful.  A query with no results will be an empty result-set.
+      Executes a query against a DynamoDB table.  This returns a resultset if the query was successful.
+      A query with no results will be an empty result-set.
       
       The _expression_ is the query expression to execute. This is similar to the type of expressions entered
       after pression <kbd>?</kbd>.
@@ -22,18 +22,14 @@ symbols:
           key: "my partition key"
         }
       }
-      if (out.is_ok()) {
-        session.set_result_set(out.unwrap())
-      } else {
-        ui.print("Something happened")
-      }
+      session.set_result_set(out.unwrap())
   - name: current_table
     syntax: session.current_table()
     docs: |
       Returns information about the currently displayed table. This will be returned as a `table` object.  If no
       table is displayed, this function will return `nil`.
-  - name: result_set
-    syntax: session.result_set()
+  - name: resultset
+    syntax: session.resultset
     docs: |
       Returns the currently displayed result set. This is the set of items that are shown to the user in the items
       table. This will be returned as a `resultset` object.

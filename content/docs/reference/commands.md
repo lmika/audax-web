@@ -1,5 +1,15 @@
 # Commands
 
+## clone
+
+```
+:clone
+```
+
+Copies the currently selected item to a new item, which will appear at the bottom of the table.
+
+Cloning an item will prompt for a new partition key and sort key but will not check for duplicates.
+
 ## del-attr
 
 ```
@@ -45,7 +55,7 @@ a query, all items returned from that query will be exported to file.
 ## mark
 
 ```
-:mark [all | none | toggle]
+:mark [all | none | toggle] [-where <expr>]
 ```
 
 Mark the rows in the following way:
@@ -53,6 +63,8 @@ Mark the rows in the following way:
 - `all`: will mark all rows.  This is the default when invoked without an argument.
 - `none`: will unmark all rows.
 - `toggle`: will toggle all marked and unmarked rows.
+
+Adding the `-where` option would only select rows that match the given query expression.
 
 
 ## new-item

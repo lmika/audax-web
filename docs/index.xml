@@ -67,11 +67,11 @@ To connect to a local instance of DynamoDB, such as one running in a Docker cont
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/commands/</guid>
-      <description>Commands # del-attr # :del-attr &amp;lt;attribute&amp;gt; Alias: da
+      <description>Commands # clone # :clone Copies the currently selected item to a new item, which will appear at the bottom of the table.
+Cloning an item will prompt for a new partition key and sort key but will not check for duplicates.
+del-attr # :del-attr &amp;lt;attribute&amp;gt; Alias: da
 Deletes attribute from the currently selected item; or if there are any marked items, the marked items.
-delete # :delete Deletes the marked items. Unlike the other commands that modify items, this command will be executed on the table straight away.
-echo # :echo [message ...] Displays message in the status bar. Mainly used for debugging.
-export # :export [-all] &amp;lt;filename&amp;gt; Writes the currently loaded items as a CSV file to filename.</description>
+delete # :delete Deletes the marked items.</description>
     </item>
     
     <item>
@@ -102,9 +102,7 @@ export # :export [-all] &amp;lt;filename&amp;gt; Writes the currently loaded ite
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://dynamobrowse.app/docs/reference/query-expressions/</guid>
-      <description>Query Expression # Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
-Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
-string = &amp;#39;&amp;#34;&amp;#39; .* &amp;#39;&amp;#34;&amp;#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&amp;#34;.</description>
+      <description>Query Expression # Query expressions are used to select rows of a table. When executed as a query (i.e. by pressing ?), they will be translated into query or table scans that will run over the DynamoDB table in AWS. They work similar to the &amp;ldquo;where&amp;rdquo; clause in PartiQL except that they only require Query and Scan permission on the AWS table and do not require &amp;ldquo;select&amp;rdquo; clauses. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.</description>
     </item>
     
     <item>
@@ -127,7 +125,7 @@ rw # Type: flag Disable read-only mode. The ro setting will enable read-only mod
       <description>Download # Binary packages can be download from GitHub.
 MacOS Using Homebrew # If you have Homebrew, you can install using the following command:
 brew tap lmika/audax brew install audax Linux # To install the Debian package, download the .deb file, and install the package by running:
-sudo apt install ./audax_0.3.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
+sudo apt install ./audax_0.4.0_linux_amd64.deb To install the RPM package, download the .rpm file, and install the package by running:
 sudo yum install .</description>
     </item>
     

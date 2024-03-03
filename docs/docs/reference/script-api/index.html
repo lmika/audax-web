@@ -16,7 +16,7 @@
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f5c6d8d24a517d1a77a08e8bb4c74a04ff5bc0800c5726c11cf9a9b7f87f3f00.js" integrity="sha256-9cbY0kpRfRp3oI6LtMdKBP9bwIAMVybBHPmpt/h/PwA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b112f3e95f9f423a0a0af9e85143df374a2391f6d9436a2b2091a06c2dc383ff.js" integrity="sha256-sRLz6V&#43;fQjoKCvnoUUPfN0ojkfbZQ2orIJGgbC3Dg/8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -137,11 +137,6 @@ https://github.com/alex-shpak/hugo-book
 	  
 	
 	  
-	  	<li><a href="#module-os">os</a></li>
-	  
-	  
-	
-	  
 	  	<li><a href="#type-resultset">resultset</a></li>
 	  
 	  
@@ -208,7 +203,7 @@ https://github.com/alex-shpak/hugo-book
 	  	  	
 	  	<h3 id="ext-command">
 			  ext.command
-			  <a class="anchor" href="ext-command">#</a>
+			  <a class="anchor" href="#ext-command">#</a>
 	  	</h3>
 		<pre><code>ext.command(name, fn)</code></pre>
 		<p>Defines a new command, which can be invoked by entering <em>name</em> within the main view mode.
@@ -230,7 +225,7 @@ a default value.</p>
 	  	  	
 	  	<h3 id="ext-key_binding">
 			  ext.key_binding
-			  <a class="anchor" href="ext-key_binding">#</a>
+			  <a class="anchor" href="#ext-key_binding">#</a>
 	  	</h3>
 		<pre><code>ext.key_binding(name, options, fn)</code></pre>
 		<p>Defines a new key binding, which can be invoked while viewing the table.</p>
@@ -251,6 +246,46 @@ It must accept no parameters.</p>
 ext.key_binding(&#34;hello&#34;, {&#34;default&#34;: &#34;H&#34;}, func() {
   ui.print(&#34;Hello&#34;)
 })</code></pre>
+		
+	  	  	
+	  	<h3 id="ext-related_items">
+			  ext.related_items
+			  <a class="anchor" href="#ext-related_items">#</a>
+	  	</h3>
+		<pre><code>ext.related_items(table, fn)</code></pre>
+		<p>Defines a &ldquo;related item&rdquo; for a table. These act as quick jumps between tables.
+When the user presses Shift+O, all the related item functions that match the given
+table will be evaluated. Each one is to return zero or more related queries, which are presented
+to the user as a list. When the user selects one, the query will be evaluated and the result set will
+be shown.</p>
+<p>The <em>table</em> parameter is the name of the table of the related items managed by this function.
+If the last character of the table is <code>*</code>, then <em>table</em> will be treated as a name prefix.</p>
+<p>The <em>fn</em> will produce a list of queries that are related to a given item. The function takes the currently
+selected item as the argument, and is expected to produce a list of maps, with each map having the following
+fields:</p>
+<ul>
+<li><code>label</code>: The label to use for the picker option</li>
+<li><code>query</code>: The query expression that will run when the option is chosen</li>
+<li><code>table</code>: The table to run the query over. If not set, the current table will be used</li>
+<li><code>args</code>: A map of query placeholder values</li>
+<li><code>on_select</code>: An optional function that will run in place of a predefined query. If set, the <code>query</code> field will
+be ignored.</li>
+</ul>
+
+		
+		
+			<h4>Example</h4>
+			<pre><code>ext.related_items(&#34;user-account&#34;, func(item) {
+  return [
+    {
+      &#34;label&#34;: &#34;Customer&#34;,
+      &#34;table&#34;: &#34;billing&#34;,
+      &#34;query&#34;: &#34;email=$email&#34;,
+      &#34;args&#34;: {&#34;email&#34;: item.attr(&#34;email&#34;)},
+    },
+  ]
+})	    
+</code></pre>
 		
 	  
   </section>
@@ -318,7 +353,7 @@ ext.key_binding(&#34;hello&#34;, {&#34;default&#34;: &#34;H&#34;}, func() {
 	  	  	
 	  	<h3 id="item-attr">
 			  item.attr
-			  <a class="anchor" href="item-attr">#</a>
+			  <a class="anchor" href="#item-attr">#</a>
 	  	</h3>
 		<pre><code>item.attr(expression)</code></pre>
 		Returns the attribute value from the query expression.
@@ -327,7 +362,7 @@ ext.key_binding(&#34;hello&#34;, {&#34;default&#34;: &#34;H&#34;}, func() {
 	  	  	
 	  	<h3 id="item-delete_attr">
 			  item.delete_attr
-			  <a class="anchor" href="item-delete_attr">#</a>
+			  <a class="anchor" href="#item-delete_attr">#</a>
 	  	</h3>
 		<pre><code>item.delete_attr(expression)</code></pre>
 		Delete the attribute.
@@ -336,70 +371,29 @@ ext.key_binding(&#34;hello&#34;, {&#34;default&#34;: &#34;H&#34;}, func() {
 	  	  	
 	  	<h3 id="item-index">
 			  item.index
-			  <a class="anchor" href="item-index">#</a>
+			  <a class="anchor" href="#item-index">#</a>
 	  	</h3>
 		<pre><code>item.index</code></pre>
 		Returns the index of this item within the result set.
 		
 		
 	  	  	
-	  	<h3 id="item-result_set">
-			  item.result_set
-			  <a class="anchor" href="item-result_set">#</a>
+	  	<h3 id="item-resultset">
+			  item.resultset
+			  <a class="anchor" href="#item-resultset">#</a>
 	  	</h3>
-		<pre><code>item.result_set</code></pre>
+		<pre><code>item.resultset</code></pre>
 		Returns the result-set this item is a member of.
 		
 		
 	  	  	
 	  	<h3 id="item-set_attr">
 			  item.set_attr
-			  <a class="anchor" href="item-set_attr">#</a>
+			  <a class="anchor" href="#item-set_attr">#</a>
 	  	</h3>
 		<pre><code>item.set_attr(expression, value)</code></pre>
 		Sets the value of the attribute.
 		
-		
-	  
-  </section>
-  
-  <section>
-	  
-	  	<h2 id="module-os">
-		  	Module: os
-		  	<a class="anchor" href="#module-os">#</a>
-	  	</h2>
-	  
-	  
-	  Provides access to the operating system.
-	  
-	  
-	  	  	
-	  	<h3 id="os-env">
-			  os.env
-			  <a class="anchor" href="os-env">#</a>
-	  	</h3>
-		<pre><code>os.env(name)</code></pre>
-		Return the value of the environment variable with the <em>name</em>.  If the environment variable is not
-set, this will return nil.
-		
-		
-	  	  	
-	  	<h3 id="os-exec">
-			  os.exec
-			  <a class="anchor" href="os-exec">#</a>
-	  	</h3>
-		<pre><code>os.exec(comamnd)</code></pre>
-		<p>Executes the passed in command using the default shell.</p>
-<p>This returns a <a href="">Result</a> object which, if the return code is zero, will unwrap to stdout of
-the command as a string.  If the return code is non-zero, the <a href="">Result</a> object will be an error.</p>
-
-		
-		
-			<h4>Example</h4>
-			<pre><code>currentDate := os.exec(&#34;date&#34;)
-ui.print(&#34;Current date = &#34;, currentDate.unwrap())
-</code></pre>
 		
 	  
   </section>
@@ -424,7 +418,7 @@ ordered based on the partition and sort key.</p>
 	  	  	
 	  	<h3 id="resultset-length">
 			  resultset.length
-			  <a class="anchor" href="resultset-length">#</a>
+			  <a class="anchor" href="#resultset-length">#</a>
 	  	</h3>
 		<pre><code>resultset.length</code></pre>
 		Returns the number of items within the result set.
@@ -433,7 +427,7 @@ ordered based on the partition and sort key.</p>
 	  	  	
 	  	<h3 id="resultset-table">
 			  resultset.table
-			  <a class="anchor" href="resultset-table">#</a>
+			  <a class="anchor" href="#resultset-table">#</a>
 	  	</h3>
 		<pre><code>resultset.table</code></pre>
 		Returns information about the table this result set belongs to.
@@ -456,7 +450,7 @@ ordered based on the partition and sort key.</p>
 	  	  	
 	  	<h3 id="session-current_table">
 			  session.current_table
-			  <a class="anchor" href="session-current_table">#</a>
+			  <a class="anchor" href="#session-current_table">#</a>
 	  	</h3>
 		<pre><code>session.current_table()</code></pre>
 		Returns information about the currently displayed table. This will be returned as a <code>table</code> object.  If no
@@ -466,11 +460,11 @@ table is displayed, this function will return <code>nil</code>.
 	  	  	
 	  	<h3 id="session-query">
 			  session.query
-			  <a class="anchor" href="session-query">#</a>
+			  <a class="anchor" href="#session-query">#</a>
 	  	</h3>
 		<pre><code>session.query(expression, [options])</code></pre>
-		<p>Executes a query against a DynamoDB table.  This returns a <code>Result</code> object which, when unrapped, will return a
-a resultset if the query was successful.  A query with no results will be an empty result-set.</p>
+		<p>Executes a query against a DynamoDB table.  This returns a resultset if the query was successful.
+A query with no results will be an empty result-set.</p>
 <p>The <em>expression</em> is the query expression to execute. This is similar to the type of expressions entered
 after pression <kbd>?</kbd>.</p>
 <p>The <em>options</em> map can contain the following key/value pairs:</p>
@@ -488,19 +482,15 @@ after pression <kbd>?</kbd>.</p>
     key: &#34;my partition key&#34;
   }
 }
-if (out.is_ok()) {
-  session.set_result_set(out.unwrap())
-} else {
-  ui.print(&#34;Something happened&#34;)
-}
+session.set_result_set(out.unwrap())
 </code></pre>
 		
 	  	  	
-	  	<h3 id="session-result_set">
-			  session.result_set
-			  <a class="anchor" href="session-result_set">#</a>
+	  	<h3 id="session-resultset">
+			  session.resultset
+			  <a class="anchor" href="#session-resultset">#</a>
 	  	</h3>
-		<pre><code>session.result_set()</code></pre>
+		<pre><code>session.resultset</code></pre>
 		<p>Returns the currently displayed result set. This is the set of items that are shown to the user in the items
 table. This will be returned as a <code>resultset</code> object.</p>
 <p>Note that this only contains the items of the current result set that exists in memory.  As such, it will be
@@ -511,7 +501,7 @@ capped to the configured query limit.</p>
 	  	  	
 	  	<h3 id="session-selected_item">
 			  session.selected_item
-			  <a class="anchor" href="session-selected_item">#</a>
+			  <a class="anchor" href="#session-selected_item">#</a>
 	  	</h3>
 		<pre><code>session.selected_item()</code></pre>
 		Returns the item currently highlighted in the items table. This will be returned as an <code>item</code> object.  If no
@@ -521,7 +511,7 @@ item is highlighted, it will return <code>nil</code>.
 	  	  	
 	  	<h3 id="session-set_result_set">
 			  session.set_result_set
-			  <a class="anchor" href="session-set_result_set">#</a>
+			  <a class="anchor" href="#session-set_result_set">#</a>
 	  	</h3>
 		<pre><code>session.set_result_set(new_result_set)</code></pre>
 		<p>Replaces the currently displayed result-set with a new one. This can be used alongside the <code>query</code> function
@@ -549,7 +539,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="table-gsis">
 			  table.gsis
-			  <a class="anchor" href="table-gsis">#</a>
+			  <a class="anchor" href="#table-gsis">#</a>
 	  	</h3>
 		<pre><code>table.gsis</code></pre>
 		Returns a list of the GSIs used by this table.  The elements of the list will have the type table_index
@@ -558,7 +548,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="table-keys">
 			  table.keys
-			  <a class="anchor" href="table-keys">#</a>
+			  <a class="anchor" href="#table-keys">#</a>
 	  	</h3>
 		<pre><code>table.keys</code></pre>
 		<p>Returns the keys of the table. This will be returned as a map with the following names:</p>
@@ -572,7 +562,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="table-name">
 			  table.name
-			  <a class="anchor" href="table-name">#</a>
+			  <a class="anchor" href="#table-name">#</a>
 	  	</h3>
 		<pre><code>table.name</code></pre>
 		Returns the name of the table.
@@ -595,7 +585,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="table_index-keys">
 			  table_index.keys
-			  <a class="anchor" href="table_index-keys">#</a>
+			  <a class="anchor" href="#table_index-keys">#</a>
 	  	</h3>
 		<pre><code>table_index.keys</code></pre>
 		<p>Returns the keys of the index. This will be returned as a map with the following names:</p>
@@ -609,7 +599,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="table_index-name">
 			  table_index.name
-			  <a class="anchor" href="table_index-name">#</a>
+			  <a class="anchor" href="#table_index-name">#</a>
 	  	</h3>
 		<pre><code>table_index.name</code></pre>
 		Returns the name of the index.
@@ -632,7 +622,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="ui-print">
 			  ui.print
-			  <a class="anchor" href="ui-print">#</a>
+			  <a class="anchor" href="#ui-print">#</a>
 	  	</h3>
 		<pre><code>ui.print(args...)</code></pre>
 		Displays a message in the status bar.
@@ -641,7 +631,7 @@ At most once with the final result-set you&rsquo;d like to show the user is cons
 	  	  	
 	  	<h3 id="ui-prompt">
 			  ui.prompt
-			  <a class="anchor" href="ui-prompt">#</a>
+			  <a class="anchor" href="#ui-prompt">#</a>
 	  	</h3>
 		<pre><code>ui.prompt(message)</code></pre>
 		<p>Request a line of input from the user, using <em>message</em> as the prompt.</p>
@@ -705,11 +695,6 @@ ui.print(&#34;Hello, &#34;, line)</code></pre>
 	
 	  
 	  	<li><a href="#type-item">item</a></li>
-	  
-	  
-	
-	  
-	  	<li><a href="#module-os">os</a></li>
 	  
 	  
 	

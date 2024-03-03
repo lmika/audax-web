@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Query Expression # Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
-Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
-string = &#39;&#34;&#39; .* &#39;&#34;&#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&#34;.">
+<meta name="description" content="Query Expression # Query expressions are used to select rows of a table. When executed as a query (i.e. by pressing ?), they will be translated into query or table scans that will run over the DynamoDB table in AWS. They work similar to the &ldquo;where&rdquo; clause in PartiQL except that they only require Query and Scan permission on the AWS table and do not require &ldquo;select&rdquo; clauses. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="Query Expression # Query expression is used to execute queries and scans over items in the DynamoDB table. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.
-Note that the query expression language is still under early development and may change in the future. The expression is represented in EBNF form:
-string = &#39;&#34;&#39; .* &#39;&#34;&#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*; literal = string; field = identifier (&#34;." />
+<meta property="og:description" content="Query Expression # Query expressions are used to select rows of a table. When executed as a query (i.e. by pressing ?), they will be translated into query or table scans that will run over the DynamoDB table in AWS. They work similar to the &ldquo;where&rdquo; clause in PartiQL except that they only require Query and Scan permission on the AWS table and do not require &ldquo;select&rdquo; clauses. Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dynamobrowse.app/docs/reference/query-expressions/" /><meta property="article:section" content="docs" />
 
@@ -20,7 +16,7 @@ string = &#39;&#34;&#39; .* &#39;&#34;&#39;; identifier = [a-zA-Z_][a-zA-Z0-9_]*
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.71eb39b27f9aa9ef70fe691f6c7421af3f3e1e35afbd9bb2d620a8221ac761ce.css" integrity="sha256-ces5sn&#43;aqe9w/mkfbHQhrz8&#43;HjWvvZuy1iCoIhrHYc4=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.f5c6d8d24a517d1a77a08e8bb4c74a04ff5bc0800c5726c11cf9a9b7f87f3f00.js" integrity="sha256-9cbY0kpRfRp3oI6LtMdKBP9bwIAMVybBHPmpt/h/PwA=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.b112f3e95f9f423a0a0af9e85143df374a2391f6d9436a2b2091a06c2dc383ff.js" integrity="sha256-sRLz6V&#43;fQjoKCvnoUUPfN0ojkfbZQ2orIJGgbC3Dg/8=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -128,7 +124,26 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#names-and-values">Names And Values</a></li>
+    <li><a href="#equality">Equality</a></li>
+    <li><a href="#numerical-comparison">Numerical Comparison</a></li>
+    <li><a href="#prefix-operator">Prefix Operator</a></li>
+    <li><a href="#logical-operators">Logical Operators</a></li>
+    <li><a href="#the-in-operator">The <code>in</code> Operator</a></li>
+    <li><a href="#the-is-operator">The <code>is</code> Operator</a></li>
+    <li><a href="#the-using-options">The <code>using</code> Options</a></li>
+    <li><a href="#builtin-functions">Builtin Functions</a>
+      <ul>
+        <li><a href="#the-marked-function">The <code>marked</code> function</a></li>
+        <li><a href="#the-range-function">The <code>range</code> function</a></li>
+        <li><a href="#the-size-function">The <code>size</code> function</a></li>
+      </ul>
+    </li>
+    <li><a href="#placeholders">Placeholders</a></li>
+  </ul>
+</nav>
 
 
 
@@ -143,56 +158,181 @@ https://github.com/alex-shpak/hugo-book
   Query Expression
   <a class="anchor" href="#query-expression">#</a>
 </h1>
-<p>Query expression is used to execute queries and scans over items in the DynamoDB table.
-Such expressions can also be used in other areas of Dynamo-Browse, such as populating the
-value of new columns.</p>
-<blockquote class="book-hint warning">
-  Note that the query expression language is still under early development and may change in the future.
+<p>Query expressions are used to select rows of a table.  When executed as a query (i.e. by pressing <kbd>?</kbd>),
+they will be translated into query or table scans that will run over the DynamoDB table in AWS.
+They work similar to the &ldquo;where&rdquo; clause in PartiQL except that they only require Query and Scan permission
+on the AWS table and do not require &ldquo;select&rdquo; clauses.
+Such expressions can also be used in other areas of Dynamo-Browse, such as populating the value of new columns.</p>
+<h2 id="names-and-values">
+  Names And Values
+  <a class="anchor" href="#names-and-values">#</a>
+</h2>
+<p>A query expressions support the following literals:</p>
+<ul>
+<li>Strings: <code>&quot;Hello&quot;</code></li>
+<li>Integers: <code>123</code></li>
+<li>Boolean: <code>true</code> or <code>false</code></li>
+</ul>
+<p>Field names are represented as regular identifiers, such as <code>pk</code> or <code>address</code>.</p>
+<h2 id="equality">
+  Equality
+  <a class="anchor" href="#equality">#</a>
+</h2>
+<p>To select rows with a field that equals a given value, use the <code>=</code> operator:</p>
+<pre tabindex="0"><code>pk = &#34;something&#34;
+</code></pre><p>Either operand will can be an identifier, placeholder, or value that resolves to any type.
+The result will be true if both the LHS and RHS equal the same type and value. If the types differ or
+the values differ, the result will be false. The field types can be different, but will always produce false.</p>
+<p>The compliment is the <code>!=</code> operator:</p>
+<pre tabindex="0"><code>pk != &#34;not this&#34;
+</code></pre><h2 id="numerical-comparison">
+  Numerical Comparison
+  <a class="anchor" href="#numerical-comparison">#</a>
+</h2>
+<p>The operands <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> can be used to compare numerical fields and values:</p>
+<pre tabindex="0"><code>three &lt; 5     // true
+three &lt;= 3    // true
+three &gt; 12    // false
+three &gt;= 1    // true
+</code></pre><p>To verify that a number exists within a range, use the <code>between</code> operand:</p>
+<pre tabindex="0"><code>three between 1 and 5   // true
+</code></pre><h2 id="prefix-operator">
+  Prefix Operator
+  <a class="anchor" href="#prefix-operator">#</a>
+</h2>
+<p>To select rows with a field that starts with a given substring, use the <code>^=</code> operator:</p>
+<pre tabindex="0"><code>pk ^= &#34;some&#34;
+</code></pre><p>This is equivalent to using the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.OperatorsAndFunctions.html">begins_with</a> function in AWS query expressions.</p>
+<h2 id="logical-operators">
+  Logical Operators
+  <a class="anchor" href="#logical-operators">#</a>
+</h2>
+<p>The logical operators <code>and</code>, <code>or</code> and <code>not</code> can be used to express conjunctions, disjunctions and logical negation
+between multiple expressions:</p>
+<pre tabindex="0"><code>pk = &#34;this&#34; and sk = &#34;that&#34;
+pk != &#34;that&#34; and count &gt; 123
+not count = 21
+</code></pre><p>The order of precedence of these operators, from lowest to highest, is <code>or</code>, <code>and</code>, then <code>not</code>. This differs
+from AWS, in which all operators have the same precedence. For example, the query:</p>
+<pre tabindex="0"><code>pk=&#34;this&#34; or pk=&#34;that&#34; and sk=&#34;foo&#34;
+</code></pre><p>is equivalent to:</p>
+<pre tabindex="0"><code>pk=&#34;this&#34; or (pk=&#34;that&#34; and sk=&#34;foo&#34;)
+</code></pre><p>The order can be overridden using brackets:</p>
+<pre tabindex="0"><code>(pk=&#34;this&#34; or pk=&#34;that&#34;) and sk=&#34;foo&#34;
+</code></pre><blockquote class="book-hint info">
+  <p>If a query expression is of the form <code>pk = &lt;val&gt;</code> or <code>pk = &lt;val&gt; and sk &lt;op&gt; &lt;val&gt;</code>,
+where:</p>
+<ul>
+<li><em>pk</em> and <em>sk</em> are the partition and sort keys of the base table or a GSI,</li>
+<li><em>val</em> resolves to a constant value, and,</li>
+<li><em>op</em> is either <code>=</code>, <code>^=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, or <code>between</code></li>
+</ul>
+<p>the expression will be executed as a Query call. Unlike expressions on the AWS Query API method itself,
+the order of the <code>pk</code> and <code>sk</code> subexpressions can be swapped.</p>
+<p>Other expressions are supported but they will be executed as a table Scan.</p>
+
 </blockquote>
 
-<p>The expression is represented in EBNF form:</p>
-<pre tabindex="0"><code>string              = &#39;&#34;&#39; .* &#39;&#34;&#39;;
+<h2 id="the-in-operator">
+  The <code>in</code> Operator
+  <a class="anchor" href="#the-in-operator">#</a>
+</h2>
+<p>The <code>in</code> operator can be used to determine if a value exists in a collection:</p>
+<pre tabindex="0"><code>three in (1, 2, 3, 4, 5)
 
-identifier          = [a-zA-Z_][a-zA-Z0-9_]*;
-
-literal             = string;
-
-field               = identifier (&#34;.&#34; identifier)*;
-
-binary_operation    = field ( &#34;=&#34; | &#34;^=&#34; ) literal;
-
-expression          = field
-                    | binary_operation
-                    | expr ( &#34;and&#34; | &#34;or&#34; ) expr
-                    ;
-</code></pre><p>The order of operations, from lowest priority to highest priority are as follows:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Operation</th>
-<th style="text-align:left">Symbol</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Disjunction</td>
-<td style="text-align:left"><code>or</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Conjunction</td>
-<td style="text-align:left"><code>and</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Equality</td>
-<td style="text-align:left"><code>=</code>, <code>^=</code></td>
-</tr>
-</tbody>
-</table>
-<p>The types of binary operations that are supported are:</p>
+name in (&#34;Tom&#34;, &#34;Dick&#34;, &#34;Harry&#34;)
+</code></pre><p>The result will be a boolean, which will be true if the value of the LHS equals any of the items within the RHS.</p>
+<p>The collection can be one or more fixed set of values within parenthesis separated by commas. A single
+value present within parenthesis is equivalent to the equality test:</p>
+<pre tabindex="0"><code>three in (3)   // equivalent to: three = 3
+</code></pre><p>The right hand side can also be a subexpression without parenthesis that will resolve to either a string,
+list or map. The operand will behave differently based on the RHS type:</p>
 <ul>
-<li><code>attr = &quot;value&quot;</code>: matches items where attribute <em>attr</em> matches the string <em>value</em></li>
-<li><code>attr ^= &quot;value&quot;</code>: matches items where attribute <em>attr</em> has the prefix <em>value</em></li>
+<li>If the RHS is a string, the result will be true if the LHS is a substring of the RHS (equivalent to the <code>contains</code> AWS conditional expressions function)</li>
+<li>If the RHS is a list, the result will be true if the LHS equals any of the items of the list</li>
+<li>If the RHS is a map, the result will be true if the LHS appears as a key of the map</li>
 </ul>
+<p>The compliment operand is <code>not in</code>:</p>
+<pre tabindex="0"><code>three not in (6, 7, 8, 9)
+</code></pre><h2 id="the-is-operator">
+  The <code>is</code> Operator
+  <a class="anchor" href="#the-is-operator">#</a>
+</h2>
+<p>The <code>is</code> operator can be used to assert the value type.  The RHS operand is a string which is to represent an AWS
+DynamoDB item attribute type, for example <code>S</code> for strings, <code>N</code> for numbers, etc.</p>
+<pre tabindex="0"><code>&#34;hello&#34; is &#34;S&#34;    // true
+123 is &#34;N&#34;        // true
+&#34;hello&#34; is &#34;N&#34;    // false
+</code></pre><p>This is equivalent to the <code>attribute_type</code> AWS conditional expressions function.</p>
+<p>The special value <code>any</code> can be used to check that a field is set, regardless of type:</p>
+<pre tabindex="0"><code>pk is &#34;any&#34;  // true
+</code></pre><p>This is equivalent to the <code>attribute_exists</code> AWS conditional expressions function.</p>
+<p>The compliment operand is <code>not is</code>.  Using it with the &ldquo;any&rdquo; special value (<code>not is &quot;any&quot;</code>) is equivalent to the
+<code>attribute_not_exists</code> AWS conditional expressions function.</p>
+<h2 id="the-using-options">
+  The <code>using</code> Options
+  <a class="anchor" href="#the-using-options">#</a>
+</h2>
+<p>A query that is to be executed on the actual table in AWS will go though a short planning phase to determine
+whether it&rsquo;s possible to invoke the expression as a <code>Query</code> call. If the attributes map to partition and sort keys
+of either the main table, or exactly one GSI associated with the table, the expression will be executed as a Query
+over the table or the GSI found with those attributes.</p>
+<p>In cases where multiple GSI candidates exist on the base table, the query will fail with the following error:</p>
+<pre tabindex="0"><code>multiple plans with index found. Specify index or scan with &#39;using&#39; clause
+</code></pre><p>In these cases, the index will need to be specified with the <code>using</code> keyword with the <code>index</code> option:</p>
+<pre tabindex="0"><code>address=&#34;something&#34; using index(&#34;specific-gsi-name&#34;)
+</code></pre><p>The <code>using</code> keyword can also be used to force the expression to run as a table scan,
+even if the query can be invoked using a Query call over the base table or GSI:</p>
+<pre tabindex="0"><code>address=&#34;something&#34; using scan
+</code></pre><h2 id="builtin-functions">
+  Builtin Functions
+  <a class="anchor" href="#builtin-functions">#</a>
+</h2>
+<p>Query expressions support a number of builtin functions.</p>
+<h3 id="the-marked-function">
+  The <code>marked</code> function
+  <a class="anchor" href="#the-marked-function">#</a>
+</h3>
+<pre tabindex="0"><code>marked(fieldname)
+</code></pre><p>The <code>marked</code> function will return a list of field values of all marked rows of the current result set. The
+items will appear in the list as they appear in the result set. The <em>fieldname</em> currently only supports top-level fields.
+If no fields are marked, the empty list is returned.</p>
+<pre tabindex="0"><code>marked(&#34;city&#34;)
+</code></pre><h3 id="the-range-function">
+  The <code>range</code> function
+  <a class="anchor" href="#the-range-function">#</a>
+</h3>
+<pre tabindex="0"><code>range(from, to)
+</code></pre><p>The <code>range</code> function will return a list of integers between <em>from</em> and <em>to</em> inclusive.  Non integers will be truncated
+to integers, and the step is always be 1.</p>
+<pre tabindex="0"><code>range(2, 5)            // [2, 3, 4, 5]
+three in range(2, 5)   // true
+</code></pre><h3 id="the-size-function">
+  The <code>size</code> function
+  <a class="anchor" href="#the-size-function">#</a>
+</h3>
+<pre tabindex="0"><code>size(v)
+</code></pre><p>The <code>size</code> function will return the number of items of a list or map, or the length of a string.</p>
+<blockquote class="book-hint info">
+  The <code>size</code> function is equivalent to the <code>size</code> AWS conditional expressions function, and as such is the
+only function that is included as is in the generated Query or Scan expression.  All other functions are evaluated
+prior to making the Query or Scan AWS call.
+</blockquote>
+
+<h2 id="placeholders">
+  Placeholders
+  <a class="anchor" href="#placeholders">#</a>
+</h2>
+<p>In some circumstances, such as the <a href="/docs/reference/script-api/#session-query">session.query</a> method, it&rsquo;s possible to use a placeholder as a field or value. To expand a placeholder to an identifier, use the <code>:</code> prefix. To expanded the placeholder as a value, use the <code>$</code> prefix. For example, the expression <code>:key = $value</code> in the following script:</p>
+<pre tabindex="0"><code>out := session.query(&#34;:key = $value&#34;, {
+  table: &#34;some-table&#34;,
+  args: {
+    key: &#34;pk&#34;,
+    value: &#34;value&#34;
+  }
+}
+</code></pre><p>Is equivalent to the query <code>pk = &quot;hello&quot;</code>, as the placeholder <code>:key</code> is expanded to an identifier and <code>$value</code> is expanded
+to a value, in this case a string.</p>
 </article>
  
       
@@ -232,7 +372,26 @@ expression          = field
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#names-and-values">Names And Values</a></li>
+    <li><a href="#equality">Equality</a></li>
+    <li><a href="#numerical-comparison">Numerical Comparison</a></li>
+    <li><a href="#prefix-operator">Prefix Operator</a></li>
+    <li><a href="#logical-operators">Logical Operators</a></li>
+    <li><a href="#the-in-operator">The <code>in</code> Operator</a></li>
+    <li><a href="#the-is-operator">The <code>is</code> Operator</a></li>
+    <li><a href="#the-using-options">The <code>using</code> Options</a></li>
+    <li><a href="#builtin-functions">Builtin Functions</a>
+      <ul>
+        <li><a href="#the-marked-function">The <code>marked</code> function</a></li>
+        <li><a href="#the-range-function">The <code>range</code> function</a></li>
+        <li><a href="#the-size-function">The <code>size</code> function</a></li>
+      </ul>
+    </li>
+    <li><a href="#placeholders">Placeholders</a></li>
+  </ul>
+</nav>
 
 
  
